@@ -1,18 +1,7 @@
-.filters {
-  display: grid;
-}
-
-.filter1 {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.checkbox1 {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.filter2 {
-  grid-column: 2;
-  grid-row: 1;
+:host {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 80%;
+  text-align: center;
 }
