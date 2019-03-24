@@ -1,8 +1,8 @@
 <div class="body">
-  <img src="favicon.ico">
+  <img [src]="university.imgPath">
   <h3>{{university.name}}</h3>
   <p>{{university.city}} ({{university.country}})</p>
   <p>{{university.program}}</p>
-  <p>Nb de places restantes: {{university.placesNumber}}</p>
+  <p>Places restantes: {{university.placesNumber}}</p>
   <p>Note: {{university.rate}}/5</p>
 </div>
