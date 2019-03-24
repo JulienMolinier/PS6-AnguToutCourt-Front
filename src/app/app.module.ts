@@ -12,6 +12,7 @@ import {ResearchComponent} from './researchComponents/research/research.componen
 import {ResearchResultListComponent} from './researchComponents/research-result-list/research-result-list.component';
 import {UniversityCardComponent} from './researchComponents/university-card/university-card.component';
 import {ResearchFilterComponent} from './researchComponents/research-filter/research-filter.component';
+import {HomeComponent} from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ResearchFilterComponent} from './researchComponents/research-filter/rese
     ResearchComponent,
     ResearchResultListComponent,
     UniversityCardComponent,
-    ResearchFilterComponent
+    ResearchFilterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
