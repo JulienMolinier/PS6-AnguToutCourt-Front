@@ -1,7 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {ResearchComponent} from "./researchComponents/research/research.component";
 
 const routes: Routes = [
+  {path: 'research', component: ResearchComponent},
 ];
 
 @NgModule({

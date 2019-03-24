@@ -8,12 +8,20 @@ import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatMenuModule, MatToolbarModule} from '@angular/material';
 import {HeaderComponent} from './header/header.component';
+import {ResearchComponent} from './researchComponents/research/research.component';
+import {ResearchResultListComponent} from './researchComponents/research-result-list/research-result-list.component';
+import {UniversityCardComponent} from './researchComponents/university-card/university-card.component';
+import {ResearchFilterComponent} from './researchComponents/research-filter/research-filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    ResearchComponent,
+    ResearchResultListComponent,
+    UniversityCardComponent,
+    ResearchFilterComponent
   ],
   imports: [
     BrowserModule,

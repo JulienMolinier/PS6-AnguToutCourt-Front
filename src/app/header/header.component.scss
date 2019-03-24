@@ -5,18 +5,13 @@
  */
 :host {
   color: $white;
-  font-size: 20px;
 }
 
 .header {
   background: $linearGradient;
-  padding: 1em;
+  padding: 0.5em;
 }
 
 .imagePoly {
-  width: 10%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
+  width: 5%;
 }
