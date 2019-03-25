@@ -10,6 +10,12 @@ import {MatButtonModule, MatMenuModule, MatToolbarModule} from '@angular/materia
 import { ReviewComponent } from './reviews/review/review.component';
 import { ReviewFormComponent } from './reviews/review-form/review-form.component';
 import { ReviewListComponent } from './reviews/review-list/review-list.component';
+import {HeaderComponent} from './header/header.component';
+import {ResearchComponent} from './researchComponents/research/research.component';
+import {ResearchResultListComponent} from './researchComponents/research-result-list/research-result-list.component';
+import {UniversityCardComponent} from './researchComponents/university-card/university-card.component';
+import {ResearchFilterComponent} from './researchComponents/research-filter/research-filter.component';
+import {HomeComponent} from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +24,12 @@ import { ReviewListComponent } from './reviews/review-list/review-list.component
     ReviewComponent,
     ReviewFormComponent,
     ReviewListComponent,
+    HeaderComponent,
+    ResearchComponent,
+    ResearchResultListComponent,
+    UniversityCardComponent,
+    ResearchFilterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

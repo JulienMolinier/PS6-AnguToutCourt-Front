@@ -17,9 +17,7 @@ export class ReviewFormComponent implements OnInit {
   ngOnInit() {
   }
   addReview(){
-    const ticketToCreate: Ticket = this.ticketForm.getRawValue() as Ticket;
-    ticketToCreate.date = new Date();
-    this.ticketService.addTicket(ticketToCreate);
+
 
     const reviewToCreate: Review = this.reviewForm.getRawValue() as Review;
 
