@@ -13,6 +13,7 @@ import {ResearchResultListComponent} from './researchComponents/research-result-
 import {UniversityCardComponent} from './researchComponents/university-card/university-card.component';
 import {ResearchFilterComponent} from './researchComponents/research-filter/research-filter.component';
 import {HomeComponent} from './home/home.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HomeComponent} from './home/home.component';
     ResearchResultListComponent,
     UniversityCardComponent,
     ResearchFilterComponent,
-    HomeComponent
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
