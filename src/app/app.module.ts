@@ -7,6 +7,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {ReviewComponent} from './reviews/review/review.component';
+import {ReviewFormComponent} from './reviews/review-form/review-form.component';
+import {ReviewListComponent} from './reviews/review-list/review-list.component';
 import {HeaderComponent} from './header/header.component';
 import {ResearchComponent} from './researchComponents/research/research.component';
 import {ResearchResultListComponent} from './researchComponents/research-result-list/research-result-list.component';
@@ -19,6 +22,9 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
   declarations: [
     AppComponent,
     AppComponent,
+    ReviewComponent,
+    ReviewFormComponent,
+    ReviewListComponent,
     HeaderComponent,
     ResearchComponent,
     ResearchResultListComponent,

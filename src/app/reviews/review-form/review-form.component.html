@@ -1,0 +1,36 @@
+<h3>Ajouter un Avis</h3>
+<form class="ticket-form">
+  <label for="LastName">
+    Last Name <br>
+    <input class="input-custom" type="text" id="LastName">
+  </label>
+  <br>
+  <label for="FirstName">
+    Fisrt Name <br>
+    <input class="input-custom" type="text" id="FirstName">
+  </label>
+  <br>
+
+  <label for="Education">
+    Education <br>
+    <select id="Education">
+      <option value="">--Please choose a Formation--</option>
+      <option *ngFor="let formation of FormationList" [value]="formation">{{formation}}</option>
+    </select>
+  </label>
+  <br>
+
+  <label for="City">
+    City <br>
+    <input class="input-custom" type="text" id="City">
+  </label>
+  <br>
+  <label for="Country">
+    Country <br>
+    <input class="input-custom" type="text" id="Country">
+  </label>
+  <br>
+  <button type="submit" class="btn-custom" (click)="addReview">Post</button>
+</form>
+
+
