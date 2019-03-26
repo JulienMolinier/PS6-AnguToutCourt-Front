@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {University} from "../../../models/university";
+import {University} from '../../../models/university';
 
 @Component({
   selector: 'app-university-card',

@@ -11,12 +11,15 @@ import {ReviewComponent} from './reviews/review/review.component';
 import {ReviewFormComponent} from './reviews/review-form/review-form.component';
 import {ReviewListComponent} from './reviews/review-list/review-list.component';
 import {HeaderComponent} from './header/header.component';
-import {ResearchComponent} from './researchComponents/research/research.component';
-import {ResearchResultListComponent} from './researchComponents/research-result-list/research-result-list.component';
-import {UniversityCardComponent} from './researchComponents/university-card/university-card.component';
-import {ResearchFilterComponent} from './researchComponents/research-filter/research-filter.component';
+import {ResearchComponent} from './research-components/research/research.component';
+import {ResearchResultListComponent} from './research-components/research-result-list/research-result-list.component';
+import {UniversityCardComponent} from './research-components/university-card/university-card.component';
+import {ResearchFilterComponent} from './research-components/research-filter/research-filter.component';
 import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {LoginComponent} from './log/login/login.component';
+import {RegisterComponent} from './log/register/register.component';
+import {PasswordDirective} from './directives/password.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
     UniversityCardComponent,
     ResearchFilterComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent,
+    RegisterComponent,
+    PasswordDirective
   ],
   imports: [
     BrowserModule,
