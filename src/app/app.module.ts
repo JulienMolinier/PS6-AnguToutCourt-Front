@@ -17,6 +17,10 @@ import {UniversityCardComponent} from './researchComponents/university-card/univ
 import {ResearchFilterComponent} from './researchComponents/research-filter/research-filter.component';
 import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {UniversityMapComponent} from './universitycomponents/university-map/university-map.component';
+import {UniversityDescriptionComponent} from './universitycomponents/university-description/university-description.component';
+import {UniversityInfosComponent} from './universitycomponents/university-infos/university-infos.component';
+import {UniversityComponent} from './universitycomponents/university/university.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
     UniversityCardComponent,
     ResearchFilterComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UniversityMapComponent,
+    UniversityDescriptionComponent,
+    UniversityInfosComponent,
+    UniversityComponent
   ],
   imports: [
     BrowserModule,

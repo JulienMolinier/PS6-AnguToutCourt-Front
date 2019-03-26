@@ -1,17 +1,20 @@
-import {University} from "../models/university";
+import {University} from '../models/university';
 
 export const UNIVERSITIES_MOCKED: University[] = [
   {
-    imgPath: "../../favicon.ico",
+    id: 1,
+    imgPath: '../../favicon.ico',
     name: 'Université de Montpellier',
     city: 'Montpellier',
     country: 'France',
     rate: 5,
     placesNumber: 20,
     program: 'ERASMUS',
+    description: 'La meilleure université au monde.'
   },
   {
-    imgPath: "../../favicon.ico",
+    id: 2,
+    imgPath: '../../favicon.ico',
     name: 'Université de Nice',
     city: 'Nice',
     country: 'France',

@@ -1,16 +1,19 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ResearchComponent} from "./researchComponents/research/research.component";
-import {HomeComponent} from "./home/home.component";
-import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
-import {ReviewFormComponent} from "./reviews/review-form";
+import {ResearchComponent} from './researchComponents/research/research.component';
+import {HomeComponent} from './home/home.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {ReviewFormComponent} from './reviews/review-form';
+import {UniversityComponent} from './universitycomponents/university/university.component';
 
 const routes: Routes = [
   {path: 'review-form', component: ReviewFormComponent},
   {path: 'research', component: ResearchComponent},
   {path: '', component: HomeComponent},
   {path: 'not-found', component: PageNotFoundComponent},
-  {path: '**', redirectTo: 'not-found'}
+  {path: '**', redirectTo: 'not-found'},
+  {path: 'university/:id', component: UniversityComponent},
+  {path: 'university', component: UniversityComponent}
 ];
 
 @NgModule({
