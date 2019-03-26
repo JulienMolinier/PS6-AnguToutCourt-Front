@@ -17,6 +17,10 @@ import {UniversityCardComponent} from './research-components/university-card/uni
 import {ResearchFilterComponent} from './research-components/research-filter/research-filter.component';
 import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {UniversityMapComponent} from './universitycomponents/university-map/university-map.component';
+import {UniversityDescriptionComponent} from './universitycomponents/university-description/university-description.component';
+import {UniversityInfosComponent} from './universitycomponents/university-infos/university-infos.component';
+import {UniversityComponent} from './universitycomponents/university/university.component';
 import {LoginComponent} from './log/login/login.component';
 import {RegisterComponent} from './log/register/register.component';
 import {PasswordDirective} from './directives/password.directive';
@@ -37,7 +41,11 @@ import {PasswordDirective} from './directives/password.directive';
     PageNotFoundComponent,
     LoginComponent,
     RegisterComponent,
-    PasswordDirective
+    PasswordDirective,
+    UniversityMapComponent,
+    UniversityDescriptionComponent,
+    UniversityInfosComponent,
+    UniversityComponent
   ],
   imports: [
     BrowserModule,

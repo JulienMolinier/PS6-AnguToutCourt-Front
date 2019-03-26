@@ -15,6 +15,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['research']);
   }
 
+  goReviews() {
+    this.router.navigate(['reviews']);
+  }
+
   ngOnInit() {
   }
 

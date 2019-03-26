@@ -5,6 +5,7 @@ import {LoginComponent} from './log/login/login.component';
 import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {ReviewFormComponent} from './reviews/review-form';
+import {UniversityComponent} from './universitycomponents/university/university.component';
 import {ReviewListComponent} from './reviews/review-list';
 
 const routes: Routes = [
@@ -14,7 +15,10 @@ const routes: Routes = [
   {path: 'reviews', component: ReviewListComponent},
   {path: 'research', component: ResearchComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'not-found', component: PageNotFoundComponent}
+  {path: 'not-found', component: PageNotFoundComponent},
+  {path: '**', redirectTo: 'not-found'},
+  {path: 'university/:id', component: UniversityComponent},
+  {path: 'university', component: UniversityComponent}
 ];
 
 @NgModule({

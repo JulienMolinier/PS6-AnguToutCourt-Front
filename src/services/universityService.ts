@@ -16,4 +16,12 @@ export class UniversityService {
   constructor() {
   }
 
+  getById(id: number) {
+    const university = this.universityList.find(
+      (s) => {
+        return s.id === id;
+      }
+    );
+    return university;
+  }
 }

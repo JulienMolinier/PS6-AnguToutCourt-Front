@@ -1,4 +1,5 @@
 export interface University {
+  id: number;
   imgPath?: string;
   name?: string;
   country?: string;
@@ -6,4 +7,5 @@ export interface University {
   program?: string;
   placesNumber?: number;
   rate?: number;
+  description?: string;
 }
