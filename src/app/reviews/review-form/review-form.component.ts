@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Formations, Review} from '../../../models/review';
+import {Major, Review} from '../../../models/review';
 import {FormGroup} from '@angular/forms';
 
 @Component({
@@ -10,7 +10,7 @@ import {FormGroup} from '@angular/forms';
 export class ReviewFormComponent implements OnInit {
 
   public reviewForm: FormGroup;
-  public FormationList: string[] = Object.keys(Formations).map(m => Formations[m]);
+  public MajorList: string[] = Object.keys(Major).map(m => Major[m]);
 
   constructor() {
   }

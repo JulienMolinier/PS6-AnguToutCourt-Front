@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Menu} from '../../models/menu';
+import {LastOpinions} from '../../models/lastOpinions';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +8,10 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  @Input()
+  menu: Menu;
+  lastOPinions: LastOpinions;
 
   constructor() {
   }

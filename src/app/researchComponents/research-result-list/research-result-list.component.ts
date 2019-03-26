@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {University} from "../../../models/university";
-import {UniversityService} from "../../../services/universityService";
+import {University} from '../../../models/university';
+import {UniversityService} from '../../../services/universityService';
 
 @Component({
   selector: 'app-research-result-list',

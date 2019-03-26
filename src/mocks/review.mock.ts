@@ -1,12 +1,12 @@
-import {Formations, Review} from '../models/review';
+import {Major, Review} from '../models/review';
 
 export const REVIEW_MOCKED: Review[] = [
   {
     FirstName: 'Mekouar',
     LastName: 'Youssef',
-    Formation: Formations.MA,
+    Major: Major.SI,
     City: 'Nice',
     Country: 'France',
-    Description: 'je tient à vous dire que cétait extrordinaire cette échange',
+    Description: 'Excellente expérience que je recommande fortement.',
   }
 ];
