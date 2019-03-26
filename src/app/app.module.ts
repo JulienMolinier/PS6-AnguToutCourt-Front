@@ -24,6 +24,7 @@ import {UniversityComponent} from './universitycomponents/university/university.
 import {LoginComponent} from './log/login/login.component';
 import {RegisterComponent} from './log/register/register.component';
 import {PasswordDirective} from './directives/password.directive';
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -38,14 +39,7 @@ import {PasswordDirective} from './directives/password.directive';
     UniversityCardComponent,
     ResearchFilterComponent,
     HomeComponent,
-    PageNotFoundComponent,
-    LoginComponent,
-    RegisterComponent,
-    PasswordDirective,
-    UniversityMapComponent,
-    UniversityDescriptionComponent,
-    UniversityInfosComponent,
-    UniversityComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
