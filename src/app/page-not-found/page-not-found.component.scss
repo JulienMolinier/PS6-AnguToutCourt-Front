@@ -1,0 +1,29 @@
+.content {
+  background-image: url("../../assets/images/desert.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.text {
+  text-align: center;
+  padding-top: 15em;
+  padding-bottom: 20em;
+  color: white;
+  font-family: Georgia;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+}
+
+.button {
+  background-color: grey;
+  border-color: #282828;
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+}
