@@ -11,7 +11,8 @@ const routes: Routes = [
   {path: 'reviews' , component: ReviewListComponent},
   {path: 'research', component: ResearchComponent},
   {path: '', component: HomeComponent},
-  {path: '**', component: PageNotFoundComponent},
+  {path: 'not-found', component: PageNotFoundComponent},
+  {path: '**', redirectTo: 'not-found'}
 ];
 
 @NgModule({
