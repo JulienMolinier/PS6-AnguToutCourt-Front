@@ -24,6 +24,7 @@ import {UniversityComponent} from './universitycomponents/university/university.
 import {LoginComponent} from './log/login/login.component';
 import {RegisterComponent} from './log/register/register.component';
 import {PasswordDirective} from './directives/password.directive';
+import {CreateAccountComponent} from './create-account/create-account.component';
 import {HttpClientModule} from '@angular/common/http';
 import {UniversityService} from '../services/universityService';
 
@@ -41,13 +42,15 @@ import {UniversityService} from '../services/universityService';
     ResearchFilterComponent,
     HomeComponent,
     PageNotFoundComponent,
+    UniversityCardComponent,
+    UniversityComponent,
+    UniversityInfosComponent,
+    UniversityDescriptionComponent,
     LoginComponent,
     RegisterComponent,
     PasswordDirective,
-    UniversityMapComponent,
-    UniversityDescriptionComponent,
-    UniversityInfosComponent,
-    UniversityComponent
+    CreateAccountComponent,
+    UniversityMapComponent
   ],
   imports: [
     BrowserModule,
