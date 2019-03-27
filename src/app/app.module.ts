@@ -7,9 +7,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatMenuModule, MatToolbarModule} from '@angular/material';
-import {ReviewComponent} from './reviews/review/review.component';
-import {ReviewFormComponent} from './reviews/review-form/review-form.component';
-import {ReviewListComponent} from './reviews/review-list/review-list.component';
+import {ReviewComponent} from './reviews/review';
+import {ReviewFormComponent} from './reviews/review-form';
+import {ReviewListComponent} from './reviews/review-list';
 import {HeaderComponent} from './header/header.component';
 import {ResearchComponent} from './research-components/research/research.component';
 import {ResearchResultListComponent} from './research-components/research-result-list/research-result-list.component';
@@ -24,6 +24,8 @@ import {UniversityComponent} from './universitycomponents/university/university.
 import {LoginComponent} from './log/login/login.component';
 import {RegisterComponent} from './log/register/register.component';
 import {PasswordDirective} from './directives/password.directive';
+import {HttpClientModule} from '@angular/common/http';
+import {UniversityService} from '../services/universityService';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import {PasswordDirective} from './directives/password.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     MatCardModule,
     MatIconModule,
     AppRoutingModule,
@@ -59,7 +62,7 @@ import {PasswordDirective} from './directives/password.directive';
     MatButtonModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [UniversityService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

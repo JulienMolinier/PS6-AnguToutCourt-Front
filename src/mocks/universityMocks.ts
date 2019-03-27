@@ -10,7 +10,8 @@ export const UNIVERSITIES_MOCKED: University[] = [
     rate: 5,
     placesNumber: 20,
     program: 'ERASMUS',
-    description: 'La meilleure université au monde.'
+    description: 'La meilleure université au monde.',
+    nbReviews: 0
   },
   {
     id: 2,
@@ -21,5 +22,6 @@ export const UNIVERSITIES_MOCKED: University[] = [
     rate: 4,
     placesNumber: 10,
     program: 'ERASMUS',
+    nbReviews: 0
   },
 ];

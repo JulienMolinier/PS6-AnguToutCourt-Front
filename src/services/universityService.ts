@@ -1,19 +1,18 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs/index';
 import {University} from '../models/university';
-import {UNIVERSITIES_MOCKED} from '../mocks/universityMocks';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UniversityService {
-  private universityList: University[] = UNIVERSITIES_MOCKED;
-  private researchResultList: University[] = UNIVERSITIES_MOCKED;
+  private url = 'http://localhost:9428';
+  private universityList: University[];
 
-  public universities$: BehaviorSubject<University[]> = new BehaviorSubject(this.universityList);
-  public researchUniversities$: BehaviorSubject<University[]> = new BehaviorSubject(this.researchResultList);
+  public universities$: BehaviorSubject<University[]> = new BehaviorSubject([]);
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
   getById(id: number) {
@@ -23,5 +22,13 @@ export class UniversityService {
       }
     );
     return university;
+  }
+
+  getUniversities() {
+    this.http.get<University[]>(`${this.url}/api/universities`).subscribe(value => {
+      this.universityList = value;
+      this.universities$.next(this.universityList);
+      console.log(this.universityList);
+    });
   }
 }

@@ -12,7 +12,8 @@ export class ResearchResultListComponent implements OnInit {
   public researchResultList: University[] = [];
 
   constructor(public universityService: UniversityService) {
-    this.universityService.researchUniversities$.subscribe(value => this.researchResultList = value);
+    universityService.getUniversities();
+    this.universityService.universities$.subscribe((value) => this.researchResultList = value);
   }
 
   ngOnInit(): void {

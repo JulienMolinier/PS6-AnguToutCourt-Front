@@ -1,11 +1,12 @@
 export interface University {
-  id: number;
+  id?: number;
   imgPath?: string;
   name?: string;
   country?: string;
   city?: string;
   program?: string;
   placesNumber?: number;
-  rate?: number;
+  rate: number;
+  nbReviews: number;
   description?: string;
 }
