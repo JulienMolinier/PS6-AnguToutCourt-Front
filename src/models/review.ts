@@ -9,7 +9,7 @@ export interface Review {
 }
 
 export enum Major {
-  SI = 'Informatique',
+  SI = 'Génie Informatique',
   GB = 'Génie Biologique',
   MAM = 'Mathématiques-Appliquées-Modélisation',
   ELEC = 'Génie Électronique',

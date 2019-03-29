@@ -1,8 +1,10 @@
 export interface LastOpinions {
-  FirstName?: string;
-  Major?: string;
-  Country?: string;
-  Opinion?: string;
+  FirstName: string;
+  LastName: string;
+  Major: string;
+  City: string;
+  Country: string;
+  Opinion: string;
 
 }
 
