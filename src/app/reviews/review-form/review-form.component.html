@@ -1,3 +1,4 @@
+<div align="center">
 <h3>Ajouter un Avis</h3>
 <form class="ticket-form">
   <label for="LastName">
@@ -6,7 +7,7 @@
   </label>
   <br>
   <label for="FirstName">
-    First Name <br>
+    Fisrt Name <br>
     <input class="input-custom" type="text" id="FirstName">
   </label>
   <br>
@@ -14,8 +15,8 @@
   <label for="Education">
     Education <br>
     <select id="Education">
-      <option value="">--Please choose a Major--</option>
-      <option *ngFor="let major of MajorList" [value]="Major">{{major}}</option>
+      <option value="">--Veuillez choisir votre formation--</option>
+      <option *ngFor="let formation of FormationList" [value]="formation">{{formation}}</option>
     </select>
   </label>
   <br>
@@ -30,7 +31,17 @@
     <input class="input-custom" type="text" id="Country">
   </label>
   <br>
-  <button type="submit" class="btn-custom" (click)="addReview">Post</button>
+
+  <label for="Description">
+    Mon avis <br>
+    <textarea id="Description" name="story" rows="5" cols="33">
+
+</textarea>
+  </label>
+  <br>
+
+  <button type="submit" class="btn-custom" (click)="addReview">Ajouter mon avis</button>
 </form>
 
 
+</div>

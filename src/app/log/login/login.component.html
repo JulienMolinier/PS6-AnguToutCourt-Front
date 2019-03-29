@@ -1,0 +1,18 @@
+<div class="content">
+  <h1 class="title">Login</h1>
+  <div class="login">
+    <label for="login">Identifiant</label>
+    <br>
+    <input type="text" id="login" name="login" required
+           minlength="4" maxlength="20" size="22">
+  </div>
+  <div>
+    <label for="password">Mot de passe</label>
+    <br>
+    <input type="password" value="" id="password" required
+           minlength="4" maxlength="20" size="15" appPassword>
+  </div>
+  <button class="button">
+    <a class="link" (click)="goHome()">Se connecter</a>
+  </button>
+</div>

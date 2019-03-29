@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Menu} from '../../models/menu';
-import {LastOpinions} from '../../models/lastOpinions';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +8,15 @@ import {LastOpinions} from '../../models/lastOpinions';
 })
 export class HomeComponent implements OnInit {
 
-  @Input()
-  menu: Menu;
-  lastOPinions: LastOpinions;
+  constructor(private router: Router) {
+  }
 
-  constructor() {
+  goResearch() {
+    this.router.navigate(['research']);
+  }
+
+  goReviews() {
+    this.router.navigate(['reviews']);
   }
 
   ngOnInit() {
