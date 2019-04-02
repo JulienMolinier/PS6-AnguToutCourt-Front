@@ -28,6 +28,7 @@ import {CreateAccountComponent} from './create-account';
 import {HttpClientModule} from '@angular/common/http';
 import {UniversityService} from '../services/universityService';
 import { UniversityHeaderComponent } from './universitycomponents/university-header/university-header.component';
+import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { UniversityHeaderComponent } from './universitycomponents/university-hea
     RegisterComponent,
     PasswordDirective,
     CreateAccountComponent,
+    ExchangeProgramsComponent,
     UniversityMapComponent,
     UniversityHeaderComponent
   ],

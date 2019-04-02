@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Review} from '../../../models/review';
-import {ReviewService} from '../../../services/review';
+import {ReviewService} from '../../../services/reviewService';
 
 @Component({
   selector: 'app-review-list',
@@ -11,6 +11,7 @@ export class ReviewListComponent implements OnInit {
   public reviewList: Review[] = [];
 
   constructor(public reviewService: ReviewService) {
+    this.reviewService.getReview();
     this.reviewService.reviews$.subscribe((reviews) => this.reviewList = reviews);
   }
 
