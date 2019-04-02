@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from 'rxjs/index';
+import {BehaviorSubject} from 'rxjs';
 import {Review} from '../models/review';
+import {HttpClient} from '@angular/common/http';
 import {REVIEW_MOCKED} from '../mocks/review.mock';
 
 @Injectable({
@@ -12,16 +13,15 @@ export class ReviewService {
   private url = 'http://localhost:9428';
 
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
-  /*
   getReview() {
-    this.http.get<Review[]>(`${this.url}/api/review`).subscribe(value => {
+    this.http.get<Review[]>(`${this.url}/api/reviews`).subscribe(value => {
       this.reviewList = value;
       this.reviews$.next(this.reviewList);
       console.log(this.reviewList);
     });
   }
-*/
+
 }
