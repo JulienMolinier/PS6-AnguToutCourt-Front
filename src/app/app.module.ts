@@ -27,7 +27,8 @@ import {PasswordDirective} from './directives/password.directive';
 import {CreateAccountComponent} from './create-account';
 import {HttpClientModule} from '@angular/common/http';
 import {UniversityService} from '../services/universityService';
-import { UniversityHeaderComponent } from './universitycomponents/university-header/university-header.component';
+import {UniversityHeaderComponent } from './universitycomponents/university-header/university-header.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
 
 @NgModule({
@@ -59,6 +60,8 @@ import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.c
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,
     MatIconModule,
