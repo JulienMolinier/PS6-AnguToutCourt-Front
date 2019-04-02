@@ -1,15 +1,15 @@
-export interface Review {
+export interface LastOpinions {
   FirstName: string;
   LastName: string;
   Major: string;
   City: string;
   Country: string;
-  Description: string;
+  Opinion: string;
 
 }
 
 export enum Major {
-  SI = 'Génie Informatique',
+  SI = 'Informatique',
   GB = 'Génie Biologique',
   MAM = 'Mathématiques-Appliquées-Modélisation',
   ELEC = 'Génie Électronique',
