@@ -28,6 +28,7 @@ import {CreateAccountComponent} from './create-account/create-account.component'
 import {HttpClientModule} from '@angular/common/http';
 import {UniversityService} from '../services/universityService';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     RegisterComponent,
     PasswordDirective,
     CreateAccountComponent,
+    ExchangeProgramsComponent,
     UniversityMapComponent
   ],
   imports: [
