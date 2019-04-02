@@ -8,6 +8,7 @@ import {ReviewFormComponent} from './reviews/review-form';
 import {UniversityComponent} from './universitycomponents/university/university.component';
 import {ReviewListComponent} from './reviews/review-list';
 import {CreateAccountComponent} from './create-account';
+import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -18,9 +19,10 @@ const routes: Routes = [
   {path: 'research', component: ResearchComponent},
   {path: 'home', component: HomeComponent},
   {path: 'not-found', component: PageNotFoundComponent},
-  {path: '**', redirectTo: 'not-found'},
   {path: 'university/:id', component: UniversityComponent},
-  {path: 'university', component: UniversityComponent}
+  {path: 'university', component: UniversityComponent},
+  {path: 'exchange-programs', component: ExchangeProgramsComponent},
+  {path: '**', redirectTo: 'not-found'}
 ];
 
 @NgModule({

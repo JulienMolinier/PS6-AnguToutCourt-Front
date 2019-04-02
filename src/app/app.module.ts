@@ -27,6 +27,7 @@ import {PasswordDirective} from './directives/password.directive';
 import {CreateAccountComponent} from './create-account/create-account.component';
 import {HttpClientModule} from '@angular/common/http';
 import {UniversityService} from '../services/universityService';
+import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {UniversityService} from '../services/universityService';
     RegisterComponent,
     PasswordDirective,
     CreateAccountComponent,
+    ExchangeProgramsComponent,
     UniversityMapComponent
   ],
   imports: [
