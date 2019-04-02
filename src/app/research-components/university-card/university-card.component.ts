@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {University} from '../../../models/university';
 
 @Component({
@@ -11,10 +11,16 @@ export class UniversityCardComponent implements OnInit {
   @Input()
   university: University;
 
+  @Output()
+  showUniversityDetails: EventEmitter<University> = new EventEmitter<University>();
+
   constructor() {
   }
 
   ngOnInit() {
   }
 
+  universityDetails() {
+    this.showUniversityDetails.emit(this.university);
+  }
 }

@@ -12,15 +12,17 @@ export class UniversityComponent implements OnInit {
 
   id: number;
 
-  university: University;
+  public university: University;
 
   constructor(public universityService: UniversityService, private route: ActivatedRoute) {
     console.log('bonjour');
   }
 
   ngOnInit() {
-    this.id = this.route.snapshot.params['id'];
-    this.university = this.universityService.getById(this.id);
+    this.route.paramMap.subscribe((params) => this.universityService.getById(params.get('id')));
+    // this.id = this.route.snapshot.params.id;
+    // console.log(this.id);
+    // this.university = this.universityService.getById(this.id);
   }
 
 }

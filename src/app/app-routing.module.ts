@@ -18,9 +18,10 @@ const routes: Routes = [
   {path: 'research', component: ResearchComponent},
   {path: 'home', component: HomeComponent},
   {path: 'not-found', component: PageNotFoundComponent},
-  {path: '**', redirectTo: 'not-found'},
   {path: 'university/:id', component: UniversityComponent},
-  {path: 'university', component: UniversityComponent}
+  {path: 'university', component: UniversityComponent},
+  {path: '**', redirectTo: 'not-found'}
+
 ];
 
 @NgModule({

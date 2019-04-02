@@ -1,3 +1,6 @@
-<app-university-description></app-university-description>
-<app-university-infos></app-university-infos>
-<app-university-map></app-university-map>
+<ng-container *ngIf="(universityService.universityViewed$ | async) as university">
+  <app-university-header [university]="university"></app-university-header>
+  <app-university-description [university]="university"></app-university-description>
+  <app-university-infos [university]="university"></app-university-infos>
+  <app-university-map [university]="university"></app-university-map>
+</ng-container>

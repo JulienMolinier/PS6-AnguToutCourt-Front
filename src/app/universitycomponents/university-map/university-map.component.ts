@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {University} from "../../../models/university";
 
 @Component({
   selector: 'app-university-map',
@@ -6,6 +7,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./university-map.component.scss']
 })
 export class UniversityMapComponent implements OnInit {
+
+  @Input()
+  university: University;
 
   constructor() {
   }
