@@ -22,6 +22,7 @@ const routes: Routes = [
   {path: 'not-found', component: PageNotFoundComponent},
   {path: 'university/:id', component: UniversityComponent},
   {path: 'university', component: UniversityComponent},
+  {path: 'university', component: UniversityComponent},
   {path: 'exchange-programs', component: ExchangeProgramsComponent},
   {path: '**', redirectTo: 'not-found'}
 ];
