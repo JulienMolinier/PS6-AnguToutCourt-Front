@@ -14,6 +14,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'review-form', component: ReviewFormComponent},
+  {path: 'review-list', component: ReviewListComponent},
   {path: 'reviews', component: ReviewListComponent},
   {path: 'createAccount', component: CreateAccountComponent},
   {path: 'research', component: ResearchComponent},
