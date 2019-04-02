@@ -2,24 +2,23 @@ import {Major, Review} from '../models/review';
 
 export const REVIEW_MOCKED: Review[] = [
   {
-    FirstName: 'Mekouar',
-    LastName: 'Youssef',
+    email: 'fruhgrugfyrgrfgyr',
     Major: Major.SI,
     City: 'Stockholm',
     Country: 'Suède',
-    Description: 'Très bon programme! Une expérience enrichissante et de belles rencontres. Je vous recommande fortement cette destination.',
+    Description: 'Très bon programme! Une expérience enrichissante et de belles rencontres. ' +
+      'Je vous recommande fortement cette destination.',
   },
   {
-    FirstName: 'ELALAOUI',
-    LastName: 'Hasnaa',
+    email: 'fruhgrugfyrgrfgyr',
     Major: Major.MAM,
     City: 'Montréal',
     Country: 'Canada',
-    Description: 'Très satisfaite de cet échange, les cours correspondent parfaitement à la description. Veillez à prendre vos gros pulls! ',
+    Description: 'Très satisfaite de cet échange, les cours correspondent parfaitement à la description. ' +
+      'Veillez à prendre vos gros pulls! ',
   },
   {
-    FirstName: 'MOLINIER',
-    LastName: 'Julien',
+    email: 'fruhgrugfyrgrfgyr',
     Major: Major.BAT,
     City: 'Bangkok',
     Country: 'Thaïlande',

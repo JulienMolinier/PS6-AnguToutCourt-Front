@@ -27,6 +27,7 @@ import {PasswordDirective} from './directives/password.directive';
 import {CreateAccountComponent} from './create-account/create-account.component';
 import {HttpClientModule} from '@angular/common/http';
 import {UniversityService} from '../services/universityService';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,8 @@ import {UniversityService} from '../services/universityService';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,
     MatIconModule,
