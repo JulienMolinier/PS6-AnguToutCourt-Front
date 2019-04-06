@@ -10,6 +10,8 @@ import {REVIEW_MOCKED} from '../mocks/review.mock';
 export class ReviewService {
   private reviewList: Review[] = REVIEW_MOCKED;
   public reviews$: BehaviorSubject<Review[]> = new BehaviorSubject(this.reviewList);
+  public lastReviewList: Review[] = [];
+  public lastReviews$: BehaviorSubject<Review[]> = new BehaviorSubject(this.lastReviewList);
   private url = 'http://localhost:9428';
 
 
@@ -22,6 +24,12 @@ export class ReviewService {
       this.reviews$.next(this.reviewList);
       console.log(this.reviewList);
     });
+  }
+
+  getLastReview(): void {
+    const dateToday: Date = new Date();
+    this.getReview();
+    this.reviewList.filter(review => review.Date === dateToday);
   }
 
 }

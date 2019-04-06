@@ -1,3 +1,4 @@
+
 export interface Review {
   FirstName: string;
   LastName: string;
@@ -5,6 +6,7 @@ export interface Review {
   City: string;
   Country: string;
   Description: string;
+  Date: Date;
 
 }
 
@@ -16,3 +18,5 @@ export enum Major {
   BAT = 'Génie du Bâtiment',
   GE = 'Génie de l Eau'
 }
+
+
