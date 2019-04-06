@@ -2,8 +2,7 @@ import {Major, Review} from '../models/review';
 const dateToday: Date = new Date();
 export const REVIEW_MOCKED: Review[] = [
   {
-    FirstName: 'Mekouar',
-    LastName: 'Youssef',
+    email: 'fruhgrugfyrgrfgyr',
     Major: Major.SI,
     City: 'Stockholm',
     Country: 'Suède',
@@ -11,8 +10,7 @@ export const REVIEW_MOCKED: Review[] = [
     Date: dateToday,
   },
   {
-    FirstName: 'ELALAOUI',
-    LastName: 'Hasnaa',
+    email: 'fruhgrugfyrgrfgyr',
     Major: Major.MAM,
     City: 'Montréal',
     Country: 'Canada',
@@ -20,8 +18,7 @@ export const REVIEW_MOCKED: Review[] = [
     Date: dateToday,  },
 
   {
-    FirstName: 'MOLINIER',
-    LastName: 'Julien',
+    email: 'fruhgrugfyrgrfgyr',
     Major: Major.BAT,
     City: 'Bangkok',
     Country: 'Thaïlande',

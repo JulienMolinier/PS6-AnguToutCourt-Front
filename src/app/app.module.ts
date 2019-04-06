@@ -24,9 +24,12 @@ import {UniversityComponent} from './universitycomponents/university/university.
 import {LoginComponent} from './log/login/login.component';
 import {RegisterComponent} from './log/register/register.component';
 import {PasswordDirective} from './directives/password.directive';
-import {CreateAccountComponent} from './create-account/create-account.component';
+import {CreateAccountComponent} from './create-account';
 import {HttpClientModule} from '@angular/common/http';
 import {UniversityService} from '../services/universityService';
+import {UniversityHeaderComponent } from './universitycomponents/university-header/university-header.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
 import { LastReviewListComponent } from './last-review-list/last-review-list.component';
 
 @NgModule({
@@ -51,12 +54,17 @@ import { LastReviewListComponent } from './last-review-list/last-review-list.com
     RegisterComponent,
     PasswordDirective,
     CreateAccountComponent,
+    ExchangeProgramsComponent,
+    UniversityMapComponent,
+    UniversityHeaderComponent
     UniversityMapComponent,
     LastReviewListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,
     MatIconModule,

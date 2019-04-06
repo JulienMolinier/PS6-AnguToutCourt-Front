@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {University} from '../../../models/university';
 import {UniversityService} from '../../../services/universityService';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-research-result-list',
@@ -11,7 +12,7 @@ export class ResearchResultListComponent implements OnInit {
 
   public researchResultList: University[] = [];
 
-  constructor(public universityService: UniversityService) {
+  constructor(public universityService: UniversityService, private router: Router) {
     universityService.getUniversities();
     this.universityService.universities$.subscribe((value) => this.researchResultList = value);
   }
@@ -19,4 +20,7 @@ export class ResearchResultListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  navigateUniversityDetails(university: University) {
+    this.router.navigate([`/university/${university.id}`]);
+  }
 }

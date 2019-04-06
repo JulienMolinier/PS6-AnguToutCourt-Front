@@ -1,7 +1,6 @@
 
 export interface Review {
-  FirstName: string;
-  LastName: string;
+  email: string;
   Major: string;
   City: string;
   Country: string;

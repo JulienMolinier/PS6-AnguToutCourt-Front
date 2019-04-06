@@ -1,5 +1,5 @@
 <div class="result-list">
   <div *ngFor="let university of researchResultList">
-    <app-university-card [university]="university"></app-university-card>
+    <app-university-card [university]="university" (showUniversityDetails)="navigateUniversityDetails($event)"></app-university-card>
   </div>
 </div>
