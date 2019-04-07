@@ -25,12 +25,23 @@ export class ResearchResultListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onFilterRateChange(eve: any) {
+
+  onFilterRateChange() {
     this.rateCheckbox.next(!this.rateCheckbox.getValue());
+    if (this.rateCheckbox.getValue()) {
+      this.researchResultList.sort((a, b) => a.rate > b.rate ? 0 : 1);
+    } else {
+      this.researchResultList.sort((a, b) => a.rate > b.rate ? 1 : 0);
+    }
   }
 
-  onFilterPlaceChange(eve: any) {
+  onFilterPlaceChange() {
     this.placeCheckbox.next(!this.placeCheckbox.getValue());
+    if (this.placeCheckbox.getValue()) {
+      this.researchResultList.sort((a, b) => a.placesNumber > b.placesNumber ? 0 : 1);
+    } else {
+      this.researchResultList.sort((a, b) => a.placesNumber > b.placesNumber ? 1 : 0);
+    }
   }
 
   navigateUniversityDetails(university: University) {

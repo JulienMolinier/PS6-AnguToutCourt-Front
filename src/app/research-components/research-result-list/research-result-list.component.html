@@ -1,20 +1,14 @@
 <div class="filters">
   <h3>Filtrer par:</h3>
   <div class="filter1">
-    <input (change)="onFilterRateChange($event)" [value]="rateCheckbox" id="rate" name="ratecheckbox"
+    <input (change)="onFilterRateChange()" [value]="rateCheckbox" id="rate" name="ratecheckbox"
            type="checkbox">
     <label for="rate">par notes</label>
   </div>
   <div class="filter2">
-    <input (change)="onFilterPlaceChange($event)" [value]="placeCheckbox" id="nbplaces" name="placescheckbox"
+    <input (change)="onFilterPlaceChange()" [value]="placeCheckbox" id="nbplaces" name="placescheckbox"
            type="checkbox">
     <label for="nbplaces">par places restantes</label>
-  </div>
-  <div>
-    <select name="ordre1">
-      <option value="decroissant">décroissant</option>
-      <option value="croissant">croissant</option>
-    </select>
   </div>
 </div>
 
