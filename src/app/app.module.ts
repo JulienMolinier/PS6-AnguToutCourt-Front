@@ -14,7 +14,6 @@ import {HeaderComponent} from './header/header.component';
 import {ResearchComponent} from './research-components/research/research.component';
 import {ResearchResultListComponent} from './research-components/research-result-list/research-result-list.component';
 import {UniversityCardComponent} from './research-components/university-card/university-card.component';
-import {ResearchFilterComponent} from './research-components/research-filter/research-filter.component';
 import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {UniversityMapComponent} from './universitycomponents/university-map/university-map.component';
@@ -46,7 +45,6 @@ import {NgSelectModule} from "@ng-select/ng-select";
     ResearchComponent,
     ResearchResultListComponent,
     UniversityCardComponent,
-    ResearchFilterComponent,
     HomeComponent,
     PageNotFoundComponent,
     UniversityCardComponent,

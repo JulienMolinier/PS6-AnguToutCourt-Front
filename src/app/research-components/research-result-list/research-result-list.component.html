@@ -1,5 +1,27 @@
+<div class="filters">
+  <h3>Filtrer par:</h3>
+  <div class="filter1">
+    <input (change)="onFilterRateChange($event)" [value]="rateCheckbox" id="rate" name="ratecheckbox"
+           type="checkbox">
+    <label for="rate">par notes</label>
+  </div>
+  <div class="filter2">
+    <input (change)="onFilterPlaceChange($event)" [value]="placeCheckbox" id="nbplaces" name="placescheckbox"
+           type="checkbox">
+    <label for="nbplaces">par places restantes</label>
+  </div>
+  <div>
+    <select name="ordre1">
+      <option value="decroissant">décroissant</option>
+      <option value="croissant">croissant</option>
+    </select>
+  </div>
+</div>
+
 <div class="result-list">
   <div *ngFor="let university of researchResultList">
-    <app-university-card [university]="university" (showUniversityDetails)="navigateUniversityDetails($event)"></app-university-card>
+    <app-university-card (showUniversityDetails)="navigateUniversityDetails($event)"
+                         [university]="university">
+    </app-university-card>
   </div>
 </div>
