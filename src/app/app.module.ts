@@ -27,10 +27,13 @@ import {PasswordDirective} from './directives/password.directive';
 import {CreateAccountComponent} from './create-account';
 import {HttpClientModule} from '@angular/common/http';
 import {UniversityService} from '../services/universityService';
-import {UniversityHeaderComponent } from './universitycomponents/university-header/university-header.component';
+import {UniversityHeaderComponent} from './universitycomponents/university-header/university-header.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
-import { LastReviewListComponent } from './last-review-list/last-review-list.component';
+import {LastReviewListComponent} from './last-review-list/last-review-list.component';
+import {ReviewService} from "../services/reviewService";
+import {LoginService} from "../services/loginService";
+import {NgSelectModule} from "@ng-select/ng-select";
 
 @NgModule({
   declarations: [
@@ -56,7 +59,7 @@ import { LastReviewListComponent } from './last-review-list/last-review-list.com
     CreateAccountComponent,
     ExchangeProgramsComponent,
     UniversityMapComponent,
-    UniversityHeaderComponent
+    UniversityHeaderComponent,
     UniversityMapComponent,
     LastReviewListComponent
   ],
@@ -73,9 +76,10 @@ import { LastReviewListComponent } from './last-review-list/last-review-list.com
     NoopAnimationsModule,
     MatMenuModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    NgSelectModule
   ],
-  providers: [UniversityService],
+  providers: [UniversityService, ReviewService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

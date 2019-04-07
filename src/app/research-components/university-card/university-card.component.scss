@@ -1,8 +1,69 @@
+:host {
+  padding: 5px;
+}
+
 .body {
-  padding: 0.5em;
-  margin: 0.5em;
   background-color: #A7C4E2;
-  border-color: grey;
+  border-color: black;
   border-style: solid;
   border-width: 2px;
+  height: 16em;
+}
+
+.img {
+  height: 12em;
+  width: 14em;
+}
+
+.details-container {
+  margin-top: 3%;
+  float: right;
+  width: 75%;
+  display: grid;
+}
+
+.img-container {
+  width: 14em;
+  height: 16em;
+  marging-bottom: 20px;
+  float: left;
+  background-color: #A7C4E2;
+  border-color: black;
+  border-style: solid;
+  border-width: 0px 2px 2px 0px;
+
+}
+
+.rate {
+  text-align: center;
+}
+
+.one {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.two {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.three {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.four {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.five {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.six {
+  grid-column: 2;
+  grid-row: 3;
 }

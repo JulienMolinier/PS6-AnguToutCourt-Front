@@ -25,6 +25,36 @@ export class UniversityService {
     });
   }
 
+  async getByIdAsync(id: string) {
+    this.university = await this.http.get<University>(`${this.url}/api/universities/${id}`).toPromise();
+  }
+
+  addARate(id: string, rateToAdd: number) {
+    let promise = this.getByIdAsync(id);
+    promise
+      .then(response => {
+        console.log(response);
+        this.university.rates.push(rateToAdd);
+        this.university.rate = 0;
+        for (let r of this.university.rates) {
+          this.university.rate += r;
+        }
+        this.university.nbReviews += 1;
+        this.university.rate /= this.university.nbReviews;
+        console.log(this.university);
+        this.putUniversity();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  putUniversity() {
+    this.http.put(`${this.url}/api/universities/${this.university.id}`, this.university).subscribe(value => {
+      console.log(value);
+    });
+  }
+
   getUniversities() {
     this.http.get<University[]>(`${this.url}/api/universities`).subscribe(value => {
       this.universityList = value;

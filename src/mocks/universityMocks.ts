@@ -7,11 +7,16 @@ export const UNIVERSITIES_MOCKED: University[] = [
     name: 'Université de Montpellier',
     city: 'Montpellier',
     country: 'France',
-    rate: 5,
+    rates: [5],
     placesNumber: 20,
     program: 'ERASMUS',
     description: 'La meilleure université au monde.',
-    nbReviews: 0
+    nbReviews: 1,
+    nbOldExp: 23,
+    semester: [
+      1,
+      2
+    ]
   },
   {
     id: 2,
@@ -19,9 +24,15 @@ export const UNIVERSITIES_MOCKED: University[] = [
     name: 'Université de Nice',
     city: 'Nice',
     country: 'France',
-    rate: 4,
+    rates: [4],
+    description: 'La meilleure université au monde.',
     placesNumber: 10,
     program: 'ERASMUS',
-    nbReviews: 0
+    nbReviews: 1,
+    nbOldExp: 23,
+    semester: [
+      1,
+      2
+    ]
   },
 ];

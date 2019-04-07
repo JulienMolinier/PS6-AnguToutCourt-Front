@@ -1,8 +1,14 @@
 <div class="body" (click)="universityDetails()">
-  <img [src]="university.imgPath">
-  <h3>{{university.name}}</h3>
-  <p>{{university.city}} ({{university.country}})</p>
-  <p>{{university.program}}</p>
-  <p>Places restantes: {{university.placesNumber}}</p>
-  <p>Note: {{university.rate}}/5</p>
+  <div class="img-container">
+    <img [src]="university.imgPath" class="img">
+    <p class="rate">{{university.rate}}/5 sur {{university.nbReviews}} votes</p>
+  </div>
+  <div class="details-container">
+    <h3 class="one">{{university.name}}</h3>
+    <p class="two">{{university.city}} ({{university.country}})</p>
+    <p class="three">{{university.program}}</p>
+    <p class="four">Semestre(s) disponible(s): {{university.semester}}</p>
+    <p class="five">Places restantes: {{university.placesNumber}}</p>
+    <p class="six">Etudiants déja partis: {{university.nbOldExp}}</p>
+  </div>
 </div>
