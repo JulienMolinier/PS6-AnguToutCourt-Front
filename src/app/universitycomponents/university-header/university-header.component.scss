@@ -1,0 +1,45 @@
+:host {
+  padding: 5px;
+}
+
+.body {
+  background-color: #A7C4E2;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  height: 7em;
+}
+
+.univ {
+  float: left;
+  width: 80%;
+  display: grid;
+}
+
+.univname{
+  margin-top: 5%;
+  font-size: 70px;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.img {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  height: 6em;
+  width: 7em;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.details-container {
+  text-align: center  ;
+  float: right;
+  width: 15%;
+  height: 100%;
+  display: grid;
+  border-color: black;
+  border-style: solid;
+  border-width: 0px 0px 0px 2px;
+}

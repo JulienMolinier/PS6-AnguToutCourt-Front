@@ -1,3 +1,11 @@
-<div>
-  <h1>{{university.name}}</h1>
+<div class="body">
+  <div class="univ">
+    <img [src]="university.imgPath" class="img">
+    <h1 class="univname">{{university.name}}</h1>
+  </div>
+
+  <div class="details-container">
+    <p class="rate">Note : {{university.rate}}/5 ({{university.nbReviews}} votes)</p>
+    <p class="places">{{university.placesNumber}} places restantes</p>
+  </div>
 </div>
