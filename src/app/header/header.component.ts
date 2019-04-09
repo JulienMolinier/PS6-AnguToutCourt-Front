@@ -26,10 +26,6 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['reviews']);
   }
 
-  goUniversities() {
-    this.router.navigate(['university']);
-  }
-
   goExchange() {
     this.router.navigate(['exchange-programs']);
   }

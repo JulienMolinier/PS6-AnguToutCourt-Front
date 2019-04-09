@@ -23,12 +23,24 @@
   float: left;
 }
 
+.navbar {
+  font-weight: bold;
+  font-size: 25px;
+}
+
 ul {
   display: table;
-  width: 500px;
   margin: auto;
+  transform: translate(-20%, 0%);
+
 }
 
 ul li {
   display: table-cell;
+  padding: 15px;
+}
+
+ul li :hover {
+  border-bottom: 2px solid white;
+  text-decoration: none;
 }
