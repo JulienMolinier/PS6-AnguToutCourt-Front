@@ -10,6 +10,7 @@
 .header {
   background: $linearGradient;
   padding: 1em;
+  display: inline-block;
 }
 
 .imagePoly {
@@ -19,4 +20,15 @@
 
 .imagePoly2 {
   width: 20%;
+  float: left;
+}
+
+ul {
+  display: table;
+  width: 500px;
+  margin: auto;
+}
+
+ul li {
+  display: table-cell;
 }
