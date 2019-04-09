@@ -2,12 +2,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '~@ng-select/ng-select/themes/default.theme.css';
+@import 'styles/fonts';
 
 html {
-  font: 500 20px/32px Roboto,"Helvetica Neue",sans-serif;
+  font-family: 'MyRoboto';
 }
 
 body {
   margin: 0;
-  background-color: $background-color;
+  background-color: white;
 }

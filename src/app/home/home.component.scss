@@ -1,0 +1,24 @@
+/*
+.img{
+  height:205px;
+  width: 100%;
+  width: 100vw;
+  background-position:left top;
+  background-repeat:no-repeat;
+
+}
+*/
+
+.body{
+  font-size: 30px;
+}
+
+:host{
+  background-color: white;
+  background-size:cover;
+  background-image: url(../../assets/images/home.jpg);
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
