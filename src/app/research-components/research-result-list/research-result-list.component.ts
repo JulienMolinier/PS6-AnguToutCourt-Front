@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {University} from '../../../models/university';
 import {UniversityService} from '../../../services/universityService';
 import {Router} from '@angular/router';
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-research-result-list',
