@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatMenuModule, MatToolbarModule} from '@angular/material';
 import {ReviewComponent} from './reviews/review';
 import {ReviewFormComponent} from './reviews/review-form';
 import {ReviewListComponent} from './reviews/review-list';
@@ -30,9 +30,9 @@ import {UniversityHeaderComponent} from './universitycomponents/university-heade
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
 import {LastReviewListComponent} from './last-review-list/last-review-list.component';
-import {ReviewService} from "../services/reviewService";
-import {LoginService} from "../services/loginService";
-import {NgSelectModule} from "@ng-select/ng-select";
+import {ReviewService} from '../services/reviewService';
+import {LoginService} from '../services/loginService';
+import {NgSelectModule} from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -62,6 +62,8 @@ import {NgSelectModule} from "@ng-select/ng-select";
     LastReviewListComponent
   ],
   imports: [
+    MatButtonModule,
+    MatCheckboxModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -75,7 +77,9 @@ import {NgSelectModule} from "@ng-select/ng-select";
     MatMenuModule,
     MatButtonModule,
     MatToolbarModule,
-    NgSelectModule
+    NgSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [UniversityService, ReviewService, LoginService],
   bootstrap: [AppComponent]
