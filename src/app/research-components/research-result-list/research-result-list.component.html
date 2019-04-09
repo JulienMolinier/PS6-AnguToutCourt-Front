@@ -1,14 +1,26 @@
 <div class="filters">
   <h3>Filtrer par:</h3>
   <div class="filter1">
-    <input (change)="onFilterRateChange()" [value]="rateCheckbox" id="rate" name="ratecheckbox"
+    <input (change)="onFilterRateChange()" id="rate" name="ratecheckbox" value="rateCheckbox"
            type="checkbox">
     <label for="rate">par notes</label>
   </div>
-  <div class="filter2">
-    <input (change)="onFilterPlaceChange()" [value]="placeCheckbox" id="nbplaces" name="placescheckbox"
+  <div>
+    <input (change)="onFilterPlaceChange()" id="nbplaces" name="placescheckbox" value="placeCheckbox"
            type="checkbox">
     <label for="nbplaces">par places restantes</label>
+  </div>
+  <br>
+  <div>
+    <ng-select [formControlName]="'Pays'"
+               [items]="countryList"
+               bindLabel="name"
+               bindValue="name"
+               class="select"
+               clearAllText="Clear"
+               groupBy="continent"
+               placeholder="Selectionner un pays">
+    </ng-select>
   </div>
 </div>
 
