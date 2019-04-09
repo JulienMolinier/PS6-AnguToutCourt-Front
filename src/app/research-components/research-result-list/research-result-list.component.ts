@@ -3,6 +3,8 @@ import {University} from '../../../models/university';
 import {UniversityService} from '../../../services/universityService';
 import {Router} from '@angular/router';
 import {BehaviorSubject} from 'rxjs';
+import {COUNTRY_MOCKED} from '../../../mocks/country.mocks';
+import {Country} from '../../../models/country';
 
 @Component({
   selector: 'app-research-result-list',
@@ -12,6 +14,7 @@ import {BehaviorSubject} from 'rxjs';
 export class ResearchResultListComponent implements OnInit {
 
   private researchResultList: University[] = [];
+  private countryList: Country[] = COUNTRY_MOCKED;
   private rateCheckbox: BehaviorSubject<boolean>;
   private placeCheckbox: BehaviorSubject<boolean>;
 
@@ -29,18 +32,18 @@ export class ResearchResultListComponent implements OnInit {
   onFilterRateChange() {
     this.rateCheckbox.next(!this.rateCheckbox.getValue());
     if (this.rateCheckbox.getValue()) {
-      this.researchResultList.sort((a, b) => a.rate > b.rate ? 0 : 1);
+      this.researchResultList.sort((a, b) => a.rate > b.rate ? -1 : 1);
     } else {
-      this.researchResultList.sort((a, b) => a.rate > b.rate ? 1 : 0);
+      this.researchResultList.sort((a, b) => a.rate > b.rate ? 1 : -1);
     }
   }
 
   onFilterPlaceChange() {
     this.placeCheckbox.next(!this.placeCheckbox.getValue());
     if (this.placeCheckbox.getValue()) {
-      this.researchResultList.sort((a, b) => a.placesNumber > b.placesNumber ? 0 : 1);
+      this.researchResultList.sort((a, b) => a.placesNumber > b.placesNumber ? -1 : 1);
     } else {
-      this.researchResultList.sort((a, b) => a.placesNumber > b.placesNumber ? 1 : 0);
+      this.researchResultList.sort((a, b) => a.placesNumber > b.placesNumber ? 1 : -1);
     }
   }
 
