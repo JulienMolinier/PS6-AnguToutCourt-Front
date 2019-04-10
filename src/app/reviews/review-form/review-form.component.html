@@ -1,15 +1,9 @@
-<div align="center">
+<div class="content">
   <h3>Ajouter un Avis</h3>
   <form [formGroup]="reviewForm" class="ticket-form">
-    <label for="email">
-      E-mail <br>
-      <input [formControlName]="'email'" class="input-custom" id="email" type="text">
-    </label>
-
     <br>
     <br>
-
-    <label for="universityId">Nom de l'université <br>
+    <label for="universityId">Nom de l'université <br><br>
       <ng-select [formControlName]="'universityId'"
                  [items]="universities"
                  bindLabel="name"
@@ -21,22 +15,21 @@
                  placeholder="Sélectionner l'université">
       </ng-select>
     </label>
-
     <br>
-
-    <label for="Description">
-      Mon avis <br>
-      <textarea [formControlName]="'Description'" cols="33" id="Description" name="story" rows="5"></textarea>
-    </label>
+    <mat-form-field>
+      <input [formControlName]="'email'" class="input-custom" matInput placeholder="email" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <textarea [formControlName]="'Description'" matInput placeholder="Laisser un commentaire"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input [formControlName]="'Rate'" class="input-custom" id="Rate" matInput max="5"
+             placeholder="Note" type="number">
+    </mat-form-field>
     <br>
     <br>
-    <label for="Rate">
-      Ma note <br>
-      <input [formControlName]="'Rate'" class="input-custom" id="Rate" max="5" type="number">
-    </label>
-    <br>
-    <br>
-
     <button (click)="addReview()" class="btn-custom" type="submit">Ajouter mon avis</button>
 
   </form>

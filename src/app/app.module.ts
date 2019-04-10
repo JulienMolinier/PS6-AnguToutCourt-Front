@@ -56,7 +56,6 @@ import {UniversityInfosComponent} from './universitycomponents/university-infos/
 import {UniversityComponent} from './universitycomponents/university/university.component';
 import {LoginComponent} from './log/login/login.component';
 import {RegisterComponent} from './log/register/register.component';
-import {PasswordDirective} from './directives/password.directive';
 import {CreateAccountComponent} from './create-account';
 import {HttpClientModule} from '@angular/common/http';
 import {UniversityService} from '../services/universityService';
@@ -88,7 +87,6 @@ import {SlideshowModule} from 'ng-simple-slideshow';
     UniversityDescriptionComponent,
     LoginComponent,
     RegisterComponent,
-    PasswordDirective,
     CreateAccountComponent,
     ExchangeProgramsComponent,
     UniversityMapComponent,
