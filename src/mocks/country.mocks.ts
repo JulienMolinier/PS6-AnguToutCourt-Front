@@ -14,7 +14,7 @@ export const COUNTRY_MOCKED: Country[] = [
     continent: 'Europe',
   },
   {
-    name: 'Suède',
+    name: 'Irlande',
     continent: 'Europe',
   },
   {

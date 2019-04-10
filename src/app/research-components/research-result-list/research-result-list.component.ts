@@ -17,6 +17,7 @@ export class ResearchResultListComponent implements OnInit {
   private countryList: Country[] = COUNTRY_MOCKED;
   private rateCheckbox: BehaviorSubject<boolean>;
   private placeCheckbox: BehaviorSubject<boolean>;
+  private countryFilter: string;
 
   constructor(public universityService: UniversityService, private router: Router) {
     this.rateCheckbox = new BehaviorSubject<boolean>(false);
@@ -49,5 +50,27 @@ export class ResearchResultListComponent implements OnInit {
 
   navigateUniversityDetails(university: University) {
     this.router.navigate([`/university/${university.id}`]);
+  }
+
+  onCountryFilterChange() {
+    const promise = this.universityService.getUniversitiesAsync();
+    if (this.countryFilter) {
+      promise
+        .then(response => {
+          this.universityService.universities$.subscribe((value) => this.researchResultList = value);
+          this.researchResultList = this.researchResultList.filter(value => value.country == this.countryFilter);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      promise
+        .then(response => {
+          this.universityService.universities$.subscribe((value) => this.researchResultList = value);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }
 }

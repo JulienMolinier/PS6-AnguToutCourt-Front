@@ -13,6 +13,8 @@
     <ng-select [items]="countryList"
                bindLabel="name"
                bindValue="name"
+               (change)="onCountryFilterChange()"
+               [(ngModel)]="countryFilter"
                class="select"
                clearAllText="Clear"
                groupBy="continent"
