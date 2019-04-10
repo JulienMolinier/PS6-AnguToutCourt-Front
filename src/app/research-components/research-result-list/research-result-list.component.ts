@@ -17,12 +17,13 @@ export class ResearchResultListComponent implements OnInit {
   private countryList: Country[] = COUNTRY_MOCKED;
   private rateCheckbox: BehaviorSubject<boolean>;
   private placeCheckbox: BehaviorSubject<boolean>;
+  private countryFilter: string;
 
   constructor(public universityService: UniversityService, private router: Router) {
     this.rateCheckbox = new BehaviorSubject<boolean>(false);
     this.placeCheckbox = new BehaviorSubject<boolean>(false);
     universityService.getUniversities();
-    this.universityService.universities$.subscribe((value) => this.researchResultList = value);
+    this.getUniversitiesList();
   }
 
   ngOnInit(): void {
@@ -49,5 +50,18 @@ export class ResearchResultListComponent implements OnInit {
 
   navigateUniversityDetails(university: University) {
     this.router.navigate([`/university/${university.id}`]);
+  }
+
+  getUniversitiesList() {
+    this.universityService.universities$.subscribe((value) => this.researchResultList = value);
+  }
+
+  onCountryFilterChange() {
+    if (this.countryFilter) {
+      this.getUniversitiesList();
+      this.researchResultList = this.researchResultList.filter(value => value.country == this.countryFilter);
+    } else {
+      this.getUniversitiesList();
+    }
   }
 }

@@ -59,7 +59,11 @@ export class UniversityService {
     this.http.get<University[]>(`${this.url}/api/universities`).subscribe(value => {
       this.universityList = value;
       this.universities$.next(this.universityList);
-      console.log(this.universityList);
     });
+  }
+
+  async getUniversitiesAsync() {
+    this.universityList = await this.http.get<University[]>(`${this.url}/api/universities`).toPromise();
+    this.universities$.next(this.universityList);
   }
 }

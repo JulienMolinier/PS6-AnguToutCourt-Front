@@ -1,14 +1,23 @@
 .content {
   text-align: center;
-  padding-bottom: 7em;
-  margin: 5em 15em;
+  padding-bottom: 5%;
+  padding-top: 2%;
+  margin: 5% 35%;
   border-width: 1px;
   border-color: #afd1d8;
-  box-shadow: 2px 2px 2px #74858c;
-  background-color: lightblue;
+  box-shadow: 2px 2px 2px black;
+  background-color: white;
 }
-
 .title {
   padding-top: 3em;
   padding-bottom: 2em;
 }
+
+span {
+  font-family: Arial;
+  font-size: small;
+  color: #f44336;
+}
+
+
+
