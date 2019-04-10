@@ -1,17 +1,24 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="content">
   <h1>Login</h1>
   <br>
-  <div>
+  <form [formGroup]="loginForm">
     <mat-form-field>
-      <input matInput placeholder="Username">
+      <input [formControlName]="'username'" matInput placeholder="Username" required>
+      <mat-error *ngIf="username.invalid">{{getErrorUsernameMessage()}}</mat-error>
     </mat-form-field>
-  </div>
-  <div>
+    <br>
     <mat-form-field>
-      <input matInput placeholder="Mot de passe" type="password">
+      <input [formControlName]="'password'" [type]="visible ? 'text' : 'password'" matInput placeholder="Mot de passe"
+             required
+             type="password">
+      <mat-icon (click)="visible = !visible" matSuffix>{{visible ? 'visibility' : 'visibility_off'}}</mat-icon>
+      <mat-error *ngIf="password.invalid">{{getErrorPasswordMessage()}}</mat-error>
     </mat-form-field>
-  </div>
+  </form>
   <br>
+  <br>
+  <span>{{messageError}}</span>
   <div>
     <button class="button">
       <a (click)="goHome()" class="link">Se connecter</a>
