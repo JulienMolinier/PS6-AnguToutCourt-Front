@@ -1,0 +1,28 @@
+.body {
+  //background: $linearGradient;
+  // background-color: white;
+  //border-color: black;
+  //border-style: solid;
+  //border-width: 2px 0px 0px 0px;
+  height: 25em;
+}
+
+:host {
+  margin-right: auto;
+  margin-top: 0%;
+  display: block;
+  width: 80%;
+}
+
+h4 {
+  margin-top: 1%;
+  margin-left: 15px;
+}
+
+.imgs-container {
+  margin-left: 15%;
+}
+
+.img {
+  height: 200px;
+}

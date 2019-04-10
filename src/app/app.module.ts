@@ -3,10 +3,44 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule
+} from '@angular/material';
 import {ReviewComponent} from './reviews/review';
 import {ReviewFormComponent} from './reviews/review-form';
 import {ReviewListComponent} from './reviews/review-list';
@@ -22,17 +56,17 @@ import {UniversityInfosComponent} from './universitycomponents/university-infos/
 import {UniversityComponent} from './universitycomponents/university/university.component';
 import {LoginComponent} from './log/login/login.component';
 import {RegisterComponent} from './log/register/register.component';
-import {PasswordDirective} from './directives/password.directive';
 import {CreateAccountComponent} from './create-account';
 import {HttpClientModule} from '@angular/common/http';
 import {UniversityService} from '../services/universityService';
 import {UniversityHeaderComponent} from './universitycomponents/university-header/university-header.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
-import {LastReviewListComponent} from './last-review-list/last-review-list.component';
-import {ReviewService} from "../services/reviewService";
-import {LoginService} from "../services/loginService";
-import {NgSelectModule} from "@ng-select/ng-select";
+import {LastReviewListComponent} from './last-review-list';
+import {ReviewService} from '../services/reviewService';
+import {LoginService} from '../services/loginService';
+import {NgSelectModule} from '@ng-select/ng-select';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 @NgModule({
   declarations: [
@@ -53,7 +87,6 @@ import {NgSelectModule} from "@ng-select/ng-select";
     UniversityDescriptionComponent,
     LoginComponent,
     RegisterComponent,
-    PasswordDirective,
     CreateAccountComponent,
     ExchangeProgramsComponent,
     UniversityMapComponent,
@@ -62,20 +95,51 @@ import {NgSelectModule} from "@ng-select/ng-select";
     LastReviewListComponent
   ],
   imports: [
+    SlideshowModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatCardModule,
-    MatIconModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    MatMenuModule,
+    NgSelectModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
     MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
     MatToolbarModule,
-    NgSelectModule
+    MatTooltipModule,
+    MatTreeModule,
   ],
   providers: [UniversityService, ReviewService, LoginService],
   bootstrap: [AppComponent]

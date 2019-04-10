@@ -12,4 +12,6 @@ export interface University {
   rate?: number;
   nbOldExp: number;
   semester: number[];
+  campusDesc: string;
+  campusImgs: string[];
 }

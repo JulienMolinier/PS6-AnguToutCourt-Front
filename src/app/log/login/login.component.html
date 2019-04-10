@@ -1,18 +1,27 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="content">
-  <h1 class="title">Login</h1>
-  <div class="login">
-    <label for="login">Identifiant</label>
+  <h1>Login</h1>
+  <br>
+  <form [formGroup]="loginForm">
+    <mat-form-field>
+      <input [formControlName]="'username'" matInput placeholder="Username" required>
+      <mat-error *ngIf="username.invalid">{{getErrorUsernameMessage()}}</mat-error>
+    </mat-form-field>
     <br>
-    <input type="text" id="login" name="login" required
-           minlength="4" maxlength="20" size="22">
-  </div>
+    <mat-form-field>
+      <input [formControlName]="'password'" [type]="visible ? 'text' : 'password'" matInput placeholder="Mot de passe"
+             required
+             type="password">
+      <mat-icon (click)="visible = !visible" matSuffix>{{visible ? 'visibility' : 'visibility_off'}}</mat-icon>
+      <mat-error *ngIf="password.invalid">{{getErrorPasswordMessage()}}</mat-error>
+    </mat-form-field>
+  </form>
+  <br>
+  <br>
+  <span>{{messageError}}</span>
   <div>
-    <label for="password">Mot de passe</label>
-    <br>
-    <input type="password" value="" id="password" required
-           minlength="4" maxlength="20" size="22" appPassword>
+    <button class="button">
+      <a (click)="goHome()" class="link">Se connecter</a>
+    </button>
   </div>
-  <button class="button">
-    <a class="link" (click)="goHome()">Se connecter</a>
-  </button>
 </div>
