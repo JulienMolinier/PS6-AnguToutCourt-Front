@@ -7,25 +7,27 @@
 }
 
 .content {
-  display: grid;
+
 }
 
 .header {
-  grid-column: 1;
-  grid-row: 1;
+
 }
 
 .description {
-  grid-column: 1;
-  grid-row: 2;
+  float: left;
+  width: 55%;
 }
 
 .infos {
-  grid-column: 1;
-  grid-row: 3;
+  float: left;
+  width: 55%;
 }
 
 .map {
-  grid-column: 2;
-  grid-row: 2;
+  float: right;
+  width: 35%;
+  height: 400px;
+  position:fixed;
+  right: 5%;
 }

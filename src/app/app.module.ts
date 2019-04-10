@@ -30,9 +30,10 @@ import {UniversityHeaderComponent} from './universitycomponents/university-heade
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
 import {LastReviewListComponent} from './last-review-list/last-review-list.component';
-import {ReviewService} from "../services/reviewService";
-import {LoginService} from "../services/loginService";
-import {NgSelectModule} from "@ng-select/ng-select";
+import {ReviewService} from '../services/reviewService';
+import {LoginService} from '../services/loginService';
+import {NgSelectModule} from '@ng-select/ng-select';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import {NgSelectModule} from "@ng-select/ng-select";
     LastReviewListComponent
   ],
   imports: [
+    SlideshowModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

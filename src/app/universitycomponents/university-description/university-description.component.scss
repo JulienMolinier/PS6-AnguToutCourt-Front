@@ -1,13 +1,14 @@
 .body {
-  background-color: #A7C4E2;
+  //background-color: white;
   border-color: black;
   border-style: solid;
-  border-width: 2px;
+  border-width: 0px 0px 2px 0px;
   height: 5em;
 }
 
 :host {
   margin-right: auto;
+  margin-bottom: 2%;
   margin-top: 0%;
   display: block;
   width: 80%;

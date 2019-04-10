@@ -1,5 +1,5 @@
-<div class="content">
-  <h4 class="title">L'{{university.name}} se situe en {{university.country}}, cette université fait partie du progrram {{university.program}}.
-    Il y a actuellement {{university.placesNumber}} places.</h4>
-
+<div class="body">
+  <i class="fas fa-chevron-right"></i> CAMPUS
+  <p>{{university.campusDesc}}</p>
+  <slideshow class="img" [imageUrls]=university.campusImgs></slideshow>
 </div>

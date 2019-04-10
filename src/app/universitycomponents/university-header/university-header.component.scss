@@ -1,9 +1,11 @@
+@import '../../../styles/variables';
+
 :host {
   padding: 5px;
 }
 
 .body {
-  background-color: #A7C4E2;
+  background: white;
   border-color: black;
   border-style: solid;
   border-width: 2px;
@@ -16,9 +18,9 @@
   display: grid;
 }
 
-.univname{
+.univname {
   margin-top: 5%;
-  font-size: 70px;
+  font-size: 4em;
   grid-column: 2;
   grid-row: 1;
 }
@@ -34,7 +36,7 @@
 }
 
 .details-container {
-  text-align: center  ;
+  text-align: center;
   float: right;
   width: 15%;
   height: 100%;
