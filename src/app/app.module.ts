@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatMenuModule, MatToolbarModule} from '@angular/material';
 import {ReviewComponent} from './reviews/review';
 import {ReviewFormComponent} from './reviews/review-form';
 import {ReviewListComponent} from './reviews/review-list';
@@ -64,6 +64,8 @@ import {SlideshowModule} from 'ng-simple-slideshow';
   ],
   imports: [
     SlideshowModule,
+    MatButtonModule,
+    MatCheckboxModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -77,7 +79,9 @@ import {SlideshowModule} from 'ng-simple-slideshow';
     MatMenuModule,
     MatButtonModule,
     MatToolbarModule,
-    NgSelectModule
+    NgSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [UniversityService, ReviewService, LoginService],
   bootstrap: [AppComponent]

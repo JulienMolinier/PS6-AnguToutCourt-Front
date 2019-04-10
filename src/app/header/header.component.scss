@@ -9,9 +9,38 @@
 
 .header {
   background: $linearGradient;
-  padding: 0.5em;
+  padding: 1em;
+  display: inline-block;
 }
 
 .imagePoly {
-  width: 5%;
+  width: 6%;
+  float: right;
+}
+
+.imagePoly2 {
+  width: 20%;
+  float: left;
+}
+
+.navbar {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+ul {
+  display: table;
+  margin: auto;
+  transform: translate(-20%, 0%);
+
+}
+
+ul li {
+  display: table-cell;
+  padding: 15px;
+}
+
+ul li :hover {
+  border-bottom: 2px solid white;
+  text-decoration: none;
 }

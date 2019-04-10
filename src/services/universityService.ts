@@ -30,7 +30,7 @@ export class UniversityService {
   }
 
   addARate(id: string, rateToAdd: number) {
-    let promise = this.getByIdAsync(id);
+    const promise = this.getByIdAsync(id);
     promise
       .then(response => {
         console.log(response);
