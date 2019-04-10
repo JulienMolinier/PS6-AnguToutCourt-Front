@@ -29,7 +29,7 @@ import {UniversityService} from '../services/universityService';
 import {UniversityHeaderComponent} from './universitycomponents/university-header/university-header.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
-import {LastReviewListComponent} from './last-review-list/last-review-list.component';
+import {LastReviewListComponent} from './last-review-list';
 import {ReviewService} from '../services/reviewService';
 import {LoginService} from '../services/loginService';
 import {NgSelectModule} from '@ng-select/ng-select';

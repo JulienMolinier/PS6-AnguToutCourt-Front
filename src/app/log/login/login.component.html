@@ -1,18 +1,20 @@
 <div class="content">
-  <h1 class="title">Login</h1>
-  <div class="login">
-    <label for="login">Identifiant</label>
-    <br>
-    <input type="text" id="login" name="login" required
-           minlength="4" maxlength="20" size="22">
+  <h1>Login</h1>
+  <br>
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="Username">
+    </mat-form-field>
   </div>
   <div>
-    <label for="password">Mot de passe</label>
-    <br>
-    <input type="password" value="" id="password" required
-           minlength="4" maxlength="20" size="22" appPassword>
+    <mat-form-field>
+      <input matInput placeholder="Mot de passe" type="password">
+    </mat-form-field>
   </div>
-  <button class="button">
-    <a class="link" (click)="goHome()">Se connecter</a>
-  </button>
+  <br>
+  <div>
+    <button class="button">
+      <a (click)="goHome()" class="link">Se connecter</a>
+    </button>
+  </div>
 </div>
