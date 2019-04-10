@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {University} from "../../../models/university";
+import {University} from '../../../models/university';
+import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-university-map',
@@ -11,10 +12,15 @@ export class UniversityMapComponent implements OnInit {
   @Input()
   university: University;
 
-  constructor() {
+  locationToDisplay: SafeResourceUrl;
+
+  constructor(private sanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
+    const urlToSanitize = this.university.location;
+    this.locationToDisplay =
+      this.sanitizer.bypassSecurityTrustResourceUrl(urlToSanitize);
   }
 
 }
