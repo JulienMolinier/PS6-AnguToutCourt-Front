@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {University} from '../../../models/university';
-import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-university-map',
