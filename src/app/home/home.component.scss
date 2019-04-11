@@ -1,7 +1,19 @@
-.body{
+.body {
   font-size: 30px;
-  background-size:cover;
-  background-image: url(../../assets/images/home.jpg);
+  background-size: cover;
+  background-image: url(../../assets/images/homev2.jpg);
   height: 100vh;
   width: 100%;
+}
+
+.review {
+  padding-top: 1%;
+  padding-bottom: 2%;
+  color: white;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background: rgba(0, 0, 0, .5);
+  backdrop-filter: grayscale(1) contrast(3) blur(1px);
 }
