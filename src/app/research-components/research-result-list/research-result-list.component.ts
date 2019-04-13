@@ -23,7 +23,7 @@ export class ResearchResultListComponent implements OnInit {
     this.rateCheckbox = new BehaviorSubject<boolean>(false);
     this.placeCheckbox = new BehaviorSubject<boolean>(false);
     universityService.getUniversities();
-    this.universityService.universities$.subscribe((value) => this.researchResultList = value);
+    this.getUniversitiesList();
   }
 
   ngOnInit(): void {
@@ -52,25 +52,16 @@ export class ResearchResultListComponent implements OnInit {
     this.router.navigate([`/university/${university.id}`]);
   }
 
+  getUniversitiesList() {
+    this.universityService.universities$.subscribe((value) => this.researchResultList = value);
+  }
+
   onCountryFilterChange() {
-    const promise = this.universityService.getUniversitiesAsync();
     if (this.countryFilter) {
-      promise
-        .then(response => {
-          this.universityService.universities$.subscribe((value) => this.researchResultList = value);
-          this.researchResultList = this.researchResultList.filter(value => value.country == this.countryFilter);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      this.getUniversitiesList();
+      this.researchResultList = this.researchResultList.filter(value => value.country == this.countryFilter);
     } else {
-      promise
-        .then(response => {
-          this.universityService.universities$.subscribe((value) => this.researchResultList = value);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      this.getUniversitiesList();
     }
   }
 }

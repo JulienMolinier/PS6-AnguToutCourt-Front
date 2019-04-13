@@ -14,4 +14,5 @@ export interface University {
   semester: number[];
   campusDesc: string;
   campusImgs: string[];
+  location: string;
 }
