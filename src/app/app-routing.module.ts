@@ -9,12 +9,14 @@ import {UniversityComponent} from './universitycomponents/university/university.
 import {ReviewListComponent} from './reviews/review-list';
 import {CreateAccountComponent} from './create-account';
 import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
+import {LastReviewListComponent} from './last-review-list';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'review-form', component: ReviewFormComponent},
   {path: 'review-list', component: ReviewListComponent},
+  {path: 'last-reviews', component: LastReviewListComponent},
   {path: 'reviews', component: ReviewListComponent},
   {path: 'createAccount', component: CreateAccountComponent},
   {path: 'research', component: ResearchComponent},

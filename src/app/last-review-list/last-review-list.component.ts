@@ -16,7 +16,7 @@ export class LastReviewListComponent implements OnInit {
     this.reviewService.reviews$.subscribe(value => this.lastReview = value);
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
