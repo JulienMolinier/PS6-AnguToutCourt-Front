@@ -15,4 +15,8 @@ export interface University {
   campusDesc: string;
   campusImgs: string[];
   location: string;
+  formationdesc: string;
+  inscriptiondesc: string;
+  contacts: string;
+  formerGraduates: string;
 }

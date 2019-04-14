@@ -1,5 +1,31 @@
 <div class="body">
-  <i class="fas fa-chevron-right"></i> CAMPUS
-  <p>{{university.campusDesc}}</p>
-  <slideshow class="img" [imageUrls]=university.campusImgs></slideshow>
+  <div class="area">
+    <i class="fas fa-chevron-right"> CAMPUS</i>
+    <p>{{university.campusDesc}}</p>
+  </div>
+
+  <slideshow [height]="'50%'" [imageUrls]=university.campusImgs align="center" ></slideshow>
+
+
+  <div class="area">
+    <i class="fas fa-chevron-right">FORMATIONS</i>
+    <p>{{university.formationdesc}}</p>
+  </div>
+
+  <div class="area">
+    <i class="fas fa-chevron-right">INSCRIPTIONS</i>
+    <p>{{university.inscriptiondesc}}</p>
+  </div>
+
+  <div class="area">
+    <i class="fas fa-chevron-right">CONTACTS</i>
+    <p>{{university.contacts}}</p>
+  </div>
+
+  <div class="area">
+    <i class="fas fa-chevron-right">ANCIENS DIPLOMÉS</i>
+    <p>{{university.formerGraduates}}</p>
+  </div>
+
+
 </div>
