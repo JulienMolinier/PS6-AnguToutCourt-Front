@@ -28,5 +28,25 @@ export const COUNTRY_MOCKED: Country[] = [
   {
     name: 'Chine',
     continent: 'Asie',
-  }
+  },
+  {
+    name: 'Suisse',
+    continent: 'Europe',
+  },
+  {
+    name: 'Ukraine',
+    continent: 'Europe',
+  },
+  {
+    name: 'Norvège',
+    continent: 'Europe',
+  },
+  {
+    name: 'Portugal',
+    continent: 'Europe',
+  },
+  {
+    name: 'Thaïlande',
+    continent: 'Asie',
+  },
 ];
