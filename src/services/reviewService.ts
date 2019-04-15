@@ -46,13 +46,14 @@ export class ReviewService {
     console.log(this.reviewList);
   }
 */
-
+/*
   getLastReview(): void {
     this.getReview();
     this.reviewList.filter(value => value.Country === 'Canada');
-    /*this.reviewList.sort((r1, r2) => r1.Date.getDate() > r2.Date.getDate() ? 1 : 0);*/
+    /*this.reviewList.sort((r1, r2) => r1.Date.getDate() > r2.Date.getDate() ? 1 : 0);
     console.log(this.reviewList);
-    /*this.reviewList.slice(0, 1);*/
-    /* console.log(this.reviewList);*/
+    this.reviewList.slice(0, 1);
+    console.log(this.reviewList);
   }
+  */
 }
