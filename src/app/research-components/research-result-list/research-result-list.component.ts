@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {BehaviorSubject} from 'rxjs';
 import {COUNTRY_MOCKED} from '../../../mocks/country.mocks';
 import {Country} from '../../../models/country';
+import {EXCHANGE_MOCKED} from '../../../mocks/exchange.mocks';
 
 @Component({
   selector: 'app-research-result-list',
@@ -15,9 +16,11 @@ export class ResearchResultListComponent implements OnInit {
 
   private researchResultList: University[] = [];
   private countryList: Country[] = COUNTRY_MOCKED;
+  private exchangeProgList: string[] = EXCHANGE_MOCKED;
   private rateCheckbox: BehaviorSubject<boolean>;
   private placeCheckbox: BehaviorSubject<boolean>;
   private countryFilter: string;
+  private exchangeFilter: string;
 
   constructor(public universityService: UniversityService, private router: Router) {
     this.rateCheckbox = new BehaviorSubject<boolean>(false);
@@ -59,7 +62,17 @@ export class ResearchResultListComponent implements OnInit {
   onCountryFilterChange() {
     if (this.countryFilter) {
       this.getUniversitiesList();
-      this.researchResultList = this.researchResultList.filter(value => value.country == this.countryFilter);
+      this.researchResultList = this.researchResultList.filter(value => value.country === this.countryFilter);
+    } else {
+      this.getUniversitiesList();
+    }
+  }
+
+  onExchangeFilterChange() {
+    if (this.exchangeFilter) {
+      this.getUniversitiesList();
+      this.researchResultList = this.researchResultList.filter(value =>
+        value.program.toLowerCase() === this.exchangeFilter.toLowerCase());
     } else {
       this.getUniversitiesList();
     }

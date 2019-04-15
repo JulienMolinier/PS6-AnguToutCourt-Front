@@ -3,12 +3,12 @@
   <br>
 
   <div align="center">
-    <h3> {{review.FirstName}} {{review.LastName}} </h3>
-    <p>{{review.Major}}</p>
-    <p>{{review.Country}}</p>
-    <p>{{review.City}}</p>
+    <h3> {{review.profile.firstName}} {{review.profile.lastName}} </h3>
+    <p>{{review.profile.major}}</p>
+    <p>{{review.university.name}}</p>
+    <p>{{review.university.country}}</p>
+    <p>{{review.university.city}}</p>
     <p>{{review.Description}}</p>
-    <br>
     <p>{{review.Date | date:"MM/dd/yy"}}</p>
   </div>
 

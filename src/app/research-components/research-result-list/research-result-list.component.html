@@ -1,11 +1,11 @@
 <div class="filters">
   <h3>Filtrer par :</h3>
   <div class="filter1">
-    <mat-checkbox (change)="onFilterRateChange()" value="rateCheckbox">par notes</mat-checkbox>
+    <mat-checkbox (change)="onFilterRateChange()" value="rateCheckbox">notes</mat-checkbox>
   </div>
   <div>
     <mat-checkbox (change)="onFilterPlaceChange()"
-                  value="placeCheckbox">par places restantes
+                  value="placeCheckbox">places restantes
     </mat-checkbox>
   </div>
   <br>
@@ -19,6 +19,16 @@
                clearAllText="Clear"
                groupBy="continent"
                placeholder="Selectionner un pays">
+    </ng-select>
+  </div>
+  <br>
+  <div>
+    <ng-select (change)="onExchangeFilterChange()"
+               [(ngModel)]="exchangeFilter"
+               [items]="exchangeProgList"
+               class="select"
+               clearAllText="Clear"
+               placeholder="Selectionner un programme">
     </ng-select>
   </div>
 </div>
