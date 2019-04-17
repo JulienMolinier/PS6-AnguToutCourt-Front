@@ -12,6 +12,7 @@ export class LastReviewListComponent implements OnInit {
   public lastReview: Review[] = [];
 
   constructor(public reviewService: ReviewService) {
+    this.reviewService.getLastReviews(2);
     this.reviewService.reviews$.subscribe(value => this.lastReview = value);
   }
 
