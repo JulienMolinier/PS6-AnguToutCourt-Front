@@ -1,34 +1,39 @@
 <div class="filters">
+
   <h3>Filtrer par :</h3>
-  <div class="filter1">
-    <mat-checkbox (change)="onFilterRateChange()" value="rateCheckbox">notes</mat-checkbox>
-  </div>
-  <div>
-    <mat-checkbox (change)="onFilterPlaceChange()"
-                  value="placeCheckbox">places restantes
+  <br>
+  <div class="checkboxes">
+    <mat-checkbox (change)="onFilterRateChange()" class="checkbox1" value="rateCheckbox">note des anciens</mat-checkbox>
+    <mat-checkbox (change)="onFilterPlaceChange()" class="checkbox2"
+                  value="placeCheckbox">nombre de places restantes
+    </mat-checkbox>
+    <mat-checkbox (change)="onFilterOldChange()" class="checkbox3" value="oldCheckbox">nombre d'étudiants déja partis
     </mat-checkbox>
   </div>
-  <br>
-  <div>
+  <div class="ngselect">
+    <ng-select (change)="onSemesterFilterChange()"
+               [(ngModel)]="semesterFilter"
+               [items]="semesterList"
+               class="select1"
+               clearAllText="Clear"
+               placeholder="Semestre">
+    </ng-select>
+    <ng-select (change)="onExchangeFilterChange()"
+               [(ngModel)]="exchangeFilter"
+               [items]="exchangeProgList"
+               class="select2"
+               clearAllText="Clear"
+               placeholder="Programme d'échange">
+    </ng-select>
     <ng-select [items]="countryList"
                bindLabel="name"
                bindValue="name"
                (change)="onCountryFilterChange()"
                [(ngModel)]="countryFilter"
-               class="select"
+               class="select3"
                clearAllText="Clear"
                groupBy="continent"
-               placeholder="Selectionner un pays">
-    </ng-select>
-  </div>
-  <br>
-  <div>
-    <ng-select (change)="onExchangeFilterChange()"
-               [(ngModel)]="exchangeFilter"
-               [items]="exchangeProgList"
-               class="select"
-               clearAllText="Clear"
-               placeholder="Selectionner un programme">
+               placeholder="Pays">
     </ng-select>
   </div>
 </div>

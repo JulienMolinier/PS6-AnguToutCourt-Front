@@ -14,17 +14,25 @@ import {EXCHANGE_MOCKED} from '../../../mocks/exchange.mocks';
 })
 export class ResearchResultListComponent implements OnInit {
 
-  private researchResultList: University[] = [];
-  private countryList: Country[] = COUNTRY_MOCKED;
-  private exchangeProgList: string[] = EXCHANGE_MOCKED;
+  private researchResultList: University[];
+  private countryList: Country[];
+  private exchangeProgList: string[];
+  private semesterList: string[];
   private rateCheckbox: BehaviorSubject<boolean>;
   private placeCheckbox: BehaviorSubject<boolean>;
+  private oldCheckbox: BehaviorSubject<boolean>;
   private countryFilter: string;
   private exchangeFilter: string;
+  private semesterFilter: string;
 
   constructor(public universityService: UniversityService, private router: Router) {
+    this.researchResultList = [];
+    this.countryList = COUNTRY_MOCKED;
+    this.exchangeProgList = EXCHANGE_MOCKED;
+    this.semesterList = ['S1', 'S2', 'S1 et S2'];
     this.rateCheckbox = new BehaviorSubject<boolean>(false);
     this.placeCheckbox = new BehaviorSubject<boolean>(false);
+    this.oldCheckbox = new BehaviorSubject<boolean>(false);
     universityService.getUniversities();
     this.getUniversitiesList();
   }
@@ -51,6 +59,15 @@ export class ResearchResultListComponent implements OnInit {
     }
   }
 
+  onFilterOldChange() {
+    this.oldCheckbox.next(!this.oldCheckbox.getValue());
+    if (this.oldCheckbox.getValue()) {
+      this.researchResultList.sort((a, b) => a.nbOldExp > b.nbOldExp ? -1 : 1);
+    } else {
+      this.researchResultList.sort((a, b) => a.nbOldExp > b.nbOldExp ? 1 : -1);
+    }
+  }
+
   navigateUniversityDetails(university: University) {
     this.router.navigate([`/university/${university.id}`]);
   }
@@ -73,6 +90,24 @@ export class ResearchResultListComponent implements OnInit {
       this.getUniversitiesList();
       this.researchResultList = this.researchResultList.filter(value =>
         value.program.toLowerCase() === this.exchangeFilter.toLowerCase());
+    } else {
+      this.getUniversitiesList();
+    }
+  }
+
+  onSemesterFilterChange() {
+    if (this.semesterFilter === 'S1') {
+      this.getUniversitiesList();
+      this.researchResultList = this.researchResultList.filter(value =>
+        value.semester.includes(1));
+    } else if (this.semesterFilter === 'S2') {
+      this.getUniversitiesList();
+      this.researchResultList = this.researchResultList.filter(value =>
+        value.semester.includes(2));
+    } else if (this.semesterFilter === 'S1 et S2') {
+      this.getUniversitiesList();
+      this.researchResultList = this.researchResultList.filter(value =>
+        value.semester.includes(1) && value.semester.includes(2));
     } else {
       this.getUniversitiesList();
     }
