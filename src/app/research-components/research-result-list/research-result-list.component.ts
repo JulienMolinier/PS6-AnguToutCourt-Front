@@ -112,4 +112,14 @@ export class ResearchResultListComponent implements OnInit {
       this.getUniversitiesList();
     }
   }
+
+  resetResearchList() {
+    this.getUniversitiesList();
+    this.rateCheckbox = new BehaviorSubject<boolean>(false);
+    this.placeCheckbox = new BehaviorSubject<boolean>(false);
+    this.oldCheckbox = new BehaviorSubject<boolean>(false);
+    this.countryFilter = null;
+    this.semesterFilter = null;
+    this.exchangeFilter = null;
+  }
 }

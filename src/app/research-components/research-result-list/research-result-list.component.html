@@ -1,7 +1,5 @@
 <div class="filters">
 
-  <h3>Filtrer par :</h3>
-  <br>
   <div class="checkboxes">
     <mat-checkbox (change)="onFilterRateChange()" class="checkbox1" value="rateCheckbox">note des anciens</mat-checkbox>
     <mat-checkbox (change)="onFilterPlaceChange()" class="checkbox2"
@@ -36,6 +34,9 @@
                placeholder="Pays">
     </ng-select>
   </div>
+  <br>
+  <br>
+  <button (click)="resetResearchList()" mat-raised-button>Remettre a zéro les filtres</button>
 </div>
 
 <div class="result-list">
