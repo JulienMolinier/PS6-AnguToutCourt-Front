@@ -1,23 +1,26 @@
 <div class="filters">
 
   <div class="checkboxes">
-    <mat-checkbox (change)="onFilterRateChange()" class="checkbox1" value="rateCheckbox">note des anciens</mat-checkbox>
-    <mat-checkbox (change)="onFilterPlaceChange()" class="checkbox2"
-                  value="placeCheckbox">nombre de places restantes
-    </mat-checkbox>
-    <mat-checkbox (change)="onFilterOldChange()" class="checkbox3" value="oldCheckbox">nombre d'étudiants déja partis
-    </mat-checkbox>
+    <mat-radio-group [(ngModel)]="check">
+      <mat-radio-button (change)="onFilterRateChange()" class="checkbox1">note des anciens
+      </mat-radio-button>
+      <mat-radio-button (change)="onFilterPlaceChange()" class="checkbox2">nombre de places restantes
+      </mat-radio-button>
+      <mat-radio-button (change)="onFilterOldChange()" class="checkbox3">nombre d'étudiants déja partis
+      </mat-radio-button>
+    </mat-radio-group>
+
   </div>
   <div class="ngselect">
-    <ng-select (change)="onSemesterFilterChange()"
-               [(ngModel)]="semesterFilter"
+    <ng-select (change)="onChangeFilter()"
+               [(ngModel)]="filters[0]"
                [items]="semesterList"
                class="select1"
                clearAllText="Clear"
                placeholder="Semestre">
     </ng-select>
-    <ng-select (change)="onExchangeFilterChange()"
-               [(ngModel)]="exchangeFilter"
+    <ng-select (change)="onChangeFilter()"
+               [(ngModel)]="filters[1]"
                [items]="exchangeProgList"
                class="select2"
                clearAllText="Clear"
@@ -26,8 +29,8 @@
     <ng-select [items]="countryList"
                bindLabel="name"
                bindValue="name"
-               (change)="onCountryFilterChange()"
-               [(ngModel)]="countryFilter"
+               (change)="onChangeFilter()"
+               [(ngModel)]="filters[2]"
                class="select3"
                clearAllText="Clear"
                groupBy="continent"
@@ -38,8 +41,9 @@
   <br>
   <button (click)="resetResearchList()" mat-raised-button>Remettre a zéro les filtres</button>
 </div>
-
+<br>
 <div class="result-list">
+  <h3>{{researchResultList.length}} résultat(s)</h3>
   <div *ngFor="let university of researchResultList">
     <app-university-card (showUniversityDetails)="navigateUniversityDetails($event)"
                          [university]="university">

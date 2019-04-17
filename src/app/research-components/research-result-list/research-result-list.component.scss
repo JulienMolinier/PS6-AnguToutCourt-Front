@@ -1,3 +1,6 @@
+h3 {
+  text-align: center;
+}
 .result-list {
   border-color: black;
   border-width: 2px;
@@ -28,21 +31,21 @@
   margin: auto;
   grid-column: 1;
   grid-row: 1;
-  padding: 5%;
+  padding: 2%;
 }
 
 .checkbox2 {
   margin: auto;
   grid-column: 2;
   grid-row: 1;
-  padding: 5%;
+  padding: 2%;
 }
 
 .checkbox3 {
   margin: auto;
   grid-column: 3;
   grid-row: 1;
-  padding: 5%;
+  padding: 2%;
 }
 
 .ngselect {
