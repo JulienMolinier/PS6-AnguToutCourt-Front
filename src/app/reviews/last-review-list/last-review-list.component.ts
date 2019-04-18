@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Review} from '../../models/review';
-import {ReviewService} from '../../services/reviewService';
+import {Component, OnInit} from '@angular/core';
+import {Review} from '../../../models/review';
+import {ReviewService} from '../../../services/reviewService';
 
 
 @Component({

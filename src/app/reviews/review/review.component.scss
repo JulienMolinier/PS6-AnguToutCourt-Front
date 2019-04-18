@@ -1,10 +1,27 @@
 .card_review {
   background-color: #A7C4E2;
-  border-color: #282828;
-  border-width: medium;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  height: 17em;
+  display: grid;
+  text-align: center;
 }
 
 .review {
-  width: 100%;
-  background: red;
+  grid-row: 1;
+  grid-column: 3;
+  margin: auto;
+}
+
+.profile {
+  grid-row: 1;
+  margin: auto;
+  grid-column: 1;
+}
+
+.university {
+  grid-row: 1;
+  margin: auto;
+  grid-column: 2;
 }

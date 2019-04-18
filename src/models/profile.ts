@@ -1,15 +1,15 @@
 export interface Profile {
-  firstName?: string;
-  lastName?: string;
-  username?: string;
-  password?: string;
-  id?: number;
-  major?: Major;
+  firstName: string;
+  lastName: string;
+  username: string;
+  password: string;
+  id: number;
+  major: Major;
 
 }
 
 export enum Major {
-  SI = 'Génie Informatique',
+  SI = 'Sciences Informatiques',
   GB = 'Génie Biologique',
   MAM = 'Mathématiques-Appliquées-Modélisation',
   ELEC = 'Génie Électronique',
