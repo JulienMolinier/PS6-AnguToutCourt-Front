@@ -1,5 +1,36 @@
 <h1>AVIS</h1>
 <br>
+
+<div class="ngselect">
+  <ng-select (change)="filterByUniversity()"
+             [(ngModel)]="filters[0]"
+             [items]="universityList"
+             class="select1"
+             clearAllText="Clear"
+             placeholder="Université">
+  </ng-select>
+  <ng-select (change)="filterByRate()"
+             [(ngModel)]="filters[1]"
+             [items]="rateList"
+             class="select2"
+             clearAllText="Clear"
+             placeholder="Note">
+  </ng-select>
+  <ng-select (change)="filterByCountry()"
+             [(ngModel)]="filters[2]"
+             [items]="countryList"
+             class="select2"
+             clearAllText="Clear"
+             placeholder="Pays">
+  </ng-select>
+</div>
+
+<div class="ngselect">
+
+</div>
+<br>
+<br>
+
 <div class="review-list">
   <ng-container *ngFor="let review of reviewList">
     <div class="ticket">
