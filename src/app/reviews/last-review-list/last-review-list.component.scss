@@ -1,5 +1,19 @@
-.review-list {
+:host-context(.white) .review-list {
   border-color: white;
+  border-width: 2px;
+  border-style: solid;
+  padding: 1%;
+  margin: auto;
+  width: 80%;
+}
+
+:host-context(.white) h1 {
+  text-align: center;
+  color: white;
+}
+
+.review-list {
+  border-color: black;
   border-width: 2px;
   border-style: solid;
   padding: 1%;
@@ -9,7 +23,7 @@
 
 h1 {
   text-align: center;
-  color: white;
+  color: black;
 }
 
 .ticket {
