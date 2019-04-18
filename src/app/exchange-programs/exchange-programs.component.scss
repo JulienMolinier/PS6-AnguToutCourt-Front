@@ -1,35 +1,30 @@
-.img1 {
-  //home2
+img {
   display: block;
   margin: auto;
+}
+
+.img1 {
+  //home2
   width: 40%;
 }
 
 .img2 {
   //erasmus
-  display: block;
-  margin: auto;
   width: 20%;
 }
 
 .img3 {
   //bci
-  display: block;
-  margin: auto;
   width: 20%;
 }
 
 .img4 {
   //crepuq
-  display: block;
-  margin: auto;
   width: 20%;
 }
 
 .img5 {
   //isep
-  display: block;
-  margin: auto;
   width: 10%;
 }
 
@@ -47,15 +42,4 @@ p {
   margin-left: 6%;
   margin-right: 8%;
   color: black;
-}
-
-button {
-  color: royalblue;
-  font-size: 15px;
-  width: 12%;
-}
-
-
-.button-center {
-  margin: auto;
 }
