@@ -1,9 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Review} from '../../../models/review';
 import {ReviewService} from '../../../services/reviewService';
-import {UniversityService} from '../../../services/universityService';
-import {University} from '../../../models/university';
-import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-review-list',
@@ -35,13 +32,13 @@ export class ReviewListComponent implements OnInit {
     let i;
     this.universityList = [];
     for (i = 0; i < this.reviewList.length; i++) {
-      if (this.universityList.indexOf(this.reviewList[i].university.name) < 0){
+      if (this.universityList.indexOf(this.reviewList[i].university.name) < 0) {
         this.universityList.push(this.reviewList[i].university.name);
       }
     }
   }
 
-  getCountryList(){
+  getCountryList() {
     let i;
     this.countryList = [];
     for (i = 0; i < this.reviewList.length; i++) {
@@ -52,15 +49,25 @@ export class ReviewListComponent implements OnInit {
   }
 
   filterByUniversity() {
-    this.reviewList = this.initialReviewList.filter( value => value.university.name === this.filters[0] );
+    this.reviewList = this.initialReviewList.filter(value => value.university.name === this.filters[0]);
   }
 
   filterByCountry() {
-    this.reviewList = this.initialReviewList.filter( value => value.university.country === this.filters[2] );
+    this.reviewList = this.initialReviewList.filter(value => value.university.country === this.filters[2]);
   }
 
-
   filterByRate() {
-    this.reviewList = this.initialReviewList.filter( value => value.Rate.toString() === this.filters[1] );
+    this.reviewList = this.initialReviewList.filter(value => value.Rate.toString() === this.filters[1]);
+  }
+
+  resetResearchList() {
+    this.filters = [null, null, null];
+    this.reviewService.getReview();
+    this.reviewService.reviews$.subscribe((reviews) => {
+      this.reviewList = reviews;
+      this.initialReviewList = [...this.reviewList];
+    });
+    this.getUniversitiesList();
+    this.getCountryList();
   }
 }

@@ -19,15 +19,18 @@
   <ng-select (change)="filterByCountry()"
              [(ngModel)]="filters[2]"
              [items]="countryList"
-             class="select2"
+             class="select3"
              clearAllText="Clear"
              placeholder="Pays">
   </ng-select>
 </div>
 
-<div class="ngselect">
-
+<div class="button">
+  <br>
+  <br>
+  <button (click)="resetResearchList()" mat-raised-button>Remettre a zéro les filtres</button>
 </div>
+
 <br>
 <br>
 
