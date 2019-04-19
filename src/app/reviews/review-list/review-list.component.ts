@@ -48,25 +48,22 @@ export class ReviewListComponent implements OnInit {
     }
   }
 
-  filterByUniversity() {
-    this.reviewList = this.initialReviewList.filter(value => value.university.name === this.filters[0]);
-  }
-
-  filterByCountry() {
-    this.reviewList = this.initialReviewList.filter(value => value.university.country === this.filters[2]);
-  }
-
-  filterByRate() {
-    this.reviewList = this.initialReviewList.filter(value => value.Rate.toString() === this.filters[1]);
+  onChangeFilter() {
+    this.reviewList = this.initialReviewList;
+    for (let i = 0; i <= this.filters.length; i++) {
+      if (i === 0 && this.filters[i] !== null) {
+        this.reviewList = this.reviewList.filter(value => value.university.name === this.filters[i]);
+      } else if (i === 2 && this.filters[i] !== null) {
+        this.reviewList = this.reviewList.filter(value => value.university.country === this.filters[i]);
+      } else if (i === 1 && this.filters[i] !== null) {
+        this.reviewList = this.reviewList.filter(value => value.Rate.toString() === this.filters[1]);
+      }
+    }
   }
 
   resetResearchList() {
     this.filters = [null, null, null];
-    this.reviewService.getReview();
-    this.reviewService.reviews$.subscribe((reviews) => {
-      this.reviewList = reviews;
-      this.initialReviewList = [...this.reviewList];
-    });
+    this.reviewList = this.initialReviewList;
     this.getUniversitiesList();
     this.getCountryList();
   }

@@ -2,26 +2,26 @@
 <br>
 
 <div class="ngselect">
-  <ng-select (change)="filterByUniversity()"
-             [(ngModel)]="filters[0]"
-             [items]="universityList"
+  <ng-select (change)="onChangeFilter()"
+             [(ngModel)]="filters[2]"
+             [items]="countryList"
              class="select1"
              clearAllText="Clear"
-             placeholder="Université">
+             placeholder="Pays">
   </ng-select>
-  <ng-select (change)="filterByRate()"
+  <ng-select (change)="onChangeFilter()"
              [(ngModel)]="filters[1]"
              [items]="rateList"
              class="select2"
              clearAllText="Clear"
              placeholder="Note">
   </ng-select>
-  <ng-select (change)="filterByCountry()"
-             [(ngModel)]="filters[2]"
-             [items]="countryList"
+  <ng-select (change)="onChangeFilter()"
+             [(ngModel)]="filters[0]"
+             [items]="universityList"
              class="select3"
              clearAllText="Clear"
-             placeholder="Pays">
+             placeholder="Université">
   </ng-select>
 </div>
 
@@ -35,6 +35,7 @@
 <br>
 
 <div class="review-list">
+  <h3>{{reviewList.length}} résultat(s)</h3>
   <ng-container *ngFor="let review of reviewList">
     <div class="ticket">
       <app-review [review]="review"></app-review>
