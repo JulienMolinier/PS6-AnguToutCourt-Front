@@ -1,0 +1,83 @@
+<div class="content">
+  <h3>Ajouter une université</h3>
+  <br>
+  <form [formGroup]="universityForm" class="ticket-form">
+
+    <div class="colone">
+      <mat-form-field>
+        <input [formControlName]="'name'" matInput placeholder="Nom de l'université" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input [formControlName]="'img'" matInput placeholder="Lien vers le Logo" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input [formControlName]="'country'" matInput placeholder="Pays" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input [formControlName]="'city'" matInput placeholder="Ville" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-select [formControlName]="'program'" matInput placeholder="Programmes d'échange" required>
+          <mat-option *ngFor="let program of exchangeProgList" [value]="program">{{program}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input [formControlName]="'placesNumber'" matInput placeholder="Place(s) disponible(s)" required
+               type="number">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input [formControlName]="'location'" matInput placeholder="Lien google Map" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-select [formControlName]="'semester'" matInput multiple placeholder="Semestre(s)" required>
+          <mat-option *ngFor="let semester of semesterList" [value]="semester">{{semester}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input [formControlName]="'nbOldExp'" matInput placeholder="Nombre d'étudiants déja partis" required
+               type="number">
+      </mat-form-field>
+      <br>
+    </div>
+
+    <div class="coltwo">
+      <mat-form-field>
+          <textarea [formControlName]="'description'" cols="33" matInput
+                    placeholder="Description" required rows="5"></textarea>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+          <textarea [formControlName]="'campusDesc'" cols="33" matInput
+                    placeholder="Description du campus" required rows="5"></textarea>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input [formControlName]="'campusImgs'" matInput placeholder="Image(s) du campus" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+          <textarea [formControlName]="'inscriptionDesc'" cols="33" matInput
+                    placeholder="Comment s'inscrire" required rows="5"></textarea>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+          <textarea [formControlName]="'contacts'" cols="33" matInput
+                    placeholder="Contact(s)" required rows="5"></textarea>
+      </mat-form-field>
+    </div>
+
+  </form>
+
+  <br>
+  <br>
+  <button (click)="addUniversity()" class="btn-custom" type="submit">Ajouter l'université</button>
+
+</div>

@@ -10,6 +10,7 @@ import {ReviewListComponent} from './reviews/review-list';
 import {CreateAccountComponent} from './create-account';
 import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
 import {LastReviewListComponent} from './reviews/last-review-list';
+import {UniversityFormComponent} from './universitycomponents/university-form/university-form.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'university/:id', component: UniversityComponent},
   {path: 'university', component: UniversityComponent},
   {path: 'exchange-programs', component: ExchangeProgramsComponent},
+  {path: 'university-form', component: UniversityFormComponent},
   {path: '**', redirectTo: 'not-found'}
 ];
 
