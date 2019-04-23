@@ -41,10 +41,12 @@
   <br>
   <button (click)="resetResearchList()" mat-raised-button>Remettre a zéro les filtres</button>
 </div>
+
+
 <br>
 <div class="result-list">
   <h3>{{researchResultList.length}} résultat(s)</h3>
-  <div *ngFor="let university of researchResultList">
+  <div *ngFor="let university of researchResultList" class="ticket">
     <app-university-card (showUniversityDetails)="navigateUniversityDetails($event)"
                          [university]="university">
     </app-university-card>

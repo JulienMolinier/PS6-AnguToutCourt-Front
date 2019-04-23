@@ -1,5 +1,41 @@
-<h2 align="center">Mes avis</h2>
+<h1>AVIS</h1>
+<br>
+
+<div class="ngselect">
+  <ng-select (change)="onChangeFilter()"
+             [(ngModel)]="filters[2]"
+             [items]="countryList"
+             class="select1"
+             clearAllText="Clear"
+             placeholder="Pays">
+  </ng-select>
+  <ng-select (change)="onChangeFilter()"
+             [(ngModel)]="filters[1]"
+             [items]="rateList"
+             class="select2"
+             clearAllText="Clear"
+             placeholder="Note">
+  </ng-select>
+  <ng-select (change)="onChangeFilter()"
+             [(ngModel)]="filters[0]"
+             [items]="universityList"
+             class="select3"
+             clearAllText="Clear"
+             placeholder="Université">
+  </ng-select>
+</div>
+
+<div class="button">
+  <br>
+  <br>
+  <button (click)="resetResearchList()" mat-raised-button>Remettre a zéro les filtres</button>
+</div>
+
+<br>
+<br>
+
 <div class="review-list">
+  <h3>{{reviewList.length}} résultat(s)</h3>
   <ng-container *ngFor="let review of reviewList">
     <div class="ticket">
       <app-review [review]="review"></app-review>

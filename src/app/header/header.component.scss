@@ -9,7 +9,9 @@
 
 .header {
   background: $linearGradient;
-  padding: 1em;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
   display: inline-block;
 }
 
@@ -37,7 +39,7 @@ ul {
 
 ul li {
   display: table-cell;
-  padding: 15px;
+  padding: 15px 15px;
 }
 
 ul li :hover {

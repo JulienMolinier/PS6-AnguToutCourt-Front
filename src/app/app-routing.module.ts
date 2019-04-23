@@ -9,7 +9,7 @@ import {UniversityComponent} from './universitycomponents/university/university.
 import {ReviewListComponent} from './reviews/review-list';
 import {CreateAccountComponent} from './create-account';
 import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
-import {LastReviewListComponent} from './last-review-list';
+import {LastReviewListComponent} from './reviews/last-review-list';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},

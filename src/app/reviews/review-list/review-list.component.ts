@@ -8,14 +8,63 @@ import {ReviewService} from '../../../services/reviewService';
   styleUrls: ['./review-list.component.scss']
 })
 export class ReviewListComponent implements OnInit {
-  public reviewList: Review[] = [];
+  private reviewList: Review[] = [];
+  private initialReviewList: Review[] = [];
+  private rateList: string[] = ['0', '1', '2', '3', '4', '5'];
+  private universityList: string[];
+  private countryList: string[];
+  private filters: string[] = [null, null, null];
 
   constructor(public reviewService: ReviewService) {
     this.reviewService.getReview();
-    this.reviewService.reviews$.subscribe((reviews) => this.reviewList = reviews);
+    this.reviewService.reviews$.subscribe((reviews) => {
+      this.reviewList = reviews;
+      this.initialReviewList = [...this.reviewList];
+    });
+    this.getUniversitiesList();
+    this.getCountryList();
   }
 
   ngOnInit() {
   }
 
+  getUniversitiesList() {
+    let i;
+    this.universityList = [];
+    for (i = 0; i < this.reviewList.length; i++) {
+      if (this.universityList.indexOf(this.reviewList[i].university.name) < 0) {
+        this.universityList.push(this.reviewList[i].university.name);
+      }
+    }
+  }
+
+  getCountryList() {
+    let i;
+    this.countryList = [];
+    for (i = 0; i < this.reviewList.length; i++) {
+      if (this.countryList.indexOf(this.reviewList[i].university.country) < 0) {
+        this.countryList.push(this.reviewList[i].university.country);
+      }
+    }
+  }
+
+  onChangeFilter() {
+    this.reviewList = this.initialReviewList;
+    for (let i = 0; i <= this.filters.length; i++) {
+      if (i === 0 && this.filters[i] !== null) {
+        this.reviewList = this.reviewList.filter(value => value.university.name === this.filters[i]);
+      } else if (i === 2 && this.filters[i] !== null) {
+        this.reviewList = this.reviewList.filter(value => value.university.country === this.filters[i]);
+      } else if (i === 1 && this.filters[i] !== null) {
+        this.reviewList = this.reviewList.filter(value => value.Rate.toString() === this.filters[1]);
+      }
+    }
+  }
+
+  resetResearchList() {
+    this.filters = [null, null, null];
+    this.reviewList = this.initialReviewList;
+    this.getUniversitiesList();
+    this.getCountryList();
+  }
 }
