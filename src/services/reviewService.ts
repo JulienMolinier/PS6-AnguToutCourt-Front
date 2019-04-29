@@ -23,6 +23,11 @@ export class ReviewService {
     });
   }
 
+  async getReviewsAsync() {
+    this.reviewList = await this.http.get<Review[]>(`${this.url}/api/reviews`).toPromise();
+    this.reviews$.next(this.reviewList);
+  }
+
   postReview(review: Review) {
     this.http.post(`${this.url}/api/reviews`, review).subscribe(value => {
       this.getReview();
