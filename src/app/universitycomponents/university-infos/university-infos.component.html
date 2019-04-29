@@ -4,10 +4,8 @@
     <p>{{university.campusDesc}}</p>
   </div>
 
-  <slideshow [imageUrls]=university.campusImgs align="center" ></slideshow>
-
-
-
+  <slideshow [imageUrls]=university.campusImgs align="center"></slideshow>
+  <br>
   <div class="area">
     <i class="fas fa-chevron-right">INSCRIPTIONS</i>
     <p>{{university.inscriptiondesc}}</p>
@@ -24,7 +22,4 @@
     <i class="fas fa-chevron-right">AVIS</i>
     <p (click)="goReviews()">Consulter les {{university.nbReviews}} avis</p>
   </div>
-  <br>
-
-
 </div>
