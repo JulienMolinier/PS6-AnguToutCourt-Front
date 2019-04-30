@@ -67,6 +67,10 @@ import {ReviewService} from '../services/reviewService';
 import {LoginService} from '../services/loginService';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {SlideshowModule} from 'ng-simple-slideshow';
+import {UniversityFormComponent} from './universitycomponents/university-form/university-form.component';
+import {FooterComponent} from './footer/footer.component';
+import {ReviewListPrintComponent} from './reviews/review-list-print/review-list-print.component';
+import {ReviewInfosComponent} from './reviews/review-infos/review-infos.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +96,12 @@ import {SlideshowModule} from 'ng-simple-slideshow';
     UniversityMapComponent,
     UniversityHeaderComponent,
     UniversityMapComponent,
-    LastReviewListComponent
+    LastReviewListComponent,
+    UniversityFormComponent,
+    LastReviewListComponent,
+    ReviewInfosComponent,
+    ReviewListPrintComponent,
+    FooterComponent
   ],
   imports: [
     SlideshowModule,

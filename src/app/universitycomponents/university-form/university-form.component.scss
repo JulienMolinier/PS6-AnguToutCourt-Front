@@ -1,16 +1,26 @@
-.select {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .content {
   text-align: center;
   padding-bottom: 3%;
   padding-top: 2%;
-  margin: 5% 40%;
+  margin: 5% 35%;
   border-width: 1px;
   border-color: #afd1d8;
   box-shadow: 2px 2px 2px black;
   background-color: white;
 }
+
+form {
+  display: grid;
+}
+
+.colone {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.coltwo {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+

@@ -1,4 +1,4 @@
-<div class="card_review">
+<div class="card_review" (click)="reviewDetails()">
 
   <div class="profile">
     <h3><i class="fas fa-user"></i> &nbsp;{{review.profile.firstName}} {{review.profile.lastName}} </h3>
@@ -12,7 +12,7 @@
 
   <div class="review">
     <h3><i class="fas fa-star"></i> &nbsp;{{review.Rate}} / 5</h3>
-    <p>{{review.Description}}</p>
+    <p [matTooltip]=review.Description class="reviewDesc">{{review.Description}}</p>
     <p>{{review.Date | date:"dd/MM/yy"}}</p>
   </div>
 

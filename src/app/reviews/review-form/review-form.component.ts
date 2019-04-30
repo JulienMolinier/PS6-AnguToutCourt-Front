@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Review} from '../../../models/review';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ReviewService} from '../../../services/reviewService';
-import {UniversityService} from "../../../services/universityService";
-import {University} from "../../../models/university";
+import {UniversityService} from '../../../services/universityService';
+import {University} from '../../../models/university';
 
 @Component({
   selector: 'app-review-form',
