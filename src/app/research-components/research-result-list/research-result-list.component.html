@@ -13,16 +13,23 @@
   </div>
   <div class="ngselect">
     <ng-select (change)="onChangeFilter()"
+               [(ngModel)]="filters[4]"
+               [items]="specialityList"
+               class="select1"
+               clearAllText="Clear"
+               placeholder="Spécialité">
+    </ng-select>
+    <ng-select (change)="onChangeFilter()"
                [(ngModel)]="filters[0]"
                [items]="semesterList"
-               class="select1"
+               class="select2"
                clearAllText="Clear"
                placeholder="Semestre">
     </ng-select>
     <ng-select (change)="onChangeFilter()"
                [(ngModel)]="filters[1]"
                [items]="exchangeProgList"
-               class="select2"
+               class="select3"
                clearAllText="Clear"
                placeholder="Programme d'échange">
     </ng-select>
@@ -31,7 +38,7 @@
                bindValue="name"
                (change)="onChangeFilter()"
                [(ngModel)]="filters[2]"
-               class="select3"
+               class="select4"
                clearAllText="Clear"
                groupBy="continent"
                placeholder="Pays">
@@ -41,7 +48,7 @@
                [items]="universityList"
                bindLabel="name"
                bindValue="name"
-               class="select4"
+               class="select5"
                clearAllText="Clear"
                groupBy="country"
                placeholder="Université">

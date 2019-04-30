@@ -19,11 +19,12 @@ export class ResearchResultListComponent implements OnInit {
   private exchangeProgList: string[];
   private semesterList: string[];
   private check: string;
-  private filters: [string, string, string, string];
+  private filters: [string, string, string, string, string];
+  private specialityList: string[];
 
   constructor(public universityService: UniversityService, private router: Router) {
     this.researchResultList = [];
-    this.filters = [null, null, null, null];
+    this.filters = [null, null, null, null, null];
     this.countryList = COUNTRY_MOCKED;
     this.exchangeProgList = EXCHANGE_MOCKED;
     this.semesterList = ['1', '2', '1 et 2'];
@@ -35,6 +36,7 @@ export class ResearchResultListComponent implements OnInit {
     }).catch((error) => {
       console.log(error);
     });
+    this.specialityList = ['SI', 'MAM', 'GB'];
   }
 
   ngOnInit(): void {
@@ -77,13 +79,16 @@ export class ResearchResultListComponent implements OnInit {
         this.researchResultList = this.researchResultList.filter(value => value.country === this.filters[i]);
       } else if (i === 3 && this.filters[i] != null) {
         this.researchResultList = this.researchResultList.filter(value => value.name === this.filters[i]);
+      } else if (i === 4 && this.filters[i] !== null) {
+        this.researchResultList = this.researchResultList.filter(value => value.name === this.filters[i]);
+
       }
     }
   }
 
   resetResearchList() {
     this.check = '';
-    this.filters = [null, null, null, null];
+    this.filters = [null, null, null, null, null];
     this.getUniversitiesList();
   }
 }
