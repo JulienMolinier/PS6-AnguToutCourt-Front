@@ -70,7 +70,8 @@ import {SlideshowModule} from 'ng-simple-slideshow';
 import {UniversityFormComponent} from './universitycomponents/university-form/university-form.component';
 import {FooterComponent} from './footer/footer.component';
 import {ReviewListPrintComponent} from './reviews/review-list-print/review-list-print.component';
-import {ReviewInfosComponent} from './reviews/review-infos/review-infos.component';
+import {ReviewInfosComponent} from './review-info/review-infos/review-infos.component';
+
 
 @NgModule({
   declarations: [
@@ -99,9 +100,9 @@ import {ReviewInfosComponent} from './reviews/review-infos/review-infos.componen
     LastReviewListComponent,
     UniversityFormComponent,
     LastReviewListComponent,
-    ReviewInfosComponent,
     ReviewListPrintComponent,
-    FooterComponent
+    FooterComponent,
+    ReviewInfosComponent
 
   ],
   imports: [

@@ -11,8 +11,9 @@ import {CreateAccountComponent} from './create-account';
 import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
 import {LastReviewListComponent} from './reviews/last-review-list';
 import {ReviewListPrintComponent} from './reviews/review-list-print';
-import {ReviewInfosComponent} from './reviews/review-infos/review-infos.component';
+
 import {UniversityFormComponent} from './universitycomponents/university-form/university-form.component';
+import {ReviewInfosComponent} from './review-info/review-infos';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
