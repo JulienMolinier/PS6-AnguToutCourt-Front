@@ -14,20 +14,27 @@ import {EXCHANGE_MOCKED} from '../../../mocks/exchange.mocks';
 export class ResearchResultListComponent implements OnInit {
 
   private researchResultList: University[];
+  private universityList: University[];
   private countryList: Country[];
   private exchangeProgList: string[];
   private semesterList: string[];
   private check: string;
-  private filters: [string, string, string];
+  private filters: [string, string, string, string];
 
   constructor(public universityService: UniversityService, private router: Router) {
     this.researchResultList = [];
-    this.filters = [null, null, null];
+    this.filters = [null, null, null, null];
     this.countryList = COUNTRY_MOCKED;
     this.exchangeProgList = EXCHANGE_MOCKED;
     this.semesterList = ['1', '2', '1 et 2'];
     universityService.getUniversities();
     this.getUniversitiesList();
+    const promise = this.universityService.getUniversitiesAsync();
+    promise.then(value => {
+      this.universityList = this.universityService.universities$.getValue();
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 
   ngOnInit(): void {
@@ -68,13 +75,15 @@ export class ResearchResultListComponent implements OnInit {
           value.program.toLowerCase() === this.filters[i].toLowerCase());
       } else if (i === 2 && this.filters[i] !== null) {
         this.researchResultList = this.researchResultList.filter(value => value.country === this.filters[i]);
+      } else if (i === 3 && this.filters[i] != null) {
+        this.researchResultList = this.researchResultList.filter(value => value.name === this.filters[i]);
       }
     }
   }
 
   resetResearchList() {
     this.check = '';
-    this.filters = [null, null, null];
+    this.filters = [null, null, null, null];
     this.getUniversitiesList();
   }
 }

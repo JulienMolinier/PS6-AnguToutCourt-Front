@@ -5,6 +5,7 @@
   padding: 1%;
   margin: auto;
   width: 80%;
+
 }
 
 :host-context(.white) h1 {
@@ -17,8 +18,8 @@
   border-width: 2px;
   border-style: solid;
   padding: 1%;
-  margin: auto;
   width: 80%;
+  margin: auto auto 5%;
 }
 
 h1 {

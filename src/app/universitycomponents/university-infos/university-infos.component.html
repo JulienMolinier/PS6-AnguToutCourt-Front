@@ -4,22 +4,23 @@
     <p>{{university.campusDesc}}</p>
   </div>
 
-  <slideshow [imageUrls]=university.campusImgs align="center" ></slideshow>
-
-
-
+  <slideshow [imageUrls]=university.campusImgs align="center"></slideshow>
+  <br>
   <div class="area">
     <i class="fas fa-chevron-right">INSCRIPTIONS</i>
-    <p>{{university.inscriptiondesc}}</p>
+    <p>L'inscription pour effectuer un semestre d'échange se fait sur ce site :</p>
+    <a href="http://unice.fr/polytechnice/fr/international/etudes-a-letranger/partir-a-letranger">cliquer ici </a>
   </div>
   <br>
 
   <div class="area">
     <i class="fas fa-chevron-right">CONTACTS</i>
     <p>{{university.contacts}}</p>
-    <br>
   </div>
   <br>
 
-
+  <div class="area">
+    <i class="fas fa-chevron-right">AVIS</i>
+    <p (click)="goReviews()">Consulter les {{university.nbReviews}} avis</p>
+  </div>
 </div>

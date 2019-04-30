@@ -68,6 +68,7 @@ import {LoginService} from '../services/loginService';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {SlideshowModule} from 'ng-simple-slideshow';
 import {UniversityFormComponent} from './universitycomponents/university-form/university-form.component';
+import {FooterComponent} from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,9 @@ import {UniversityFormComponent} from './universitycomponents/university-form/un
     UniversityHeaderComponent,
     UniversityMapComponent,
     LastReviewListComponent,
-    UniversityFormComponent
+    UniversityFormComponent,
+    LastReviewListComponent,
+    FooterComponent
   ],
   imports: [
     SlideshowModule,

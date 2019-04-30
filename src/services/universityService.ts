@@ -27,6 +27,7 @@ export class UniversityService {
 
   async getByIdAsync(id: string) {
     this.university = await this.http.get<University>(`${this.url}/api/universities/${id}`).toPromise();
+    this.universityViewed$.next(this.university);
   }
 
   addARate(id: string, rateToAdd: number) {

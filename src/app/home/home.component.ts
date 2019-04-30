@@ -17,4 +17,8 @@ export class HomeComponent implements OnInit {
   goReviewForm() {
     this.router.navigate(['review-form']);
   }
+
+  goLastReviewList() {
+    this.router.navigate(['last-reviews']);
+  }
 }

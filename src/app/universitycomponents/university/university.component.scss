@@ -1,43 +1,16 @@
-:host {
+.body {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0%;
-  //position: relative;
-  display: block;
   width: 90%;
-}
-
-.content {
-
-}
-
-.header {
-
 }
 
 .details {
   float: left;
   width: 55%;
-  overflow-y: scroll;
-  background-color: white;
-  border-color: black;
-  border-style: solid;
-  border-width: 2px 2px 2px 2px;
-}
-
-.description {
-  width: 100%;
-}
-
-.infos {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .map {
   float: right;
   width: 40%;
   height: 400px;
-  right: 5%;
 }

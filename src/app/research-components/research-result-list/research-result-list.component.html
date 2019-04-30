@@ -36,6 +36,16 @@
                groupBy="continent"
                placeholder="Pays">
     </ng-select>
+    <ng-select (change)="onChangeFilter()"
+               [(ngModel)]="filters[3]"
+               [items]="universityList"
+               bindLabel="name"
+               bindValue="name"
+               class="select4"
+               clearAllText="Clear"
+               groupBy="country"
+               placeholder="Université">
+    </ng-select>
   </div>
   <br>
   <br>
