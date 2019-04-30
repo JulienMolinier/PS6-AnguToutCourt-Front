@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {Review} from '../models/review';
 import {HttpClient} from '@angular/common/http';
+import {ReviewInfosComponent} from '../app/reviews/review-infos/review-infos.component';
+import {University} from '../models/university';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +11,19 @@ import {HttpClient} from '@angular/common/http';
 export class ReviewService {
   private reviewList: Review[];
   public reviews$: BehaviorSubject<Review[]> = new BehaviorSubject(this.reviewList);
+  public reviewViewed$: BehaviorSubject<Review> = new BehaviorSubject<Review>(null);
   private url = 'http://localhost:9428';
   private review: Review;
 
   constructor(private http: HttpClient) {
+  }
+
+  getById(id: string){
+    this.http.get<Review>(`${this.url}/api/reviews/${id}`).subscribe(value => {
+      this.review = value;
+      this.reviewViewed$.next(this.review);
+      console.log(this.review);
+    });
   }
 
   getReview() {
@@ -22,6 +33,15 @@ export class ReviewService {
       console.log(this.reviewList);
     });
   }
+
+  putReview(){
+    this.http.put(`${this.url}/api/reviews/${this.review.id}`, this.review).subscribe(value => {
+      console.log(value);
+    });
+
+  }
+
+
 
   async getReviewsAsync() {
     this.reviewList = await this.http.get<Review[]>(`${this.url}/api/reviews`).toPromise();

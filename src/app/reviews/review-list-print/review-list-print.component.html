@@ -1,0 +1,12 @@
+<h1>TOUT NOS AVIS</h1>
+
+<div class="review-list" (click)="ReviewDetails">
+  <h3>{{reviewList.length}} résultat(s)</h3>
+  <ng-container *ngFor="let review of reviewList">
+    <div class="ticket">
+      <app-review
+                  [review]="review">
+      </app-review>
+    </div>
+  </ng-container>
+</div>

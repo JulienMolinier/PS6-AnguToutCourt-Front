@@ -1,4 +1,4 @@
-<h1>AVIS</h1>
+<h1>RECHERCHE AVIS</h1>
 <br>
 
 <div class="ngselect">
@@ -39,7 +39,9 @@
     <h3>{{reviewList.length}} résultat(s)</h3>
     <ng-container *ngFor="let review of reviewList">
       <div class="ticket">
-        <app-review [review]="review"></app-review>
+        <app-review (showReviewDetails)="navigateReviewsDetails($event)"
+                    [review]="review"
+        ></app-review>
       </div>
     </ng-container>
   </ng-container>
