@@ -22,12 +22,16 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['research']);
   }
 
-  goReviews() {
+  goReviewsResearch() {
     this.router.navigate(['reviews']);
   }
 
   goExchange() {
     this.router.navigate(['exchange-programs']);
+  }
+
+  goReviews() {
+    this.router.navigate(['reviewsAll']);
   }
 
 }

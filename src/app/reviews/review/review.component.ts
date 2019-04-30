@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Review} from '../../../models/review';
+import {ReviewInfosComponent} from '../review-infos/review-infos.component';
+import {ReviewListComponent} from '../review-list';
 
 @Component({
   selector: 'app-review',
@@ -11,16 +13,15 @@ export class ReviewComponent implements OnInit {
   review: Review;
 
   @Output()
-  ReviewHasBeenSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
+  showReviewDetails: EventEmitter<Review> = new EventEmitter<Review>();
 
   constructor() {
   }
 
   ngOnInit() {
   }
-
-  selectReview() {
-    this.ReviewHasBeenSelected.emit(true);
+  reviewDetails() {
+    this.showReviewDetails.emit(this.review);
   }
 
 }

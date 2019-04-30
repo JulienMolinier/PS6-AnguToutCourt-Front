@@ -1,6 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Review} from '../../../models/review';
 import {ReviewService} from '../../../services/reviewService';
+import {University} from '../../../models/university';
+import {ReviewInfosComponent} from '../review-infos/review-infos.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-review-list',
@@ -8,6 +11,8 @@ import {ReviewService} from '../../../services/reviewService';
   styleUrls: ['./review-list.component.scss']
 })
 export class ReviewListComponent implements OnInit {
+
+
   private reviewList: Review[] = [];
   private initialReviewList: Review[] = [];
   private rateList: string[] = ['0', '1', '2', '3', '4', '5'];
@@ -15,7 +20,7 @@ export class ReviewListComponent implements OnInit {
   private countryList: string[];
   private filters: string[] = [null, null, null];
 
-  constructor(public reviewService: ReviewService) {
+  constructor(public reviewService: ReviewService, private router: Router) {
     this.reviewService.getReview();
     this.reviewService.reviews$.subscribe((reviews) => {
       this.reviewList = reviews;
@@ -60,6 +65,12 @@ export class ReviewListComponent implements OnInit {
       }
     }
   }
+
+  navigateReviewsDetails(review: Review) {
+    this.router.navigate([`/reviews/${review.id}`]);
+  }
+
+
 
   resetResearchList() {
     this.filters = [null, null, null];
