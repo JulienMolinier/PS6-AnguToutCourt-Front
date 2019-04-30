@@ -18,7 +18,7 @@ export class ReviewService {
   constructor(private http: HttpClient) {
   }
 
-  getById(id: string){
+  getById(id: string) {
     this.http.get<Review>(`${this.url}/api/reviews/${id}`).subscribe(value => {
       this.review = value;
       this.reviewViewed$.next(this.review);
@@ -34,7 +34,7 @@ export class ReviewService {
     });
   }
 
-  putReview(){
+  putReview() {
     this.http.put(`${this.url}/api/reviews/${this.review.id}`, this.review).subscribe(value => {
       console.log(value);
     });

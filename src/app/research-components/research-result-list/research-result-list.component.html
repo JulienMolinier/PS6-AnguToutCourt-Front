@@ -9,20 +9,29 @@
       <mat-radio-button (change)="onFilterOldChange()" class="checkbox3">nombre d'étudiants déja partis
       </mat-radio-button>
     </mat-radio-group>
+    <br>
+    <mat-checkbox (change)="onFilterBestChange()" class="recommendedCheckBox" [(ngModel)]="recommended">Universités recommandées par Polytech</mat-checkbox>
 
   </div>
   <div class="ngselect">
     <ng-select (change)="onChangeFilter()"
+               [(ngModel)]="filters[4]"
+               [items]="specialityList"
+               class="select1"
+               clearAllText="Clear"
+               placeholder="Spécialité">
+    </ng-select>
+    <ng-select (change)="onChangeFilter()"
                [(ngModel)]="filters[0]"
                [items]="semesterList"
-               class="select1"
+               class="select2"
                clearAllText="Clear"
                placeholder="Semestre">
     </ng-select>
     <ng-select (change)="onChangeFilter()"
                [(ngModel)]="filters[1]"
                [items]="exchangeProgList"
-               class="select2"
+               class="select3"
                clearAllText="Clear"
                placeholder="Programme d'échange">
     </ng-select>
@@ -31,10 +40,20 @@
                bindValue="name"
                (change)="onChangeFilter()"
                [(ngModel)]="filters[2]"
-               class="select3"
+               class="select4"
                clearAllText="Clear"
                groupBy="continent"
                placeholder="Pays">
+    </ng-select>
+    <ng-select (change)="onChangeFilter()"
+               [(ngModel)]="filters[3]"
+               [items]="universityList"
+               bindLabel="name"
+               bindValue="name"
+               class="select5"
+               clearAllText="Clear"
+               groupBy="country"
+               placeholder="Université">
     </ng-select>
   </div>
   <br>

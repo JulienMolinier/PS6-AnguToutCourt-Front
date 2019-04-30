@@ -37,7 +37,7 @@ export class UniversityService {
         console.log(response);
         this.university.rates.push(rateToAdd);
         this.university.rate = 0;
-        for (let r of this.university.rates) {
+        for (const r of this.university.rates) {
           this.university.rate += r;
         }
         this.university.nbReviews += 1;
@@ -58,6 +58,19 @@ export class UniversityService {
 
   getUniversities() {
     this.http.get<University[]>(`${this.url}/api/universities`).subscribe(value => {
+      this.universityList = value;
+      this.universities$.next(this.universityList);
+    });
+  }
+
+  postUniversity(university: University) {
+    this.http.post(`${this.url}/api/universities`, university).subscribe(value => {
+      console.log(value);
+    });
+  }
+
+  getBestUniversities() {
+    this.http.get<University[]>(`${this.url}/api/universities/?recommended=true`).subscribe(value => {
       this.universityList = value;
       this.universities$.next(this.universityList);
     });

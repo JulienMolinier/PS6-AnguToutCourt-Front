@@ -3,7 +3,7 @@
   border-color: black;
   border-style: solid;
   border-width: 2px;
-  height: 17em;
+  height: 12em;
   cursor: pointer;
 }
 
@@ -13,14 +13,14 @@
 }
 
 .details-container {
-  margin-top: 3%;
+  margin-top: 1%;
   float: right;
   width: 70%;
   display: grid;
 }
 
 .img-container {
-  width: 20%;
+  width: 15%;
   height: 100%;
   float: left;
   background-color: #D6EAFD;
@@ -31,6 +31,7 @@
 
 .rate {
   text-align: center;
+  margin-top: 2%;
 }
 
 .one {

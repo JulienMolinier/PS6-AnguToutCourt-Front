@@ -7,6 +7,7 @@ h3 {
   border-width: 2px;
   border-style: solid;
   padding: 10px;
+  margin-bottom: 5%;
 }
 
 .ticket {
@@ -64,7 +65,7 @@ h3 {
   margin: auto;
   grid-column: 1;
   grid-row: 1;
-  padding: 1%;
+  padding: 2%;
 }
 
 .select2 {
@@ -72,7 +73,7 @@ h3 {
   margin: auto;
   grid-column: 2;
   grid-row: 1;
-  padding: 1%;
+  padding: 2%;
 }
 
 .select3 {
@@ -80,7 +81,23 @@ h3 {
   margin: auto;
   grid-column: 3;
   grid-row: 1;
-  padding: 1%;
+  padding: 2%;
+}
+
+.select4 {
+  width: 250px;
+  margin: auto;
+  grid-column: 4;
+  grid-row: 1;
+  padding: 2%;
+}
+
+.select5 {
+  width: 250px;
+  margin: auto;
+  grid-column: 5;
+  grid-row: 1;
+  padding: 2%;
 }
 
 

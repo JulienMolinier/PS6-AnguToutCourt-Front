@@ -1,7 +1,7 @@
 <div class="body" (click)="universityDetails()">
   <div class="img-container">
     <img [src]="university.imgPath" class="img">
-    <p class="rate">{{university.rate}}/5 sur {{university.nbReviews}} votes</p>
+    <p class="rate"><i class="fas fa-star"></i> {{university.rate}}/5 sur {{university.nbReviews}} votes</p>
   </div>
   <div class="details-container">
     <h3 class="one">{{university.name}}</h3>
