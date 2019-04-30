@@ -19,7 +19,12 @@
 
 
 .Div1 {
-    alignment: left;
+  display: flex;
+  align-items: stretch;
+  alignment: center;
+  text-align: center;
+  margin-bottom: 6px;
+
 }
 
 
@@ -29,6 +34,9 @@
   margin: 20px;
   border-width: 10px;
   border-radius: 10px;
-  border-width: 3px;
   border-color: #555555;
+}
+
+.text {
+  margin-right: 10px;
 }
