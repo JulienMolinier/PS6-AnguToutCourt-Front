@@ -80,7 +80,7 @@ export class ResearchResultListComponent implements OnInit {
       } else if (i === 3 && this.filters[i] != null) {
         this.researchResultList = this.researchResultList.filter(value => value.name === this.filters[i]);
       } else if (i === 4 && this.filters[i] !== null) {
-        this.researchResultList = this.researchResultList.filter(value => value.name === this.filters[i]);
+        this.researchResultList = this.researchResultList.filter(value => value.major.includes(this.filters[i]));
 
       }
     }
