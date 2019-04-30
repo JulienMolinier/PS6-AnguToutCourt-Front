@@ -19,6 +19,7 @@ export class ResearchResultListComponent implements OnInit {
   private semesterList: string[];
   private check: string;
   private filters: [string, string, string];
+  recommended: string;
 
   constructor(public universityService: UniversityService, private router: Router) {
     this.researchResultList = [];
@@ -44,6 +45,17 @@ export class ResearchResultListComponent implements OnInit {
 
   onFilterOldChange() {
     this.researchResultList.sort((a, b) => a.nbOldExp > b.nbOldExp ? -1 : 1);
+  }
+
+  onFilterBestChange() {
+    if (this.recommended) {
+      this.universityService.getBestUniversities();
+      this.getUniversitiesList();
+    } else {
+      this.universityService.getUniversities();
+      this.getUniversitiesList();
+    }
+    console.log(this.recommended);
   }
 
   navigateUniversityDetails(university: University) {
@@ -74,6 +86,8 @@ export class ResearchResultListComponent implements OnInit {
 
   resetResearchList() {
     this.check = '';
+    this.recommended = '';
+    this.onFilterBestChange();
     this.filters = [null, null, null];
     this.getUniversitiesList();
   }

@@ -9,6 +9,8 @@
       <mat-radio-button (change)="onFilterOldChange()" class="checkbox3">nombre d'étudiants déja partis
       </mat-radio-button>
     </mat-radio-group>
+    <br>
+    <mat-checkbox (change)="onFilterBestChange()" class="recommendedCheckBox" [(ngModel)]="recommended">Universités recommandées par Polytech</mat-checkbox>
 
   </div>
   <div class="ngselect">

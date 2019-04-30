@@ -63,6 +63,13 @@ export class UniversityService {
     });
   }
 
+  getBestUniversities() {
+    this.http.get<University[]>(`${this.url}/api/universities/?recommended=true`).subscribe(value => {
+      this.universityList = value;
+      this.universities$.next(this.universityList);
+    });
+  }
+
   async getUniversitiesAsync() {
     this.universityList = await this.http.get<University[]>(`${this.url}/api/universities`).toPromise();
     this.universities$.next(this.universityList);

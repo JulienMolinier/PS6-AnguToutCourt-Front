@@ -17,4 +17,5 @@ export interface University {
   location: string;
   inscriptiondesc: string;
   contacts: string;
+  recommended: boolean;
 }
