@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Review} from '../../../models/review';
-import {ReviewInfosComponent} from '../review-infos/review-infos.component';
+import {ReviewInfosComponent} from '../../review-info/review-infos/review-infos.component';
 import {ReviewListComponent} from '../review-list';
 
 @Component({

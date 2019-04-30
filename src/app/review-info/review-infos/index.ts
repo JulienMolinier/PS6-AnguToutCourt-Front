@@ -1,1 +1,1 @@
-export {} from './review-infos.component';
+export {ReviewInfosComponent} from './review-infos.component';

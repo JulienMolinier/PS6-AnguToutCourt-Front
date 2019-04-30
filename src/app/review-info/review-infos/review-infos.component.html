@@ -1,17 +1,27 @@
-<mat-card class="example-card">
+<mat-card class="cardProfil">
+  <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <div mat-card-avatar class="imageProfil">
+      <img src="../../../assets/images/u1.png" alt="Snow">
+    </div>
+    <p> {{review.profile.lastName}} {{review.profile.firstName}}</p>
+    <mat-card-subtitle>{{review.profile.username}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      {{r}}
-    </p>
-  </mat-card-content>
+
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+    <div class="PapaDiv">
+    <div class="Div1">
+      <img src="../../../assets/images/email.png" alt="Snow">
+      <p> {{ review.email }}</p>
+    </div>
+    <div class="Div2">
+      <img src="../../../assets/images/messenger.png" alt="Snow">
+    </div>
+    <div class="Div3">
+      <img src="../../../assets/images/twitter.png" alt="Snow">
+    </div>
+    </div>
   </mat-card-actions>
+
+  </ng-container>
 </mat-card>

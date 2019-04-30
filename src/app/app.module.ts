@@ -68,7 +68,7 @@ import {LoginService} from '../services/loginService';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {SlideshowModule} from 'ng-simple-slideshow';
 import { ReviewListPrintComponent } from './reviews/review-list-print/review-list-print.component';
-import { ReviewInfosComponent } from './reviews/review-infos/review-infos.component';
+import { ReviewInfosComponent } from './review-info/review-infos/review-infos.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -99,6 +99,7 @@ import { FooterComponent } from './footer/footer.component';
     ReviewInfosComponent,
     ReviewListPrintComponent,
     FooterComponent
+
   ],
   imports: [
     SlideshowModule,

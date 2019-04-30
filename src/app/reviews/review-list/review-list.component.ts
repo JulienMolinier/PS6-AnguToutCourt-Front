@@ -4,7 +4,7 @@ import {ReviewService} from '../../../services/reviewService';
 import {ActivatedRoute} from '@angular/router';
 import {UniversityService} from '../../../services/universityService';
 import {University} from '../../../models/university';
-import {ReviewInfosComponent} from '../review-infos/review-infos.component';
+import {ReviewInfosComponent} from '../../review-info/review-infos/review-infos.component';
 import {Router} from '@angular/router';
 
 @Component({
