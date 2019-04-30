@@ -1,31 +1,30 @@
 <div class="content">
-  <h3>Ajouter un Avis</h3>
+  <h2>Ajouter un Avis</h2>
   <form [formGroup]="reviewForm" class="ticket-form">
     <br>
     <br>
-    <label for="universityId">Nom de l'université <br><br>
-      <ng-select [formControlName]="'universityId'"
-                 [items]="universities"
-                 bindLabel="name"
-                 bindValue="id"
-                 class="select"
-                 clearAllText="Clear"
-                 groupBy="country"
-                 id="universityId"
-                 placeholder="Sélectionner l'université">
-      </ng-select>
-    </label>
+    <ng-select [formControlName]="'universityId'"
+               [items]="universities"
+               bindLabel="name"
+               bindValue="id"
+               class="select"
+               clearAllText="Clear"
+               groupBy="country"
+               id="universityId"
+               placeholder="Sélectionner l'université">
+    </ng-select>
     <br>
     <mat-form-field>
-      <input [formControlName]="'email'" class="input-custom" matInput placeholder="email" required>
+      <input [formControlName]="'email'" class="input-custom" matInput placeholder="email" required required>
     </mat-form-field>
     <br>
     <mat-form-field>
-      <textarea [formControlName]="'Description'" matInput placeholder="Laisser un commentaire"></textarea>
+      <textarea [formControlName]="'Description'" cols="50" matInput placeholder="Laisser un commentaire" required
+                rows="6"></textarea>
     </mat-form-field>
     <br>
     <mat-form-field>
-      <input [formControlName]="'Rate'" class="input-custom" id="Rate" matInput max="5"
+      <input [formControlName]="'Rate'" class="input-custom" id="Rate" matInput max="5" required
              placeholder="Note" type="number">
     </mat-form-field>
     <br>
