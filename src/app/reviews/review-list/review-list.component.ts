@@ -1,6 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Review} from '../../../models/review';
 import {ReviewService} from '../../../services/reviewService';
+import {ActivatedRoute} from '@angular/router';
+import {UniversityService} from '../../../services/universityService';
 import {University} from '../../../models/university';
 import {ReviewInfosComponent} from '../review-infos/review-infos.component';
 import {Router} from '@angular/router';
@@ -19,24 +21,42 @@ export class ReviewListComponent implements OnInit {
   private universityList: string[];
   private countryList: string[];
   private filters: string[] = [null, null, null];
+  private reviewsLoaded: Promise<boolean>;
+  private size = 0;
 
-  constructor(public reviewService: ReviewService, private router: Router) {
-    this.reviewService.getReview();
-    this.reviewService.reviews$.subscribe((reviews) => {
-      this.reviewList = reviews;
-      this.initialReviewList = [...this.reviewList];
+  constructor(public reviewService: ReviewService, private route: ActivatedRoute, private univService: UniversityService) {
+    const promise = this.reviewService.getReviewsAsync();
+    promise.then(value => {
+      this.reviewService.reviews$.subscribe((reviews) => {
+        this.reviewList = reviews;
+        this.initialReviewList = this.reviewList;
+        this.size = reviews.length;
+        this.getUniversitiesList();
+        this.getCountryList();
+        this.reviewsLoaded = Promise.resolve(true);
+      });
+    }).catch((error) => {
+      console.log(error);
     });
-    this.getUniversitiesList();
-    this.getCountryList();
+
   }
 
   ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('univId');
+    const univ = this.univService.getByIdAsync(id);
+    univ.then(value => {
+      this.filters[0] = this.univService.universityViewed$.getValue().name;
+      this.onChangeFilter();
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 
   getUniversitiesList() {
     let i;
     this.universityList = [];
-    for (i = 0; i < this.reviewList.length; i++) {
+    console.log(this.reviewList);
+    for (i = 0; i < this.size; i++) {
       if (this.universityList.indexOf(this.reviewList[i].university.name) < 0) {
         this.universityList.push(this.reviewList[i].university.name);
       }

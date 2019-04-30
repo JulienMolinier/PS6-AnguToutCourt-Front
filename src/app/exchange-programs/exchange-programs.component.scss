@@ -19,11 +19,6 @@ img {
 }
 
 .img4 {
-  //crepuq
-  width: 20%;
-}
-
-.img5 {
   //isep
   width: 10%;
 }
@@ -32,10 +27,6 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  color: darkblue;
-  text-align: center;
-}
 
 p {
   font-size: 20px;
@@ -43,4 +34,14 @@ p {
   margin: auto;
   line-height: 35px;
   color: black;
+}
+
+h2{
+  color: darkblue;
+  text-align: center;
+}
+
+a:visited{
+  color: darkblue;
+  text-align: center;
 }

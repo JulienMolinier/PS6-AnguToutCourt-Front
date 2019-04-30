@@ -69,6 +69,7 @@ import {NgSelectModule} from '@ng-select/ng-select';
 import {SlideshowModule} from 'ng-simple-slideshow';
 import { ReviewListPrintComponent } from './reviews/review-list-print/review-list-print.component';
 import { ReviewInfosComponent } from './reviews/review-infos/review-infos.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -94,9 +95,7 @@ import { ReviewInfosComponent } from './reviews/review-infos/review-infos.compon
     UniversityMapComponent,
     UniversityHeaderComponent,
     UniversityMapComponent,
-    LastReviewListComponent,
-    ReviewListPrintComponent,
-    ReviewInfosComponent
+    LastReviewListComponent
   ],
   imports: [
     SlideshowModule,
