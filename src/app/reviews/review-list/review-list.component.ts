@@ -24,7 +24,7 @@ export class ReviewListComponent implements OnInit {
   private reviewsLoaded: Promise<boolean>;
   private size = 0;
 
-  constructor(public reviewService: ReviewService, private route: ActivatedRoute, private univService: UniversityService) {
+  constructor(public reviewService: ReviewService, private route: ActivatedRoute, private router: Router, private univService: UniversityService) {
     const promise = this.reviewService.getReviewsAsync();
     promise.then(value => {
       this.reviewService.reviews$.subscribe((reviews) => {

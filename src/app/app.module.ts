@@ -95,7 +95,10 @@ import { FooterComponent } from './footer/footer.component';
     UniversityMapComponent,
     UniversityHeaderComponent,
     UniversityMapComponent,
-    LastReviewListComponent
+    LastReviewListComponent,
+    ReviewInfosComponent,
+    ReviewListPrintComponent,
+    FooterComponent
   ],
   imports: [
     SlideshowModule,
