@@ -34,6 +34,30 @@
           </div>
         </div>
       </mat-card-actions>
+    </ng-container>
+  </mat-card>
+
+  <mat-card class="cardReview">
+    <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
+    <mat-card-header>
+      <div mat-card-avatar class="imageProfil">
+        <img class="imageProfil" src="../../../assets/images/profil2.jpg" alt="Snow">
+      </div>
+      <mat-card-title>
+        <p>{{review.profile.lastName}} {{review.profile.firstName}} </p>
+      </mat-card-title>
+      <mat-card-subtitle>Formation :{{review.profile.major}}</mat-card-subtitle>
+    </mat-card-header>
+      <hr class="bar" size=2 width=100%  color="" >
+    <img mat-card-image [src]="review.university.imgPath" alt="Photo de l'université">
+      <hr class="bar" size=2 width=100% color="" >
+    <mat-card-content>
+      <p>
+        {{review.Description}}
+      </p>
+    </mat-card-content>
 
     </ng-container>
   </mat-card>
+
+
