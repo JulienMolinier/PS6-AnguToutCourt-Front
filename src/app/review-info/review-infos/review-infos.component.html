@@ -1,15 +1,18 @@
-<div>
+
 
   <mat-card class="cardProfil">
     <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
+      <div class="head">
       <mat-card-header>
         <div mat-card-avatar class="imageProfil">
-          <img src="../../../assets/images/u1.png" alt="Snow">
+          <img class="imageProfil" src="../../../assets/images/profil2.jpg" alt="Snow">
         </div>
         <p> {{review.profile.lastName}} {{review.profile.firstName}}</p>
         <mat-card-subtitle>{{review.profile.username}}</mat-card-subtitle>
+        <img class="epingles" src="../../../assets/images/epingle.png" alt="Snow">
       </mat-card-header>
-
+      </div>
+      <hr class="bar" size=2 width=100% align=center color="" >
       <mat-card-actions>
         <div class="PapaDiv">
           <div class="Div1">
@@ -34,39 +37,3 @@
 
     </ng-container>
   </mat-card>
-
-  <mat-card class="cardProfil">
-    <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
-      <mat-card-header>
-        <div mat-card-avatar class="imageProfil">
-          <img src="../../../assets/images/u1.png" alt="Snow">
-        </div>
-        <div>
-          <p> {{review.profile.lastName}} {{review.profile.firstName}}</p>
-        </div>
-
-        <mat-card-subtitle>{{review.profile.username}}</mat-card-subtitle>
-      </mat-card-header>
-
-
-        <div class="PapaDiv">
-
-          <div class="Div1">
-            <div class="divRS"><img src="../../../assets/images/email.png" alt="Snow"></div>
-            <div> {{ review.email }}</div>
-          </div>
-
-          <div class="Div2">
-            <img src="../../../assets/images/messenger.png" alt="Snow">
-          </div>
-
-          <div class="Div3">
-            <img src="../../../assets/images/twitter.png" alt="Snow">
-          </div>
-
-        </div>
-
-    </ng-container>
-  </mat-card>
-
-</div>
