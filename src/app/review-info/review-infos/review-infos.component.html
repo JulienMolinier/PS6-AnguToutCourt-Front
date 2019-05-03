@@ -7,7 +7,9 @@
         <div mat-card-avatar class="imageProfil">
           <img class="imageProfil" src="../../../assets/images/profil2.jpg" alt="Snow">
         </div>
+        <mat-card-title>
         <p> {{review.profile.lastName}} {{review.profile.firstName}}</p>
+        </mat-card-title>
         <mat-card-subtitle>{{review.profile.username}}</mat-card-subtitle>
         <img class="epingles" src="../../../assets/images/epingle.png" alt="Snow">
       </mat-card-header>
@@ -49,9 +51,11 @@
       <mat-card-subtitle>Formation :{{review.profile.major}}</mat-card-subtitle>
     </mat-card-header>
       <hr class="bar" size=2 width=100%  color="" >
-    <img mat-card-image [src]="review.university.imgPath" alt="Photo de l'université">
+      <img mat-card-image [src]="review.university.imgPath" alt="Photo de l'université">
       <hr class="bar" size=2 width=100% color="" >
     <mat-card-content>
+
+      <h4>Avis :</h4>
       <p>
         {{review.Description}}
       </p>
