@@ -68,6 +68,16 @@
     </ng-container>
   </mat-card>
 
+  <mat-card class="cardReview">
+    <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
+      <mat-card-header>
+        <div mat-card-avatar class="imageProfil">
+          <img class="imageProfil" src="../../../assets/images/univ.png" alt="Snow">
+        </div>
+        <mat-card-title>
+          <p> Mon échange à : </p>
+        </mat-card-title>
+      </mat-card-header>
 
   <mat-card class="cardReview">
     <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
