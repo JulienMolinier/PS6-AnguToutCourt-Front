@@ -12,7 +12,7 @@
         <p> {{review.profile.lastName}} {{review.profile.firstName}}</p>
         </mat-card-title>
         <mat-card-subtitle>{{review.profile.username}}</mat-card-subtitle>
-        <img class="epingles" src="../../../assets/images/epingle.png" alt="Snow">
+        <img class="epingles" src="../../../assets/images/epingle2.png" alt="Snow">
       </mat-card-header>
       </div>
       <hr class="bar" size=2 width=100% align=center color="" >
@@ -69,6 +69,7 @@
 
 
   <mat-card class="cardReview">
+    <img class="epingles" src="../../../assets/images/epingle2.png" alt="Snow">
     <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
       <mat-card-header>
         <div mat-card-avatar class="imageProfil">
@@ -77,6 +78,7 @@
         <mat-card-title>
           <p> Mon échange à : </p>
         </mat-card-title>
+
       </mat-card-header>
 
       <hr class="bar" size=2 width=100%  color="" >
