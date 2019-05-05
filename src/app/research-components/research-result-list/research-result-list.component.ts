@@ -2,9 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {University} from '../../../models/university';
 import {UniversityService} from '../../../services/universityService';
 import {Router} from '@angular/router';
-import {COUNTRY_MOCKED} from '../../../mocks/country.mocks';
-import {Country} from '../../../models/country';
-import {EXCHANGE_MOCKED} from '../../../mocks/exchange.mocks';
 
 @Component({
   selector: 'app-research-result-list',
@@ -14,8 +11,7 @@ import {EXCHANGE_MOCKED} from '../../../mocks/exchange.mocks';
 export class ResearchResultListComponent implements OnInit {
 
   private researchResultList: University[];
-  private universityList: University[];
-  private countryList: Country[];
+  private countryList: string[];
   private exchangeProgList: string[];
   private semesterList: number[];
   private check: string;
@@ -24,25 +20,44 @@ export class ResearchResultListComponent implements OnInit {
   recommended: string;
 
   constructor(public universityService: UniversityService, private router: Router) {
-    this.researchResultList = [];
     this.filters = [null, null, null, null, null];
-    this.countryList = COUNTRY_MOCKED;
-    this.exchangeProgList = EXCHANGE_MOCKED;
-    this.semesterList = [1, 2];
-    universityService.getUniversities();
-    this.getUniversitiesList();
+    this.researchResultList = [];
+    this.semesterList = [];
+    this.exchangeProgList = [];
+    this.countryList = [];
+
     const promise = this.universityService.getUniversitiesAsync();
     promise.then(value => {
-      this.universityList = this.universityService.universities$.getValue();
+      this.getUniversitiesList();
+      this.setupFiltersLists();
     }).catch((error) => {
       console.log(error);
     });
-    this.specialityList = ['SI', 'MAM', 'GB'];
   }
 
   ngOnInit(): void {
   }
 
+  isDistinct(value, index, self) {
+    return self.indexOf(value) === index;
+  }
+
+  setupFiltersLists() {
+    const tmp = [];
+    const tmp2 = [];
+    this.countryList = this.researchResultList.map(univ => univ.country).filter(this.isDistinct);
+    this.exchangeProgList = this.researchResultList.map(univ => univ.program).filter(this.isDistinct);
+    this.researchResultList.map(univ => {
+      for (const m of univ.major) {
+        tmp.push(m);
+      }
+      for (const s of univ.semester) {
+        tmp2.push(s);
+      }
+    });
+    this.semesterList = tmp2.filter(this.isDistinct);
+    this.specialityList = tmp.filter(this.isDistinct);
+  }
 
   onFilterRateChange() {
     this.researchResultList.sort((a, b) => a.rate > b.rate ? -1 : 1);
@@ -110,6 +125,7 @@ export class ResearchResultListComponent implements OnInit {
         });
       }
     }
+    this.setupFiltersLists();
   }
 
   resetResearchList() {
@@ -118,5 +134,6 @@ export class ResearchResultListComponent implements OnInit {
     this.onFilterBestChange();
     this.filters = [null, null, null, null, null];
     this.getUniversitiesList();
+    this.setupFiltersLists();
   }
 }
