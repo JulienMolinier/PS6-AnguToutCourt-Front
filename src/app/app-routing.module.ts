@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ResearchComponent} from './research-components/research/research.component';
-import {LoginComponent} from './log/login/login.component';
+import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {ReviewFormComponent} from './reviews/review-form';

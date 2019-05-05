@@ -1,4 +1,6 @@
 
+<div>
+
 
   <mat-card class="cardProfil">
     <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
@@ -65,3 +67,40 @@
   </mat-card>
 
 
+  <div class="CardData">
+    <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
+      <ul>
+        <li> <img src="../../../assets/images/profil2.jpg"></li>
+        <li>{{review.profile.firstName}} {{review.profile.lastName}}</li>
+        <li> <li> <img src="../../../assets/images/etude.png"></li>
+        <li> {{review.profile.major}}</li>
+        <li> <img src="../../../assets/images/univ.png"></li>
+        <li> {{review.university.name}}</li>
+        <li>{{review.university.country}} , {{review.university.city}}</li>
+      </ul>
+    </ng-container>
+  </div>
+
+  <mat-list>
+    <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
+
+    <h3 mat-subheader></h3>
+    <mat-list-item>
+      <mat-icon mat-list-icon> <img src="../../../assets/images/profil2.jpg"> </mat-icon>
+      <h4 mat-line>{{review.profile.firstName}} {{review.profile.lastName}} </h4>
+      <p mat-line> {{review.profile.major}} </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <h3 mat-subheader>Notes</h3>
+    <mat-list-item *ngFor="let note of notes">
+      <mat-icon mat-list-icon>note</mat-icon>
+      <h4 mat-line>{{note.name}}</h4>
+      <p mat-line> {{note.updated | date}} </p>
+    </mat-list-item>
+
+    </ng-container>
+  </mat-list>
+
+
+
+</div>

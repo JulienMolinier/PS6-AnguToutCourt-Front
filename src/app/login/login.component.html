@@ -1,0 +1,28 @@
+<div style="text-align: right; font-style: italic;">{{result}}</div>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="content">
+  <h1>Login</h1>
+  <br>
+  <form [formGroup]="loginForm">
+    <mat-form-field>
+      <input [formControlName]="'username'" matInput placeholder="Username" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input [formControlName]="'password'" [type]="visible ? 'text' : 'password'" matInput placeholder="Mot de passe"
+             required
+             type="password">
+      <mat-icon (click)="visible = !visible" matSuffix>{{visible ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+
+    <br>
+    <br>
+    <span>{{messageError}}</span>
+
+
+    <div class="form-buttons">
+      <button class="button button-primary"
+              (click)="login()">Se connecter</button>
+    </div>
+  </form>
+</div>

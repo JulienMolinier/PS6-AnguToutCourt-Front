@@ -54,10 +54,10 @@ import {UniversityMapComponent} from './universitycomponents/university-map/univ
 import {UniversityDescriptionComponent} from './universitycomponents/university-description/university-description.component';
 import {UniversityInfosComponent} from './universitycomponents/university-infos/university-infos.component';
 import {UniversityComponent} from './universitycomponents/university/university.component';
-import {LoginComponent} from './log/login/login.component';
+import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './log/register/register.component';
 import {CreateAccountComponent} from './create-account';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {UniversityService} from '../services/universityService';
 import {UniversityHeaderComponent} from './universitycomponents/university-header/university-header.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -71,6 +71,7 @@ import {UniversityFormComponent} from './universitycomponents/university-form/un
 import {FooterComponent} from './footer/footer.component';
 import {ReviewListPrintComponent} from './reviews/review-list-print/review-list-print.component';
 import {ReviewInfosComponent} from './review-info/review-infos/review-infos.component';
+import {AuthenticationInterceptor} from '../services/AuthenticationInterceptor';
 
 
 
@@ -154,7 +155,12 @@ import {ReviewInfosComponent} from './review-info/review-infos/review-infos.comp
     MatTooltipModule,
     MatTreeModule,
   ],
-  providers: [UniversityService, ReviewService, LoginService],
+  providers: [UniversityService, ReviewService, LoginService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthenticationInterceptor,
+    multi: true
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
