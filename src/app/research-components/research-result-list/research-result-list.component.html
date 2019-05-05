@@ -10,7 +10,9 @@
       </mat-radio-button>
     </mat-radio-group>
     <br>
-    <mat-checkbox (change)="onFilterBestChange()" class="recommendedCheckBox" [(ngModel)]="recommended">Universités recommandées par Polytech</mat-checkbox>
+    <mat-checkbox (change)="onFilterBestChange()" [(ngModel)]="recommended" class="recommendedCheckBox">Universités
+      recommandées par Polytech
+    </mat-checkbox>
 
   </div>
   <div class="ngselect">
@@ -19,6 +21,7 @@
                [items]="specialityList"
                class="select1"
                clearAllText="Clear"
+               [multiple]="true"
                placeholder="Spécialité">
     </ng-select>
     <ng-select (change)="onChangeFilter()"
@@ -26,6 +29,7 @@
                [items]="semesterList"
                class="select2"
                clearAllText="Clear"
+               [multiple]="true"
                placeholder="Semestre">
     </ng-select>
     <ng-select (change)="onChangeFilter()"
@@ -33,6 +37,7 @@
                [items]="exchangeProgList"
                class="select3"
                clearAllText="Clear"
+               [multiple]="true"
                placeholder="Programme d'échange">
     </ng-select>
     <ng-select [items]="countryList"
@@ -43,6 +48,7 @@
                class="select4"
                clearAllText="Clear"
                groupBy="continent"
+               [multiple]="true"
                placeholder="Pays">
     </ng-select>
     <ng-select (change)="onChangeFilter()"
@@ -53,6 +59,7 @@
                class="select5"
                clearAllText="Clear"
                groupBy="country"
+               [multiple]="true"
                placeholder="Université">
     </ng-select>
   </div>

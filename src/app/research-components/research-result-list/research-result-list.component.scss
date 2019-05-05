@@ -56,13 +56,12 @@ h3 {
 
 .ngselect {
   display: grid;
-  width: 60%;
+  width: 90%;
   margin: auto;
 }
 
 .select1 {
   width: 250px;
-  margin: auto;
   grid-column: 1;
   grid-row: 1;
   padding: 2%;
@@ -70,7 +69,6 @@ h3 {
 
 .select2 {
   width: 250px;
-  margin: auto;
   grid-column: 2;
   grid-row: 1;
   padding: 2%;
@@ -78,7 +76,6 @@ h3 {
 
 .select3 {
   width: 250px;
-  margin: auto;
   grid-column: 3;
   grid-row: 1;
   padding: 2%;
@@ -86,7 +83,6 @@ h3 {
 
 .select4 {
   width: 250px;
-  margin: auto;
   grid-column: 4;
   grid-row: 1;
   padding: 2%;
@@ -94,7 +90,6 @@ h3 {
 
 .select5 {
   width: 250px;
-  margin: auto;
   grid-column: 5;
   grid-row: 1;
   padding: 2%;

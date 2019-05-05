@@ -17,9 +17,9 @@ export class ResearchResultListComponent implements OnInit {
   private universityList: University[];
   private countryList: Country[];
   private exchangeProgList: string[];
-  private semesterList: string[];
+  private semesterList: number[];
   private check: string;
-  private filters: [string, string, string, string, string];
+  private filters: [number[], string[], string[], string[], string[]];
   private specialityList: string[];
   recommended: string;
 
@@ -28,7 +28,7 @@ export class ResearchResultListComponent implements OnInit {
     this.filters = [null, null, null, null, null];
     this.countryList = COUNTRY_MOCKED;
     this.exchangeProgList = EXCHANGE_MOCKED;
-    this.semesterList = ['1', '2', '1 et 2'];
+    this.semesterList = [1, 2];
     universityService.getUniversities();
     this.getUniversitiesList();
     const promise = this.universityService.getUniversitiesAsync();
@@ -77,23 +77,37 @@ export class ResearchResultListComponent implements OnInit {
 
   onChangeFilter() {
     this.getUniversitiesList();
+    const self = this;
     for (let i = 0; i <= this.filters.length; i++) {
-      if (i === 0 && (this.filters[i] === '1' || this.filters[i] === '2')) {
-        this.researchResultList = this.researchResultList.filter(value =>
-          value.semester.includes(Number(this.filters[i])));
-      } else if (i === 0 && this.filters[i] === '1 et 2') {
-        this.researchResultList = this.researchResultList.filter(value =>
-          value.semester.includes(1) && value.semester.includes(2));
-      } else if (i === 1 && this.filters[i] !== null) {
-        this.researchResultList = this.researchResultList.filter(value =>
-          value.program.toLowerCase() === this.filters[i].toLowerCase());
-      } else if (i === 2 && this.filters[i] !== null) {
-        this.researchResultList = this.researchResultList.filter(value => value.country === this.filters[i]);
-      } else if (i === 3 && this.filters[i] != null) {
-        this.researchResultList = this.researchResultList.filter(value => value.name === this.filters[i]);
-      } else if (i === 4 && this.filters[i] !== null) {
-        this.researchResultList = this.researchResultList.filter(value => value.major.includes(this.filters[i]));
-
+      if (i === 0 && this.filters[0] !== null && this.filters[0].length !== 0) {
+        this.researchResultList = this.researchResultList.filter(item => {
+          let res = true;
+          for (const value of self.filters[0]) {
+            if (!item.semester.includes(value)) {
+              res = false;
+            }
+          }
+          return res;
+        });
+      } else if (i === 1 && this.filters[1] !== null && this.filters[1].length !== 0) {
+        this.researchResultList = this.researchResultList.filter(
+          item => self.filters[1].includes(item.program));
+      } else if (i === 2 && this.filters[2] !== null && this.filters[2].length !== 0) {
+        this.researchResultList = this.researchResultList.filter(
+          item => self.filters[2].includes(item.country));
+      } else if (i === 3 && this.filters[3] != null && this.filters[3].length !== 0) {
+        this.researchResultList = this.researchResultList.filter(
+          item => self.filters[3].includes(item.name));
+      } else if (i === 4 && this.filters[4] !== null && this.filters[4].length !== 0) {
+        this.researchResultList = this.researchResultList.filter(item => {
+          let res = true;
+          for (const value of self.filters[4]) {
+            if (!item.major.includes(value)) {
+              res = false;
+            }
+          }
+          return res;
+        });
       }
     }
   }
