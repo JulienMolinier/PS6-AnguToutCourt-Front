@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
                 email : this.user.email
               }
             );
-            this.router.navigateByUrl('/');
+            this.router.navigateByUrl('/home');
           }
         );
     }
