@@ -11,27 +11,52 @@
 
 
 .cardProfil {
-  max-width: 350px;
-  max-height: 450px;
-  margin: 20px;
+  max-width: 450px;
+  max-height: 550px;
   border-width: 10px;
   border-radius: 10px;
   border-color: #555555;
-  float: left;
-}
+  display: inline-block;
+  margin-left: 15%;
 
+}
 
 .cardReview {
   max-width: 350px;
   max-height: 100%;
-  margin: 20px;
+
   border-width: 10px;
   border-radius: 10px;
   border-color: #555555;
-  float: right;
+  display: inline-block;
+  margin-left: 5%;
+
+}
+
+
+.CardData {
+  max-width: 450px;
+  max-height: 550px;
+  border-width: 10px;
+  border-radius: 10px;
+  border-color: #555555;
+  display: inline-block;
+  margin-left: 5%;
+
+
+}
+.ecran {
+  position: center;
+}
 
 
 
+
+
+
+.imageCenter {
+  position: relative;
+  float: bottom;
 }
 
 .text {
@@ -64,13 +89,4 @@
 
 .mat-list-icon {
   color: rgba(0, 0, 0, 0.54);
-}
-.CardData {
-  max-width: 350px;
-  max-height: 450px;
-  margin: 20px;
-  border-width: 10px;
-  border-radius: 10px;
-  border-color: #555555;
-  display: inline-block;
 }

@@ -1,5 +1,5 @@
 
-<div>
+<div class="ecran">
 
 
   <mat-card class="cardProfil">
@@ -41,6 +41,8 @@
     </ng-container>
   </mat-card>
 
+
+
   <mat-card class="cardReview">
     <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
     <mat-card-header>
@@ -65,6 +67,7 @@
 
     </ng-container>
   </mat-card>
+
 
   <mat-card class="cardReview">
     <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
@@ -116,11 +119,14 @@
     </ng-container>
   </mat-card>
 
-
-  <div>
-
+  <div class="imageCenter">
     <img class="text" src="../../../assets/images/exchange.png" alt="Snow">
   </div>
+
+
+
+
+
 
 
 
