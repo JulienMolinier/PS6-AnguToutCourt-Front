@@ -7,7 +7,7 @@ import { User } from 'src/models/User';
 })
 export class LoginService {
   private url = 'http://localhost:9428';
-  private user = {firstName : '', lastName : '', email : ''};
+  private _user = {firstName : '', lastName : '', email : ''};
 
   constructor(private http: HttpClient) {
   }
@@ -17,10 +17,14 @@ export class LoginService {
   }
 
   setUser(user) {
-    this.user = user;
+    this._user = user;
   }
   saveToken(token) {
     localStorage.setItem('token', token);
+  }
+
+  get user(): { firstName: string; lastName: string; email: string } {
+    return this._user;
   }
 
   getToken() {

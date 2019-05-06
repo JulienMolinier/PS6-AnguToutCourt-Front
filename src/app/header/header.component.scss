@@ -12,7 +12,7 @@
   padding-top: 1em;
   padding-left: 1em;
   padding-right: 1em;
-  display: inline-block;
+
 }
 
 .imagePoly {
@@ -49,4 +49,27 @@ ul li {
 ul li :hover {
   border-bottom: 2px solid white;
   text-decoration: none;
+}
+
+
+.profilA {
+position: absolute;
+  right: 14%;
+  top: 4%;
+}
+
+.id1 {
+  float: left;
+  margin-right: 20px;
+}
+.id2 {
+  float: right;
+}
+.id3 {
+  float: right;
+
+}
+.id4{
+  float: left;
+
 }
