@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {University} from '../../../models/university';
 import {UniversityService} from '../../../services/universityService';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-research-result-list',
@@ -19,7 +19,7 @@ export class ResearchResultListComponent implements OnInit {
   private specialityList: string[];
   recommended: string;
 
-  constructor(public universityService: UniversityService, private router: Router) {
+  constructor(public universityService: UniversityService, private router: Router, private route: ActivatedRoute) {
     this.filters = [null, null, null, null, null];
     this.researchResultList = [];
     this.semesterList = [];
@@ -36,6 +36,8 @@ export class ResearchResultListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.recommended = this.route.snapshot.paramMap.get('bool');
+    this.onFilterBestChange();
   }
 
   isDistinct(value, index, self) {

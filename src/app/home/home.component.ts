@@ -21,4 +21,9 @@ export class HomeComponent implements OnInit {
   goLastReviewList() {
     this.router.navigate(['last-reviews']);
   }
+
+  goTop5() {
+    const bool = true;
+    this.router.navigate(['research', {bool}]);
+  }
 }
