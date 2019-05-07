@@ -1,12 +1,14 @@
 <div class="body">
   <ng-container *ngIf="(universityService.universityViewed$ | async) as university">
     <app-university-header [university]="university"></app-university-header>
-    <div class="details">
-      <app-university-description [university]="university" class="description"></app-university-description>
-      <app-university-infos [university]="university" class="infos"></app-university-infos>
-    </div>
-    <div class="map">
-      <app-university-map [university]="university"></app-university-map>
+    <div class="content">
+      <div class="details">
+        <app-university-description [university]="university" class="description"></app-university-description>
+        <app-university-infos [university]="university" class="infos"></app-university-infos>
+      </div>
+      <div class="map">
+        <app-university-map [university]="university"></app-university-map>
+      </div>
     </div>
 
   </ng-container>
