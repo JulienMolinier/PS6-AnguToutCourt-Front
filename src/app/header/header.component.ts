@@ -35,8 +35,4 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['exchange-programs']);
   }
 
-  goReviews() {
-    this.router.navigate(['reviewsAll']);
-  }
-
 }
