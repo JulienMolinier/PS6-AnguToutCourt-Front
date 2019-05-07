@@ -69,9 +69,8 @@ import {NgSelectModule} from '@ng-select/ng-select';
 import {SlideshowModule} from 'ng-simple-slideshow';
 import {UniversityFormComponent} from './universitycomponents/university-form/university-form.component';
 import {FooterComponent} from './footer/footer.component';
-import {ReviewListPrintComponent} from './reviews/review-list-print/review-list-print.component';
-import {ReviewInfosComponent} from './review-info/review-infos/review-infos.component';
 import {AuthenticationInterceptor} from '../services/AuthenticationInterceptor';
+import {ReviewInfosComponent} from './review-info/review-infos';
 
 
 
@@ -103,7 +102,6 @@ import {AuthenticationInterceptor} from '../services/AuthenticationInterceptor';
     LastReviewListComponent,
     UniversityFormComponent,
     LastReviewListComponent,
-    ReviewListPrintComponent,
     FooterComponent,
     ReviewInfosComponent
 
