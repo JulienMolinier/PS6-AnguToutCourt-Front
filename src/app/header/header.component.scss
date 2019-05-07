@@ -57,17 +57,15 @@ ul li :hover {
 }
 
 .profil {
-  width: 10%;
+  width: 15%;
   float: right;
   margin-right: 2%;
-  display: grid;
-  padding: 15px 15px;
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
 }
 
 .profilDetails {
-  grid-column: 2;
+  padding: 0px 8px;
 }
 
-.profilPic {
-  grid-column: 1;
-}
