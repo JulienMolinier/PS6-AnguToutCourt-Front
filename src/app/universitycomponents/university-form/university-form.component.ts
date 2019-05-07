@@ -37,6 +37,8 @@ export class UniversityFormComponent implements OnInit {
       location: ['', [Validators.required]],
       inscriptionDesc: ['', [Validators.required]],
       contacts: ['', [Validators.required]],
+      major: ['', [Validators.required]],
+      link: ['', [Validators.required]],
     });
   }
 

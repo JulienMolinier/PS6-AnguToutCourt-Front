@@ -7,20 +7,24 @@
   <slideshow [imageUrls]=university.campusImgs align="center"></slideshow>
   <br>
   <div class="area">
-    <i class="fas fa-chevron-right">INSCRIPTIONS</i>
-    <p>L'inscription pour effectuer un semestre d'échange se fait sur ce site :</p>
-    <a href="http://unice.fr/polytechnice/fr/international/etudes-a-letranger/partir-a-letranger">cliquer ici </a>
+    <i class="fas fa-chevron-right">COURS PROPOSÉS</i>
+    <p>Les cours proposés par l'université selon les semestres se trouvent sur leur site :
+      <a href="{{university.link}}" target="_blank"> cliquez ici </a>
+    </p>
   </div>
   <br>
 
   <div class="area">
     <i class="fas fa-chevron-right">CONTACTS</i>
-    <p>{{university.contacts}}</p>
+    <ng-container *ngFor="let contacts of university.contacts">
+      <p>{{contacts}}</p>
+    </ng-container>
+
   </div>
   <br>
 
   <div class="area">
     <i class="fas fa-chevron-right">AVIS</i>
-    <p (click)="goReviews()">Consulter les {{university.nbReviews}} avis</p>
+    <p (click)="goReviews()">Consulter le(s) {{university.nbReviews}} avis</p>
   </div>
 </div>
