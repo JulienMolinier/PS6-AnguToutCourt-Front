@@ -10,7 +10,6 @@ import {ReviewListComponent} from './reviews/review-list';
 import {CreateAccountComponent} from './create-account';
 import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
 import {LastReviewListComponent} from './reviews/last-review-list';
-import {ReviewListPrintComponent} from './reviews/review-list-print';
 
 import {UniversityFormComponent} from './universitycomponents/university-form/university-form.component';
 import {ReviewInfosComponent} from './review-info/review-infos';
@@ -23,7 +22,6 @@ const routes: Routes = [
   {path: 'last-reviews', component: LastReviewListComponent},
   {path: 'reviews', component: ReviewListComponent},
   {path: 'reviews/:id', component: ReviewInfosComponent},
-  {path: 'reviewsAll', component: ReviewListPrintComponent},
   {path: 'createAccount', component: CreateAccountComponent},
   {path: 'research', component: ResearchComponent},
   {path: 'home', component: HomeComponent},
