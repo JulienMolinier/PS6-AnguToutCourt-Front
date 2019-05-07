@@ -1,15 +1,17 @@
 import {Injectable} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { User } from 'src/models/User';
+import {HttpClient} from '@angular/common/http';
+import {User} from 'src/models/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
   private url = 'http://localhost:9428';
-  private _user = {firstName : '', lastName : '', email : ''};
+  public isLogged;
+  private user = {firstName: '', lastName: '', email: ''};
 
   constructor(private http: HttpClient) {
+    this.isLogged = !!this.getToken() || false;
   }
 
   login(username: string, password: string) {
@@ -17,14 +19,16 @@ export class LoginService {
   }
 
   setUser(user) {
-    this._user = user;
-  }
-  saveToken(token) {
-    localStorage.setItem('token', token);
+    this.user = user;
   }
 
-  get user(): { firstName: string; lastName: string; email: string } {
-    return this._user;
+  saveToken(token) {
+    localStorage.setItem('token', token);
+    this.isLogged = true;
+  }
+
+  getUser() {
+    return this.user;
   }
 
   getToken() {
@@ -33,5 +37,6 @@ export class LoginService {
 
   logout() {
     localStorage.removeItem('token');
+    this.isLogged = false;
   }
 }
