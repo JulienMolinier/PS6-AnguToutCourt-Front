@@ -1,19 +1,19 @@
 
 
-
+<div class="body">
   <mat-card class="cardProfil">
     <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
       <div class="head">
-      <mat-card-header>
-        <div mat-card-avatar class="imageProfil">
-          <img class="imageProfil" src="../../../assets/images/profil2.jpg" alt="Snow">
-        </div>
-        <mat-card-title>
-        <p> {{review.profile.lastName}} {{review.profile.firstName}}</p>
-        </mat-card-title>
-        <mat-card-subtitle>{{review.profile.username}}</mat-card-subtitle>
-        <img class="epingles" src="../../../assets/images/epingle2.png" alt="Snow">
-      </mat-card-header>
+        <mat-card-header>
+          <div mat-card-avatar class="imageProfil">
+            <img class="imageProfil" src="../../../assets/images/profil2.jpg" alt="Snow">
+          </div>
+          <mat-card-title>
+            <p> Mes contacts</p>
+          </mat-card-title>
+          <mat-card-subtitle>{{review.profile.username}}</mat-card-subtitle>
+          <img class="epingles" src="../../../assets/images/epingle2.png" alt="Snow">
+        </mat-card-header>
       </div>
       <hr class="bar" size=2 width=100% align=center color="" >
       <mat-card-actions>
@@ -44,25 +44,25 @@
 
   <mat-card class="cardReview">
     <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
-    <mat-card-header>
-      <div mat-card-avatar class="imageProfil">
-        <img class="imageProfil" src="../../../assets/images/profil2.jpg" alt="Snow">
-      </div>
-      <mat-card-title>
-        <p>{{review.profile.lastName}} {{review.profile.firstName}} </p>
-      </mat-card-title>
-      <mat-card-subtitle>Formation :{{review.profile.major}}</mat-card-subtitle>
-    </mat-card-header>
+      <mat-card-header>
+        <div mat-card-avatar class="imageProfil">
+          <img class="imageProfil" src="../../../assets/images/profil2.jpg" alt="Snow">
+        </div>
+        <mat-card-title>
+          <p>{{review.profile.lastName}} {{review.profile.firstName}} </p>
+        </mat-card-title>
+        <mat-card-subtitle>Formation :{{review.profile.major}}</mat-card-subtitle>
+      </mat-card-header>
       <hr class="bar" size=2 width=100%  color="" >
-      <img mat-card-image [src]="review.university.imgPath" alt="Photo de l'université">
+      <img mat-card-image (click)="goToUniversity(review)" [src]="review.university.imgPath" alt="Photo de l'université">
       <hr class="bar" size=2 width=100% color="" >
-    <mat-card-content>
+      <mat-card-content>
 
-      <h4>Avis :</h4>
-      <p>
-        {{review.Description}}
-      </p>
-    </mat-card-content>
+        <h4>Avis :</h4>
+        <p>
+          {{review.Description}}
+        </p>
+      </mat-card-content>
 
     </ng-container>
   </mat-card>
@@ -125,3 +125,5 @@
   </div>
 
 
+
+</div>

@@ -12,6 +12,7 @@
   padding-top: 1em;
   padding-left: 1em;
   padding-right: 1em;
+  height: 6em;
 
 }
 
@@ -34,16 +35,20 @@
   cursor: pointer;
 }
 
-ul {
+.nav {
   display: table;
   margin: auto;
   transform: translate(-20%, 0%);
+}
 
+.navConnected {
+  display: table;
+  margin: auto;
 }
 
 ul li {
   display: table-cell;
-  padding: 15px 15px;
+  padding: 30px 15px;
 }
 
 ul li :hover {
@@ -51,25 +56,18 @@ ul li :hover {
   text-decoration: none;
 }
 
-
-.profilA {
-position: absolute;
-  right: 14%;
-  top: 4%;
-}
-
-.id1 {
-  float: left;
-  margin-right: 20px;
-}
-.id2 {
+.profil {
+  width: 10%;
   float: right;
+  margin-right: 2%;
+  display: grid;
+  padding: 15px 15px;
 }
-.id3 {
-  float: right;
 
+.profilDetails {
+  grid-column: 2;
 }
-.id4{
-  float: left;
 
+.profilPic {
+  grid-column: 1;
 }
