@@ -16,7 +16,7 @@ export interface University {
   campusImgs: string[];
   location: string;
   inscriptiondesc: string;
-  contacts: string;
+  contacts: string[];
   major: string[];
   link: string;
   recommended: boolean;
