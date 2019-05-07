@@ -25,6 +25,8 @@
 
   <div class="area">
     <i class="fas fa-chevron-right">AVIS</i>
-    <p (click)="goReviews()">Consulter le(s) {{university.nbReviews}} avis</p>
+    <p>
+      <button (click)="goReviews()" mat-raised-button>Consulter le(s) {{university.nbReviews}} avis</button>
+    </p>
   </div>
 </div>

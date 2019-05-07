@@ -1,4 +1,5 @@
 .body {
+  padding-bottom: 2%;
   font-size: 30px;
   background-size: cover;
   background-image: url(../../assets/images/homev2.jpg);
@@ -17,9 +18,14 @@
   padding: 1%;
 }
 
-p{
+p {
   font-size: 25px;
 }
+
+.li {
+  font-size: 25px;
+}
+
 .selection {
   cursor: pointer;
 }
