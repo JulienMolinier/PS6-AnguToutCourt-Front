@@ -1,14 +1,16 @@
-<div class="body" (click)="universityDetails()">
-  <div class="img-container">
-    <img [src]="university.imgPath" class="img">
-    <p class="rate"><i class="fas fa-star"></i> {{university.rate}}/5 sur {{university.nbReviews}} votes</p>
+<mat-card>
+  <div (click)="universityDetails()" class="body">
+    <div class="img-container">
+      <img [src]="university.imgPath" class="img">
+      <p class="rate"><i class="fas fa-star"></i> {{university.rate}}/5 sur {{university.nbReviews}} votes</p>
+    </div>
+    <div class="details-container">
+      <h3 class="one">{{university.name}}</h3>
+      <p class="two">{{university.city}} ({{university.country}})</p>
+      <p class="three">{{university.program}}</p>
+      <p class="four">Semestre(s) disponible(s): {{university.semester}}</p>
+      <p class="five">Places restantes: {{university.placesNumber}}</p>
+      <p class="six">Etudiants déja partis: {{university.nbOldExp}}</p>
+    </div>
   </div>
-  <div class="details-container">
-    <h3 class="one">{{university.name}}</h3>
-    <p class="two">{{university.city}} ({{university.country}})</p>
-    <p class="three">{{university.program}}</p>
-    <p class="four">Semestre(s) disponible(s): {{university.semester}}</p>
-    <p class="five">Places restantes: {{university.placesNumber}}</p>
-    <p class="six">Etudiants déja partis: {{university.nbOldExp}}</p>
-  </div>
-</div>
+</mat-card>
