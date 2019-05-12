@@ -1,129 +1,134 @@
 
+<div class="papaDiv">
 
-<div class="body">
-  <mat-card class="cardProfil">
-    <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
-      <div class="head">
+
+  <div class="body">
+    <mat-card class="cardProfil">
+      <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
+        <div class="head">
+          <mat-card-header>
+            <div mat-card-avatar class="imageProfil">
+              <img class="imageProfil" src="../../../assets/images/profil2.jpg" alt="Snow">
+            </div>
+            <mat-card-title>
+              <p> Mes contacts</p>
+            </mat-card-title>
+            <mat-card-subtitle>{{review.profile.username}}</mat-card-subtitle>
+            <img class="epingles" src="../../../assets/images/epingle2.png" alt="Snow">
+          </mat-card-header>
+        </div>
+        <hr class="bar" size=2 width=100% align=center color="" >
+        <mat-card-actions>
+          <div class="PapaDiv">
+            <div class="Div1">
+              <img class="text" src="../../../assets/images/email.png" alt="Snow">
+              <p> {{ review.email }}</p>
+            </div>
+            <div class="Div1">
+              <img class="text" src="../../../assets/images/messenger.png" alt="Snow">
+              <p> {{ review.email }}</p>
+            </div>
+            <div class="Div1">
+              <img class="text" src="../../../assets/images/twitter.png" alt="Snow">
+              <p> {{ review.email }}</p>
+            </div>
+
+            <div class="Div1">
+              <img class="text" src="../../../assets/images/tel.png" alt="Snow">
+              <p> {{ "0661357080" }}</p>
+            </div>
+          </div>
+        </mat-card-actions>
+      </ng-container>
+    </mat-card>
+
+
+
+    <mat-card class="cardReview">
+      <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
         <mat-card-header>
           <div mat-card-avatar class="imageProfil">
             <img class="imageProfil" src="../../../assets/images/profil2.jpg" alt="Snow">
           </div>
           <mat-card-title>
-            <p> Mes contacts</p>
+            <p>{{review.profile.lastName}} {{review.profile.firstName}} </p>
           </mat-card-title>
-          <mat-card-subtitle>{{review.profile.username}}</mat-card-subtitle>
-          <img class="epingles" src="../../../assets/images/epingle2.png" alt="Snow">
+          <mat-card-subtitle>Formation :{{review.profile.major}}</mat-card-subtitle>
         </mat-card-header>
-      </div>
-      <hr class="bar" size=2 width=100% align=center color="" >
-      <mat-card-actions>
-        <div class="PapaDiv">
-          <div class="Div1">
-            <img class="text" src="../../../assets/images/email.png" alt="Snow">
-            <p> {{ review.email }}</p>
+        <hr class="bar" size=2 width=100%  color="" >
+        <img mat-card-image (click)="goToUniversity(review)" [src]="review.university.imgPath" alt="Photo de l'université">
+        <hr class="bar" size=2 width=100% color="" >
+        <mat-card-content>
+
+          <h4>Avis :</h4>
+          <p>
+            {{review.Description}}
+          </p>
+        </mat-card-content>
+
+      </ng-container>
+    </mat-card>
+
+
+    <mat-card class="CardData">
+      <img class="epingles" src="../../../assets/images/epingle2.png" alt="Snow">
+      <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
+        <mat-card-header>
+          <div mat-card-avatar class="imageProfil">
+            <img class="imageProfil" src="../../../assets/images/univ.png" alt="Snow">
           </div>
-          <div class="Div1">
-            <img class="text" src="../../../assets/images/messenger.png" alt="Snow">
-            <p> {{ review.email }}</p>
+          <mat-card-title>
+            <p> Mon échange à : </p>
+          </mat-card-title>
+
+        </mat-card-header>
+
+        <hr class="bar" size=2 width=100%  color="" >
+        <mat-card-actions>
+          <div class="PapaDiv">
+            <div class="Div1">
+              <img class="text" src="../../../assets/images/etude.png" alt="Snow">
+              <p> {{ review.university.name }}</p>
+            </div>
+            <div class="Div1">
+              <img class="text" src="../../../assets/images/carte.png" alt="Snow">
+              <p> {{ review.university.country }} , {{review.university.city}}</p>
+            </div>
+
+            <div class="Div1">
+              <img class="text" src="../../../assets/images/etude2.png" alt="Snow">
+              <p> {{review.university.program}}</p>
+            </div>
+            <div class="Div1">
+              <img class="text" src="../../../assets/images/carte.png" alt="Snow">
+              <p> {{ review.university.country }} , {{review.university.city}}</p>
+            </div>
+
+
+
+
+            <div class="Div1">
+              <img *ngIf="review.university.semester[0] === 1 && review.university.semester[1] === 2" class="text" src="../../../assets/images/un.png" alt="Snow">
+              <img *ngIf="review.university.semester[0] === 1 && review.university.semester[1] === 2" class="text" src="../../../assets/images/2.png" alt="Snow">
+              <img *ngIf="review.university.semester[0] === 2 || review.university.semester[1] === null" class="text" src="../../../assets/images/2.png" alt="Snow">
+              <p> Nos Semestres disponibles </p>
+            </div>
+
+
           </div>
-          <div class="Div1">
-            <img class="text" src="../../../assets/images/twitter.png" alt="Snow">
-            <p> {{ review.email }}</p>
-          </div>
+        </mat-card-actions>
+        <hr class="bar" size=2 width=100% color="" >
 
-          <div class="Div1">
-            <img class="text" src="../../../assets/images/tel.png" alt="Snow">
-            <p> {{ "0661357080" }}</p>
-          </div>
-        </div>
-      </mat-card-actions>
-    </ng-container>
-  </mat-card>
+      </ng-container>
+    </mat-card>
+
+    <div class="imageCenter">
+      <img class="text" src="../../../assets/images/exchange.png" alt="Snow">
+    </div>
 
 
 
-  <mat-card class="cardReview">
-    <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
-      <mat-card-header>
-        <div mat-card-avatar class="imageProfil">
-          <img class="imageProfil" src="../../../assets/images/profil2.jpg" alt="Snow">
-        </div>
-        <mat-card-title>
-          <p>{{review.profile.lastName}} {{review.profile.firstName}} </p>
-        </mat-card-title>
-        <mat-card-subtitle>Formation :{{review.profile.major}}</mat-card-subtitle>
-      </mat-card-header>
-      <hr class="bar" size=2 width=100%  color="" >
-      <img mat-card-image (click)="goToUniversity(review)" [src]="review.university.imgPath" alt="Photo de l'université">
-      <hr class="bar" size=2 width=100% color="" >
-      <mat-card-content>
-
-        <h4>Avis :</h4>
-        <p>
-          {{review.Description}}
-        </p>
-      </mat-card-content>
-
-    </ng-container>
-  </mat-card>
-
-
-  <mat-card class="CardData">
-    <img class="epingles" src="../../../assets/images/epingle2.png" alt="Snow">
-    <ng-container *ngIf="(reviewService.reviewViewed$ | async) as review">
-      <mat-card-header>
-        <div mat-card-avatar class="imageProfil">
-          <img class="imageProfil" src="../../../assets/images/univ.png" alt="Snow">
-        </div>
-        <mat-card-title>
-          <p> Mon échange à : </p>
-        </mat-card-title>
-
-      </mat-card-header>
-
-      <hr class="bar" size=2 width=100%  color="" >
-      <mat-card-actions>
-        <div class="PapaDiv">
-          <div class="Div1">
-            <img class="text" src="../../../assets/images/etude.png" alt="Snow">
-            <p> {{ review.university.name }}</p>
-          </div>
-          <div class="Div1">
-            <img class="text" src="../../../assets/images/carte.png" alt="Snow">
-            <p> {{ review.university.country }} , {{review.university.city}}</p>
-          </div>
-
-          <div class="Div1">
-            <img class="text" src="../../../assets/images/etude2.png" alt="Snow">
-            <p> {{review.university.program}}</p>
-          </div>
-          <div class="Div1">
-            <img class="text" src="../../../assets/images/carte.png" alt="Snow">
-            <p> {{ review.university.country }} , {{review.university.city}}</p>
-          </div>
-
-
-
-
-          <div class="Div1">
-            <img *ngIf="review.university.semester[0] === 1 && review.university.semester[1] === 2" class="text" src="../../../assets/images/un.png" alt="Snow">
-            <img *ngIf="review.university.semester[0] === 1 && review.university.semester[1] === 2" class="text" src="../../../assets/images/2.png" alt="Snow">
-            <img *ngIf="review.university.semester[0] === 2 || review.university.semester[1] === null" class="text" src="../../../assets/images/2.png" alt="Snow">
-            <p> Nos Semestres disponibles </p>
-          </div>
-
-
-        </div>
-      </mat-card-actions>
-      <hr class="bar" size=2 width=100% color="" >
-
-    </ng-container>
-  </mat-card>
-
-  <div class="imageCenter">
-    <img class="text" src="../../../assets/images/exchange.png" alt="Snow">
   </div>
 
-
-
 </div>
+
