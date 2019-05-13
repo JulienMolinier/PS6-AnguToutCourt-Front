@@ -11,6 +11,10 @@ import {PageEvent} from '@angular/material';
 })
 export class ResearchResultListComponent implements OnInit {
 
+
+  pageSize = 5;
+  recommended: string;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
   private researchResultList: University[];
   private countryList: string[];
   private exchangeProgList: string[];
@@ -18,17 +22,13 @@ export class ResearchResultListComponent implements OnInit {
   private check: string;
   private filters: [number[], string[], string[], string[], string[]];
   private specialityList: string[];
-  recommended: string;
-
-  pageSize = 10;
-  pageSizeOptions: number[] = [5, 10, 25, 100];
-
-  // MatPaginator Output
-  pageEvent: PageEvent;
+  private researchResultListPaginated: University[];
+  private pageEvent: PageEvent;
 
   constructor(public universityService: UniversityService, private router: Router, private route: ActivatedRoute) {
     this.filters = [null, null, null, null, null];
     this.researchResultList = [];
+    this.researchResultListPaginated = [];
     this.semesterList = [];
     this.exchangeProgList = [];
     this.countryList = [];
@@ -37,9 +37,14 @@ export class ResearchResultListComponent implements OnInit {
     promise.then(value => {
       this.getUniversitiesList();
       this.setupFiltersLists();
+      this.researchResultListPaginated.push(...this.researchResultList.slice(0, this.pageSize));
     }).catch((error) => {
       console.log(error);
     });
+  }
+
+  static isDistinct(value, index, self) {
+    return self.indexOf(value) === index;
   }
 
   ngOnInit(): void {
@@ -47,15 +52,11 @@ export class ResearchResultListComponent implements OnInit {
     this.onFilterBestChange();
   }
 
-  isDistinct(value, index, self) {
-    return self.indexOf(value) === index;
-  }
-
   setupFiltersLists() {
     const tmp = [];
     const tmp2 = [];
-    this.countryList = this.researchResultList.map(univ => univ.country).filter(this.isDistinct);
-    this.exchangeProgList = this.researchResultList.map(univ => univ.program).filter(this.isDistinct);
+    this.countryList = this.researchResultList.map(univ => univ.country).filter(ResearchResultListComponent.isDistinct);
+    this.exchangeProgList = this.researchResultList.map(univ => univ.program).filter(ResearchResultListComponent.isDistinct);
     this.researchResultList.map(univ => {
       for (const m of univ.major) {
         tmp.push(m);
@@ -64,20 +65,23 @@ export class ResearchResultListComponent implements OnInit {
         tmp2.push(s);
       }
     });
-    this.semesterList = tmp2.filter(this.isDistinct);
-    this.specialityList = tmp.filter(this.isDistinct);
+    this.semesterList = tmp2.filter(ResearchResultListComponent.isDistinct);
+    this.specialityList = tmp.filter(ResearchResultListComponent.isDistinct);
   }
 
   onFilterRateChange() {
     this.researchResultList.sort((a, b) => a.rate > b.rate ? -1 : 1);
+    this.pageChanged(this.pageEvent);
   }
 
   onFilterPlaceChange() {
     this.researchResultList.sort((a, b) => a.placesNumber > b.placesNumber ? -1 : 1);
+    this.pageChanged(this.pageEvent);
   }
 
   onFilterOldChange() {
     this.researchResultList.sort((a, b) => a.nbOldExp > b.nbOldExp ? -1 : 1);
+    this.pageChanged(this.pageEvent);
   }
 
   onFilterBestChange() {
@@ -88,7 +92,8 @@ export class ResearchResultListComponent implements OnInit {
       this.universityService.getUniversities();
       this.getUniversitiesList();
     }
-    console.log(this.recommended);
+    this.pageEvent.pageIndex = 0;
+    this.pageChanged(this.pageEvent);
   }
 
   navigateUniversityDetails(university: University) {
@@ -135,6 +140,8 @@ export class ResearchResultListComponent implements OnInit {
       }
     }
     this.setupFiltersLists();
+    this.pageChanged(this.pageEvent);
+
   }
 
   resetResearchList() {
@@ -144,5 +151,15 @@ export class ResearchResultListComponent implements OnInit {
     this.filters = [null, null, null, null, null];
     this.getUniversitiesList();
     this.setupFiltersLists();
+    this.pageChanged(this.pageEvent);
+
+  }
+
+  pageChanged($event: PageEvent) {
+    this.pageEvent = $event;
+    console.log('pagechanged' + $event.pageIndex);
+    this.researchResultListPaginated = [];
+    this.researchResultListPaginated.push(...this.researchResultList.slice($event.pageIndex * this.pageSize,
+      $event.pageSize > this.researchResultList.length ? this.researchResultList.length : ($event.pageIndex + 1) * this.pageSize));
   }
 }
