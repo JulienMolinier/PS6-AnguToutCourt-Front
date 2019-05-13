@@ -12,7 +12,7 @@ import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.c
 import {LastReviewListComponent} from './reviews/last-review-list';
 
 import {UniversityFormComponent} from './universitycomponents/university-form/university-form.component';
-import {ReviewInfosComponent} from './review-info/review-infos';
+import {ReviewInfosComponent} from './reviews/review-infos';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},

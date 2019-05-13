@@ -70,9 +70,7 @@ import {SlideshowModule} from 'ng-simple-slideshow';
 import {UniversityFormComponent} from './universitycomponents/university-form/university-form.component';
 import {FooterComponent} from './footer/footer.component';
 import {AuthenticationInterceptor} from '../services/AuthenticationInterceptor';
-import {ReviewInfosComponent} from './review-info/review-infos';
-
-
+import {ReviewInfosComponent} from './reviews/review-infos';
 
 
 @NgModule({

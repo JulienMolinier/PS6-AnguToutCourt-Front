@@ -2,8 +2,6 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {Review} from '../models/review';
 import {HttpClient} from '@angular/common/http';
-import {ReviewInfosComponent} from '../app/review-info/review-infos/review-infos.component';
-import {University} from '../models/university';
 
 @Injectable({
   providedIn: 'root'
