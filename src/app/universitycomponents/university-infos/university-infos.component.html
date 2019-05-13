@@ -7,7 +7,7 @@
   <slideshow [imageUrls]=university.campusImgs align="center"></slideshow>
   <br>
   <div class="area">
-    <i class="fas fa-chevron-right">COURS PROPOSÉS</i>
+    <i class="fas fa-chevron-right"> COURS PROPOSÉS</i>
     <p>Les cours proposés par l'université selon les semestres se trouvent sur leur site :
       <a href="{{university.link}}" target="_blank"> cliquez ici </a>
     </p>
@@ -15,7 +15,7 @@
   <br>
 
   <div class="area">
-    <i class="fas fa-chevron-right">CONTACTS</i>
+    <i class="fas fa-chevron-right"> CONTACTS ANCIENS ÉTUDIANTS</i>
     <ng-container *ngFor="let contacts of university.contacts">
       <p>{{contacts}}</p>
     </ng-container>
@@ -24,7 +24,7 @@
   <br>
 
   <div class="area">
-    <i class="fas fa-chevron-right">AVIS</i>
+    <i class="fas fa-chevron-right"> AVIS</i>
     <p>
       <button (click)="goReviews()" mat-raised-button>Consulter le(s) {{university.nbReviews}} avis</button>
     </p>
