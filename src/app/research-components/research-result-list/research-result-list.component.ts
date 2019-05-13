@@ -26,6 +26,7 @@ export class ResearchResultListComponent implements OnInit {
   private pageEvent: PageEvent;
 
   constructor(public universityService: UniversityService, private router: Router, private route: ActivatedRoute) {
+    this.pageEvent = new PageEvent();
     this.filters = [null, null, null, null, null];
     this.researchResultList = [];
     this.researchResultListPaginated = [];
@@ -48,6 +49,10 @@ export class ResearchResultListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.pageEvent.pageIndex = 0;
+    this.pageEvent.pageSize = this.pageSize;
+    this.pageEvent.length = 0;
+    this.pageEvent.previousPageIndex = 0;
     this.recommended = this.route.snapshot.paramMap.get('bool');
     this.onFilterBestChange();
   }
@@ -92,7 +97,6 @@ export class ResearchResultListComponent implements OnInit {
       this.universityService.getUniversities();
       this.getUniversitiesList();
     }
-    this.pageEvent.pageIndex = 0;
     this.pageChanged(this.pageEvent);
   }
 
@@ -152,13 +156,13 @@ export class ResearchResultListComponent implements OnInit {
     this.getUniversitiesList();
     this.setupFiltersLists();
     this.pageChanged(this.pageEvent);
-
   }
 
   pageChanged($event: PageEvent) {
     this.pageEvent = $event;
-    console.log('pagechanged' + $event.pageIndex);
     this.researchResultListPaginated = [];
+    $event.pageIndex = ($event.pageIndex * $event.pageSize) + 1 > this.researchResultList.length ?
+      Math.floor(this.researchResultList.length / $event.pageSize) : $event.pageIndex;
     this.researchResultListPaginated.push(...this.researchResultList.slice($event.pageIndex * this.pageSize,
       $event.pageSize > this.researchResultList.length ? this.researchResultList.length : ($event.pageIndex + 1) * this.pageSize));
   }

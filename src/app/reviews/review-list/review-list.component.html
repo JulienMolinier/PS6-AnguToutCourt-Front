@@ -34,11 +34,18 @@
 <br>
 <br>
 
+
 <div class="review-list">
   <ng-container *ngIf="(reviewsLoaded | async)">
+    <mat-paginator (page)="pageChanged($event)"
+                   [length]="reviewList.length"
+                   [pageSizeOptions]="pageSizeOptions"
+                   [pageSize]="pageSize">
+    </mat-paginator>
     <h3>{{reviewList.length}} résultat(s)</h3>
     <div class="reviews">
-      <ng-container *ngFor="let review of reviewList">
+
+      <ng-container *ngFor="let review of reviewListPaginated">
         <div class="ticket">
           <app-review (showReviewDetails)="navigateReviewsDetails($event)"
                       [review]="review"

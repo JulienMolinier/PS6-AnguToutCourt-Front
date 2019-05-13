@@ -1,11 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Review} from '../../../models/review';
 import {ReviewService} from '../../../services/reviewService';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {UniversityService} from '../../../services/universityService';
-import {University} from '../../../models/university';
-import {ReviewInfosComponent} from '../../review-info/review-infos/review-infos.component';
-import {Router} from '@angular/router';
+import {PageEvent} from '@angular/material';
 
 @Component({
   selector: 'app-review-list',
@@ -16,6 +14,7 @@ export class ReviewListComponent implements OnInit {
 
 
   private reviewList: Review[] = [];
+  pageSize = 6;
   private initialReviewList: Review[] = [];
   private rateList: string[] = ['0', '1', '2', '3', '4', '5'];
   private universityList: string[];
@@ -23,9 +22,14 @@ export class ReviewListComponent implements OnInit {
   private filters: string[] = [null, null, null];
   private reviewsLoaded: Promise<boolean>;
   private size = 0;
+  pageSizeOptions: number[] = [3, 6, 9, 12];
+  private reviewListPaginated: Review[] = [];
+  private pageEvent: PageEvent;
+
 
   constructor(public reviewService: ReviewService, private route: ActivatedRoute, private router: Router,
               private univService: UniversityService) {
+    this.pageEvent = new PageEvent();
     const promise = this.reviewService.getReviewsAsync();
     promise.then(value => {
       this.reviewService.reviews$.subscribe((reviews) => {
@@ -35,6 +39,21 @@ export class ReviewListComponent implements OnInit {
         this.getUniversitiesList();
         this.getCountryList();
         this.reviewsLoaded = Promise.resolve(true);
+        this.reviewListPaginated.push(...this.reviewList.slice(0, this.pageSize));
+        this.pageEvent.pageIndex = 0;
+        this.pageEvent.pageSize = this.pageSize;
+        this.pageEvent.length = 0;
+        this.pageEvent.previousPageIndex = 0;
+        const id = this.route.snapshot.paramMap.get('univId');
+        if (id != null) {
+          const univ = this.univService.getByIdAsync(id);
+          univ.then(() => {
+            this.filters[0] = this.univService.universityViewed$.getValue().name;
+            this.onChangeFilter();
+          }).catch((error) => {
+            console.log(error);
+          });
+        }
       });
     }).catch((error) => {
       console.log(error);
@@ -43,20 +62,12 @@ export class ReviewListComponent implements OnInit {
   }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('univId');
-    const univ = this.univService.getByIdAsync(id);
-    univ.then(value => {
-      this.filters[0] = this.univService.universityViewed$.getValue().name;
-      this.onChangeFilter();
-    }).catch((error) => {
-      console.log(error);
-    });
+
   }
 
   getUniversitiesList() {
     let i;
     this.universityList = [];
-    console.log(this.reviewList);
     for (i = 0; i < this.size; i++) {
       if (this.universityList.indexOf(this.reviewList[i].university.name) < 0) {
         this.universityList.push(this.reviewList[i].university.name);
@@ -85,6 +96,7 @@ export class ReviewListComponent implements OnInit {
         this.reviewList = this.reviewList.filter(value => value.Rate.toString() === this.filters[1]);
       }
     }
+    this.pageChanged(this.pageEvent);
   }
 
   navigateReviewsDetails(review: Review) {
@@ -92,11 +104,20 @@ export class ReviewListComponent implements OnInit {
   }
 
 
-
   resetResearchList() {
     this.filters = [null, null, null];
     this.reviewList = this.initialReviewList;
     this.getUniversitiesList();
     this.getCountryList();
+    this.pageChanged(this.pageEvent);
+  }
+
+  pageChanged($event: PageEvent) {
+    this.pageEvent = $event;
+    this.reviewListPaginated = [];
+    $event.pageIndex = ($event.pageIndex * $event.pageSize) + 1 > this.reviewList.length ?
+      Math.floor(this.reviewList.length / $event.pageSize) : $event.pageIndex;
+    this.reviewListPaginated.push(...this.reviewList.slice($event.pageIndex * this.pageSize,
+      $event.pageSize > this.reviewList.length ? this.reviewList.length : ($event.pageIndex + 1) * this.pageSize));
   }
 }
