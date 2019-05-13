@@ -32,15 +32,6 @@ export class ReviewService {
     });
   }
 
-  putReview() {
-    this.http.put(`${this.url}/api/reviews/${this.review.id}`, this.review).subscribe(value => {
-      console.log(value);
-    });
-
-  }
-
-
-
   async getReviewsAsync() {
     this.reviewList = await this.http.get<Review[]>(`${this.url}/api/reviews`).toPromise();
     this.reviews$.next(this.reviewList);
@@ -71,6 +62,5 @@ export class ReviewService {
       console.log(this.reviewList);
     });
   }
-
 
 }

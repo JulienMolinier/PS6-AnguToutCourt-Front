@@ -1,3 +1,33 @@
-<p>
-  register works!
-</p>
+<form [formGroup]="registerForm" class="content">
+  <h1>Register</h1>
+  <br>
+  <mat-form-field>
+    <input [formControlName]="'firstName'" matInput placeholder="Prénom" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input [formControlName]="'lastName'" matInput placeholder="Nom" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input [formControlName]="'email'" matInput placeholder="e-mail" required type="email">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input [formControlName]="'username'" matInput placeholder="Pseudo" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input [formControlName]="'password'" matInput placeholder="Mot de passe" required type="password">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input [formControlName]="'major'" matInput placeholder="Spécialité" required>
+  </mat-form-field>
+  <br>
+  <br>
+  <button (click)="register()"
+          class="button button-primary">S'enregistrer
+  </button>
+</form>
+

@@ -1,3 +1,4 @@
+<div style="text-align: right; font-style: italic;">{{result}}</div>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="content">
   <h1>Login</h1>
@@ -5,7 +6,6 @@
   <form [formGroup]="loginForm">
     <mat-form-field>
       <input [formControlName]="'username'" matInput placeholder="Username" required>
-      <mat-error *ngIf="username.invalid">{{getErrorUsernameMessage()}}</mat-error>
     </mat-form-field>
     <br>
     <mat-form-field>
@@ -13,15 +13,17 @@
              required
              type="password">
       <mat-icon (click)="visible = !visible" matSuffix>{{visible ? 'visibility' : 'visibility_off'}}</mat-icon>
-      <mat-error *ngIf="password.invalid">{{getErrorPasswordMessage()}}</mat-error>
     </mat-form-field>
+
+    <br>
+    <br>
+    <span>{{messageError}}</span>
+
+
+    <div class="form-buttons">
+      <button (click)="login()"
+              class="button button-primary">Se connecter
+      </button>
+    </div>
   </form>
-  <br>
-  <br>
-  <span>{{messageError}}</span>
-  <div>
-    <button class="button">
-      <a (click)="goHome()" class="link">Se connecter</a>
-    </button>
-  </div>
 </div>

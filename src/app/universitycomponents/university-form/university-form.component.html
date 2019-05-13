@@ -9,7 +9,7 @@
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input [formControlName]="'img'" matInput placeholder="Lien vers le Logo" required>
+        <input [formControlName]="'imgPath'" matInput placeholder="Lien vers le Logo" required>
       </mat-form-field>
       <br>
       <mat-form-field>
@@ -46,9 +46,16 @@
                type="number">
       </mat-form-field>
       <br>
+
     </div>
 
     <div class="coltwo">
+      <mat-form-field>
+        <mat-select [formControlName]="'major'" matInput multiple placeholder="Spécialité(s) concernée(s)" required>
+          <mat-option *ngFor="let major of majorList" [value]="major">{{major}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
       <mat-form-field>
           <textarea [formControlName]="'description'" cols="33" matInput
                     placeholder="Description" required rows="5"></textarea>
@@ -60,22 +67,29 @@
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input [formControlName]="'campusImgs'" matInput placeholder="Image(s) du campus" required>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-          <textarea [formControlName]="'inscriptionDesc'" cols="33" matInput
+          <textarea [formControlName]="'inscriptiondesc'" cols="33" matInput
                     placeholder="Comment s'inscrire" required rows="5"></textarea>
       </mat-form-field>
+
       <br>
       <mat-form-field>
-          <textarea [formControlName]="'contacts'" cols="33" matInput
-                    placeholder="Contact(s)" required rows="5"></textarea>
+        <input [formControlName]="'link'" matInput placeholder="Lien vers les cours proposés" required>
       </mat-form-field>
       <br>
     </div>
-
   </form>
+  <br>
+  <div>
+    <mat-form-field>
+    <textarea (ngModelChange)="contactChange($event)" [ngModel]="contactsRaw" cols="33" matInput
+              placeholder="Contact(s)" required rows="5"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+    <textarea (ngModelChange)="campusImgChange($event)" [ngModel]="campusImgsRaw" cols="33" matInput
+              placeholder="Image(s) du campus"
+              required rows="5"></textarea>
+    </mat-form-field>
+  </div>
 
   <br>
   <br>

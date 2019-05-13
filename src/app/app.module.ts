@@ -54,7 +54,7 @@ import {UniversityMapComponent} from './universitycomponents/university-map/univ
 import {UniversityDescriptionComponent} from './universitycomponents/university-description/university-description.component';
 import {UniversityInfosComponent} from './universitycomponents/university-infos/university-infos.component';
 import {UniversityComponent} from './universitycomponents/university/university.component';
-import {LoginComponent} from './login/login.component';
+import {LoginComponent} from './log/login/login.component';
 import {RegisterComponent} from './log/register/register.component';
 import {CreateAccountComponent} from './create-account';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
@@ -70,6 +70,7 @@ import {SlideshowModule} from 'ng-simple-slideshow';
 import {UniversityFormComponent} from './universitycomponents/university-form/university-form.component';
 import {FooterComponent} from './footer/footer.component';
 import {AuthenticationInterceptor} from '../services/AuthenticationInterceptor';
+import {ProfileService} from '../services/profileService';
 import {ReviewInfosComponent} from './reviews/review-infos';
 
 
@@ -151,7 +152,7 @@ import {ReviewInfosComponent} from './reviews/review-infos';
     MatTooltipModule,
     MatTreeModule,
   ],
-  providers: [UniversityService, ReviewService, LoginService, {
+  providers: [UniversityService, ReviewService, ProfileService, LoginService, {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthenticationInterceptor,
     multi: true
