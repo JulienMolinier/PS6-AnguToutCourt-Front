@@ -2,11 +2,15 @@
   text-align: center;
   padding-bottom: 3%;
   padding-top: 2%;
-  margin: 5% 35%;
+  margin: 5% 30%;
   border-width: 1px;
   border-color: #afd1d8;
   box-shadow: 2px 2px 2px black;
   background-color: white;
+}
+
+mat-form-field {
+  width: 70%;
 }
 
 form {
