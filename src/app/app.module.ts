@@ -54,7 +54,7 @@ import {UniversityMapComponent} from './universitycomponents/university-map/univ
 import {UniversityDescriptionComponent} from './universitycomponents/university-description/university-description.component';
 import {UniversityInfosComponent} from './universitycomponents/university-infos/university-infos.component';
 import {UniversityComponent} from './universitycomponents/university/university.component';
-import {LoginComponent} from './login/login.component';
+import {LoginComponent} from './log/login/login.component';
 import {RegisterComponent} from './log/register/register.component';
 import {CreateAccountComponent} from './create-account';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
@@ -71,8 +71,6 @@ import {UniversityFormComponent} from './universitycomponents/university-form/un
 import {FooterComponent} from './footer/footer.component';
 import {AuthenticationInterceptor} from '../services/AuthenticationInterceptor';
 import {ReviewInfosComponent} from './review-info/review-infos';
-
-
 
 
 @NgModule({
