@@ -71,6 +71,7 @@ import {UniversityFormComponent} from './universitycomponents/university-form/un
 import {FooterComponent} from './footer/footer.component';
 import {AuthenticationInterceptor} from '../services/AuthenticationInterceptor';
 import {ReviewInfosComponent} from './review-info/review-infos';
+import {ProfileService} from "../services/profileService";
 
 
 @NgModule({
@@ -151,7 +152,7 @@ import {ReviewInfosComponent} from './review-info/review-infos';
     MatTooltipModule,
     MatTreeModule,
   ],
-  providers: [UniversityService, ReviewService, LoginService, {
+  providers: [UniversityService, ReviewService, ProfileService, LoginService, {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthenticationInterceptor,
     multi: true
