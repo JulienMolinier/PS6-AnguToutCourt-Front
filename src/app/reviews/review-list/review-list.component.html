@@ -37,12 +37,16 @@
 <div class="review-list">
   <ng-container *ngIf="(reviewsLoaded | async)">
     <h3>{{reviewList.length}} résultat(s)</h3>
-    <ng-container *ngFor="let review of reviewList">
-      <div class="ticket">
-        <app-review (showReviewDetails)="navigateReviewsDetails($event)"
-                    [review]="review"
-        ></app-review>
-      </div>
-    </ng-container>
+    <div class="reviews">
+      <ng-container *ngFor="let review of reviewList">
+        <div class="ticket">
+          <app-review (showReviewDetails)="navigateReviewsDetails($event)"
+                      [review]="review"
+          ></app-review>
+        </div>
+      </ng-container>
+    </div>
+
+
   </ng-container>
 </div>

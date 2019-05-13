@@ -1,14 +1,17 @@
-.card_review {
+.body {
+  height: 17em;
+  width: 20em;
   background-color: white;
   border-width: 2px;
-  display: grid;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
+
 .review {
-  grid-row: 1;
-  grid-column: 3;
   margin: auto;
+  text-align: center;
 }
 
 .reviewDesc {
@@ -19,13 +22,10 @@
 }
 
 .profile {
-  grid-row: 1;
-  margin: auto;
-  grid-column: 1;
+  text-align: center;
 }
 
 .university {
-  grid-row: 1;
-  margin: auto;
-  grid-column: 2;
+  width: 55%;
+  text-align: center;
 }

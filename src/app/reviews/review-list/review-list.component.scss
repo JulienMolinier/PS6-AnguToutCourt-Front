@@ -1,8 +1,15 @@
 .review-list {
+
   border-width: 2px;
   padding: 1%;
   width: 80%;
   margin: auto auto 5%;
+}
+
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 h1 {

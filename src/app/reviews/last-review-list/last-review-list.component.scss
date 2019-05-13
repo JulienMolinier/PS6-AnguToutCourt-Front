@@ -1,20 +1,27 @@
 :host-context(.white) .review-list {
-  padding: 1%;
   margin: auto;
   width: 80%;
-
+  border-width: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 3%;
 }
 
 :host-context(.white) h1 {
   text-align: center;
   color: white;
+  padding-top: 3%;
 }
 
 .review-list {
   border-width: 2px;
   padding: 1%;
-  width: 80%;
+  width: 50%;
   margin: auto auto 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 h1 {

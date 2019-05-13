@@ -4,11 +4,13 @@
   background-size: cover;
   background-image: url(../../assets/images/homev2.jpg);
   height: 90vh;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2%;
 }
 
 .left {
-  margin: 2% 2%;
-  float: left;
+  margin: 0 2%;
   color: white;
   width: 40%;
   border-width: 2px;
@@ -29,12 +31,14 @@ p {
 }
 
 .right {
-  float: right;
+  padding-top: 2%;
+  margin: 0 2%;
   width: 50%;
 }
 
 .review {
-  margin: 5% auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 50%;
   padding-top: 1%;
   padding-bottom: 2%;
@@ -42,17 +46,13 @@ p {
   grid-row: 1;
   grid-column: 2;
   text-align: center;
-  border-width: 0px;
   background: rgba(0, 0, 0, .7);
 }
 
 .last-reviews {
-  margin: auto 2%;
   font-size: 14px;
-  padding: 2%;
   grid-row: 2;
   grid-column: 2;
-  border-width: 0px;
   background: rgba(0, 0, 0, .7);
   cursor: pointer;
 }
