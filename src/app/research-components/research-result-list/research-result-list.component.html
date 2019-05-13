@@ -72,6 +72,11 @@
 <br>
 <div class="result-list">
   <h3>{{researchResultList.length}} résultat(s)</h3>
+  <mat-paginator (page)="pageEvent = $event"
+                 [length]="researchResultList.length"
+                 [pageSizeOptions]="pageSizeOptions"
+                 [pageSize]="pageSize">
+  </mat-paginator>
   <div *ngFor="let university of researchResultList" class="ticket">
     <app-university-card (showUniversityDetails)="navigateUniversityDetails($event)"
                          [university]="university">

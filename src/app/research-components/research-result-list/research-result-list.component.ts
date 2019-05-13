@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {University} from '../../../models/university';
 import {UniversityService} from '../../../services/universityService';
 import {ActivatedRoute, Router} from '@angular/router';
+import {PageEvent} from '@angular/material';
 
 @Component({
   selector: 'app-research-result-list',
@@ -18,6 +19,12 @@ export class ResearchResultListComponent implements OnInit {
   private filters: [number[], string[], string[], string[], string[]];
   private specialityList: string[];
   recommended: string;
+
+  pageSize = 10;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+
+  // MatPaginator Output
+  pageEvent: PageEvent;
 
   constructor(public universityService: UniversityService, private router: Router, private route: ActivatedRoute) {
     this.filters = [null, null, null, null, null];
