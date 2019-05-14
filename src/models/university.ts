@@ -20,4 +20,5 @@ export interface University {
   major: string[];
   link: string;
   recommended: boolean;
+  lifecost: number;
 }
