@@ -118,7 +118,7 @@ export class ReviewListComponent implements OnInit {
     this.reviewListPaginated = [];
     $event.pageIndex = ($event.pageIndex * $event.pageSize) + 1 > this.reviewList.length ?
       Math.floor(this.reviewList.length / $event.pageSize) : $event.pageIndex;
-    this.reviewListPaginated.push(...this.reviewList.slice($event.pageIndex * this.pageSize,
-      $event.pageSize > this.reviewList.length ? this.reviewList.length : ($event.pageIndex + 1) * this.pageSize));
+    this.reviewListPaginated.push(...this.reviewList.slice($event.pageIndex * $event.pageSize,
+      $event.pageSize > this.reviewList.length ? this.reviewList.length : ($event.pageIndex + 1) * $event.pageSize));
   }
 }

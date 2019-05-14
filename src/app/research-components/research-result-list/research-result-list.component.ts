@@ -175,7 +175,7 @@ export class ResearchResultListComponent implements OnInit {
       Math.floor(this.researchResultList.length / $event.pageSize));
     $event.pageIndex = ($event.pageIndex * $event.pageSize) + 1 > this.researchResultList.length ? 0
       : $event.pageIndex; // Math.floor(this.researchResultList.length / $event.pageSize)
-    this.researchResultListPaginated.push(...this.researchResultList.slice($event.pageIndex * this.pageSize,
-      $event.pageSize > this.researchResultList.length ? this.researchResultList.length : ($event.pageIndex + 1) * this.pageSize));
+    this.researchResultListPaginated.push(...this.researchResultList.slice($event.pageIndex * $event.pageSize,
+      $event.pageSize > this.researchResultList.length ? this.researchResultList.length : ($event.pageIndex + 1) * $event.pageSize));
   }
 }
