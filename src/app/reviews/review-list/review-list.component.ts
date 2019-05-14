@@ -39,6 +39,7 @@ export class ReviewListComponent implements OnInit {
         this.getUniversitiesList();
         this.getCountryList();
         this.reviewsLoaded = Promise.resolve(true);
+        this.reviewListPaginated = [];
         this.reviewListPaginated.push(...this.reviewList.slice(0, this.pageSize));
         this.pageEvent.pageIndex = 0;
         this.pageEvent.pageSize = this.pageSize;
