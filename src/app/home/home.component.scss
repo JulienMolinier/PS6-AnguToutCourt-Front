@@ -23,12 +23,13 @@ p {
 }
 
 .li {
-  font-size: 40px;
+  font-size: 26px;
   color: yellow;
 }
 
 .selection {
   cursor: pointer;
+  list-style-image: url('../../assets/images/right_chevron.png');;
 }
 
 .right {
