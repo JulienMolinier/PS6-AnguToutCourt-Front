@@ -72,6 +72,7 @@ import {FooterComponent} from './footer/footer.component';
 import {AuthenticationInterceptor} from '../services/AuthenticationInterceptor';
 import {ProfileService} from '../services/profileService';
 import {ReviewInfosComponent} from './reviews/review-infos';
+import {AdministrationComponent} from './administration/administration.component';
 
 
 @NgModule({
@@ -102,7 +103,8 @@ import {ReviewInfosComponent} from './reviews/review-infos';
     UniversityFormComponent,
     LastReviewListComponent,
     FooterComponent,
-    ReviewInfosComponent
+    ReviewInfosComponent,
+    AdministrationComponent
 
   ],
   imports: [

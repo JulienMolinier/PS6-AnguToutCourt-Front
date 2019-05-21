@@ -6,6 +6,7 @@ export interface Profile {
   password: string;
   id: number;
   major: Major;
+  isAdmin: boolean;
 
 }
 
@@ -15,6 +16,7 @@ export enum Major {
   MAM = 'Mathématiques-Appliquées-Modélisation',
   ELEC = 'Génie Électronique',
   BAT = 'Génie du Bâtiment',
-  GE = 'Génie de l Eau'
+  GE = 'Génie de l Eau',
+  ADMIN = 'Administrateur'
 
 }

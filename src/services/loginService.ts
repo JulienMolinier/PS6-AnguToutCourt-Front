@@ -8,7 +8,7 @@ import {User} from 'src/models/User';
 export class LoginService {
   private url = 'http://localhost:9428';
   public isLogged;
-  private user = {firstName: '', lastName: '', email: ''};
+  private user = {firstName: '', lastName: '', email: '', isAdmin: false};
 
   constructor(private http: HttpClient) {
     this.isLogged = !!this.getToken() || false;

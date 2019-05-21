@@ -14,6 +14,7 @@ import {LastReviewListComponent} from './reviews/last-review-list';
 import {UniversityFormComponent} from './universitycomponents/university-form/university-form.component';
 import {ReviewInfosComponent} from './reviews/review-infos';
 import {RegisterComponent} from './log/register/register.component';
+import {AdministrationComponent} from './administration/administration.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'createAccount', component: CreateAccountComponent},
   {path: 'research', component: ResearchComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'administration', component: AdministrationComponent},
   {path: 'not-found', component: PageNotFoundComponent},
   {path: 'university/:id', component: UniversityComponent},
   {path: 'university', component: UniversityComponent},
