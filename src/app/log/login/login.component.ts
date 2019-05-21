@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from 'src/services/loginService';
 import {Router} from '@angular/router';
+import {User} from '../../../models/User';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   private messageError: string;
   private visible = false;
   private result = '';
-  private user;
+  private user: User;
 
   constructor(private fb: FormBuilder,
               private loginService: LoginService,
@@ -33,23 +34,12 @@ export class LoginComponent implements OnInit {
         .subscribe(
           (result) => {
             console.log('User is logged in : ' + result.result);
-            this.user = result['user'];
-            this.result = result.result
-              + ' : ' + this.user.firstName
-              + ' ' + this.user.lastName
-              + ', ' + this.user.email;
-            this.loginService.saveToken(result.token);
-            this.loginService.setUser(
-              {
-                firstName: this.user.firstName,
-                lastName: this.user.lastName,
-                email: this.user.email,
-                isAdmin: this.user.isAdmin
-              }
-            );
+            this.user = result.user;
+            this.result = result.result;
+            this.loginService.saveToken(result.token, this.user);
+            this.loginService.setUser(this.user);
             if (this.user.isAdmin) {
               this.router.navigateByUrl('/administration');
-
             } else {
               this.router.navigateByUrl('/home');
             }

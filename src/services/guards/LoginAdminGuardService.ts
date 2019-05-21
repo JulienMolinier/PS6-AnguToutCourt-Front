@@ -8,7 +8,7 @@ export class LoginAdminGuardService implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    return this.loginService.isLogged && this.loginService.getUser().isAdmin;
+    return this.loginService.isLogged && this.loginService.user$.getValue().isAdmin;
   }
 
 }

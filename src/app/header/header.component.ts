@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
   }
 
   isAdmin() {
-    return this.loginService.getUser().isAdmin;
+    return this.loginService.user$.getValue().isAdmin;
   }
 
   goHomeAdmin() {
