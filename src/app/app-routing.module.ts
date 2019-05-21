@@ -7,7 +7,6 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {ReviewFormComponent} from './reviews/review-form';
 import {UniversityComponent} from './universitycomponents/university/university.component';
 import {ReviewListComponent} from './reviews/review-list';
-import {CreateAccountComponent} from './create-account';
 import {ExchangeProgramsComponent} from './exchange-programs/exchange-programs.component';
 import {LastReviewListComponent} from './reviews/last-review-list';
 
@@ -15,25 +14,26 @@ import {UniversityFormComponent} from './universitycomponents/university-form/un
 import {ReviewInfosComponent} from './reviews/review-infos';
 import {RegisterComponent} from './log/register/register.component';
 import {AdministrationComponent} from './administration/administration.component';
+import {LoginGuardService} from '../services/guards/LoginGuardService';
+import {LoginAdminGuardService} from '../services/guards/LoginAdminGuardService';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'review-form', component: ReviewFormComponent},
-  {path: 'review-list', component: ReviewListComponent},
-  {path: 'last-reviews', component: LastReviewListComponent},
-  {path: 'reviews', component: ReviewListComponent},
-  {path: 'reviews/:id', component: ReviewInfosComponent},
-  {path: 'createAccount', component: CreateAccountComponent},
-  {path: 'research', component: ResearchComponent},
-  {path: 'home', component: HomeComponent},
+  {path: 'register', component: RegisterComponent, canActivate: [LoginAdminGuardService]},
+  {path: 'review-form', component: ReviewFormComponent, canActivate: [LoginGuardService]},
+  {path: 'review-list', component: ReviewListComponent, canActivate: [LoginGuardService]},
+  {path: 'last-reviews', component: LastReviewListComponent, canActivate: [LoginGuardService]},
+  {path: 'reviews', component: ReviewListComponent, canActivate: [LoginGuardService]},
+  {path: 'reviews/:id', component: ReviewInfosComponent, canActivate: [LoginGuardService]},
+  {path: 'research', component: ResearchComponent, canActivate: [LoginGuardService]},
+  {path: 'home', component: HomeComponent, canActivate: [LoginGuardService]},
   {path: 'administration', component: AdministrationComponent},
   {path: 'not-found', component: PageNotFoundComponent},
-  {path: 'university/:id', component: UniversityComponent},
-  {path: 'university', component: UniversityComponent},
-  {path: 'exchange-programs', component: ExchangeProgramsComponent},
-  {path: 'university-form', component: UniversityFormComponent},
+  {path: 'university/:id', component: UniversityComponent, canActivate: [LoginGuardService]},
+  {path: 'university', component: UniversityComponent, canActivate: [LoginGuardService]},
+  {path: 'exchange-programs', component: ExchangeProgramsComponent, canActivate: [LoginGuardService]},
+  {path: 'university-form', component: UniversityFormComponent, canActivate: [LoginAdminGuardService]},
   {path: '**', redirectTo: 'not-found'}
 ];
 

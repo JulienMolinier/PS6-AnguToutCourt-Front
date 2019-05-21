@@ -56,7 +56,6 @@ import {UniversityInfosComponent} from './universitycomponents/university-infos/
 import {UniversityComponent} from './universitycomponents/university/university.component';
 import {LoginComponent} from './log/login/login.component';
 import {RegisterComponent} from './log/register/register.component';
-import {CreateAccountComponent} from './create-account';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {UniversityService} from '../services/universityService';
 import {UniversityHeaderComponent} from './universitycomponents/university-header/university-header.component';
@@ -73,6 +72,8 @@ import {AuthenticationInterceptor} from '../services/AuthenticationInterceptor';
 import {ProfileService} from '../services/profileService';
 import {ReviewInfosComponent} from './reviews/review-infos';
 import {AdministrationComponent} from './administration/administration.component';
+import {LoginGuardService} from '../services/guards/LoginGuardService';
+import {LoginAdminGuardService} from '../services/guards/LoginAdminGuardService';
 
 
 @NgModule({
@@ -94,7 +95,6 @@ import {AdministrationComponent} from './administration/administration.component
     UniversityDescriptionComponent,
     LoginComponent,
     RegisterComponent,
-    CreateAccountComponent,
     ExchangeProgramsComponent,
     UniversityMapComponent,
     UniversityHeaderComponent,
@@ -154,7 +154,7 @@ import {AdministrationComponent} from './administration/administration.component
     MatTooltipModule,
     MatTreeModule,
   ],
-  providers: [UniversityService, ReviewService, ProfileService, LoginService, {
+  providers: [UniversityService, ReviewService, ProfileService, LoginGuardService, LoginAdminGuardService, LoginService, {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthenticationInterceptor,
     multi: true
