@@ -171,8 +171,6 @@ export class ResearchResultListComponent implements OnInit {
   pageChanged($event: PageEvent) {
     this.pageEvent = $event;
     this.researchResultListPaginated = [];
-    console.log(($event.pageIndex * $event.pageSize) + 1 + ' + ' + this.researchResultList.length + ' + ' +
-      Math.floor(this.researchResultList.length / $event.pageSize));
     $event.pageIndex = ($event.pageIndex * $event.pageSize) + 1 > this.researchResultList.length ? 0
       : $event.pageIndex; // Math.floor(this.researchResultList.length / $event.pageSize)
     this.researchResultListPaginated.push(...this.researchResultList.slice($event.pageIndex * $event.pageSize,

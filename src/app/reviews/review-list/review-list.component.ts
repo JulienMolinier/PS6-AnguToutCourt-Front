@@ -33,6 +33,15 @@ export class ReviewListComponent implements OnInit {
     const promise = this.reviewService.getReviewsAsync();
     promise.then(value => {
       this.reviewService.reviews$.subscribe((reviews) => {
+        reviews = reviews.sort((i1, i2) => {
+          if (i1.Date < i2.Date) {
+            return 1;
+          }
+          if (i1.Date > i2.Date) {
+            return -1;
+          }
+          return 0;
+        });
         this.reviewList = reviews;
         this.initialReviewList = this.reviewList;
         this.size = reviews.length;
