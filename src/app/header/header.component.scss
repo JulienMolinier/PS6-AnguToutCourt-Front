@@ -42,11 +42,6 @@
   transform: translate(-20%, 0%);
 }
 
-.navConnected {
-  display: table;
-  margin: auto;
-}
-
 ul li {
   display: table-cell;
   padding: 30px 15px;
@@ -55,18 +50,5 @@ ul li {
 ul li :hover {
   border-bottom: 2px solid white;
   text-decoration: none;
-}
-
-.profil {
-  width: 15%;
-  float: right;
-  margin-right: 2%;
-  display: flex;
-  justify-content: center;
-  margin-top: 1%;
-}
-
-.profilDetails {
-  padding: 0px 8px;
 }
 

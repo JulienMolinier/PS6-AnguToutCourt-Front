@@ -31,4 +31,11 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['exchange-programs']);
   }
 
+  isAdmin() {
+    return this.loginService.getUser().isAdmin;
+  }
+
+  goHomeAdmin() {
+    this.router.navigate(['administration']);
+  }
 }

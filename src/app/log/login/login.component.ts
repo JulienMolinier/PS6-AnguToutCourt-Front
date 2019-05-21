@@ -32,21 +32,27 @@ export class LoginComponent implements OnInit {
       this.loginService.login(val.username, val.password)
         .subscribe(
           (result) => {
-            console.log('User is logged in : ' + result['result']);
+            console.log('User is logged in : ' + result.result);
             this.user = result['user'];
-            this.result = result['result']
+            this.result = result.result
               + ' : ' + this.user.firstName
               + ' ' + this.user.lastName
               + ', ' + this.user.email;
-            this.loginService.saveToken(result['token']);
+            this.loginService.saveToken(result.token);
             this.loginService.setUser(
               {
                 firstName: this.user.firstName,
                 lastName: this.user.lastName,
-                email: this.user.email
+                email: this.user.email,
+                isAdmin: this.user.isAdmin
               }
             );
-            this.router.navigateByUrl('/home');
+            if (this.user.isAdmin) {
+              this.router.navigateByUrl('/administration');
+
+            } else {
+              this.router.navigateByUrl('/home');
+            }
           }
         );
     }
