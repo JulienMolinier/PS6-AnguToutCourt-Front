@@ -49,6 +49,7 @@ import {ResearchComponent} from './research-components/research/research.compone
 import {ResearchResultListComponent} from './research-components/research-result-list/research-result-list.component';
 import {UniversityCardComponent} from './research-components/university-card/university-card.component';
 import {HomeComponent} from './home/home.component';
+import {AdministrationComponent} from './administration/administration.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {UniversityMapComponent} from './universitycomponents/university-map/university-map.component';
 import {UniversityDescriptionComponent} from './universitycomponents/university-description/university-description.component';
@@ -71,7 +72,6 @@ import {FooterComponent} from './footer/footer.component';
 import {AuthenticationInterceptor} from '../services/AuthenticationInterceptor';
 import {ProfileService} from '../services/profileService';
 import {ReviewInfosComponent} from './reviews/review-infos';
-import {AdministrationComponent} from './administration/administration.component';
 import {LoginGuardService} from '../services/guards/LoginGuardService';
 import {LoginAdminGuardService} from '../services/guards/LoginAdminGuardService';
 
