@@ -6,14 +6,15 @@
       <img alt="Snow" src="../../../assets/images/user3.png">
     </div>
     <div class="profilDetails">
-      <h3>{{loginService.getUser().firstName}} {{loginService.getUser().lastName}}</h3>
+      <h3>{{loginService.user$.getValue().firstName}} {{loginService.user$.getValue().lastName}}</h3>
     </div>
   </div>
   <nav class="navbar">
     <ul *ngIf="loginService.isLogged" class="navConnected" routerLinkActive="active">
-      <li class="nav-item"><a (click)="goHome()" class="nav-link">Accueil</a></li>
-      <li class="nav-item"><a (click)="goResearch()" class="nav-link">Recherche</a></li>
-      <li class="nav-item"><a (click)="goExchange()" class="nav-link">Programmes</a></li>
+      <li *ngIf="!isAdmin()" class="nav-item"><a (click)="goHome()" class="nav-link">Accueil</a></li>
+      <li *ngIf="isAdmin()" class="nav-item"><a (click)="goHomeAdmin()" class="nav-link">Accueil</a></li>
+      <li class="nav-item"><a (click)="goResearch()" class="nav-link">Universités</a></li>
+      <li class="nav-item"><a (click)="goExchange()" class="nav-link">Échanges</a></li>
       <li class="nav-item"><a (click)="goReviewsResearch()" class="nav-link">Avis</a></li>
     </ul>
     <ul *ngIf="!loginService.isLogged" class="nav" routerLinkActive="active">

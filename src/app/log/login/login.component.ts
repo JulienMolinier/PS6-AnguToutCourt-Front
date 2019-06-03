@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from 'src/services/loginService';
 import {Router} from '@angular/router';
+import {User} from '../../../models/User';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {MyDialogComponent} from '../../my-dialog/my-dialog.component';
 
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   private messageError: string;
   private visible = false;
   private result = '';
-  private user;
+  private user: User;
 
   constructor(private fb: FormBuilder,
               private loginService: LoginService,
@@ -49,22 +50,16 @@ export class LoginComponent implements OnInit {
       this.loginService.login(val.username, val.password)
         .subscribe(
           (result) => {
-            console.log('User is logged in : ' + result['result']);
-            this.user = result['user'];
-            this.result = result['result']
-              + ' : ' + this.user.firstName
-              + ' ' + this.user.lastName
-              + ', ' + this.user.email;
-            this.loginService.saveToken(result['token']);
-            this.loginService.setUser(
-              {
-                firstName: this.user.firstName,
-                lastName: this.user.lastName,
-                email: this.user.email
-              }
-            );
-            this.router.navigateByUrl('/home');
-          },
+            console.log('User is logged in : ' + result.result);
+            this.user = result.user;
+            this.loginService.setUser(this.user);
+            this.loginService.saveToken(result.token, this.user);
+            this.result = result.result;
+            if (this.user.isAdmin) {
+              this.router.navigateByUrl('/administration');
+            } else {
+              this.router.navigateByUrl('/home');
+            }
           error => {
             this.openDialog();
           }

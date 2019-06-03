@@ -3,7 +3,7 @@
 <div class="review-list">
   <ng-container *ngFor="let review of lastReview">
     <div class="ticket">
-      <app-review [review]="review"></app-review>
+      <app-review (showReviewDetails)="navigateReviewsDetails($event)" [review]="review"></app-review>
     </div>
   </ng-container>
 </div>

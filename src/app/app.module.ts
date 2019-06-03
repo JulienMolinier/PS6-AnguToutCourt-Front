@@ -49,6 +49,7 @@ import {ResearchComponent} from './research-components/research/research.compone
 import {ResearchResultListComponent} from './research-components/research-result-list/research-result-list.component';
 import {UniversityCardComponent} from './research-components/university-card/university-card.component';
 import {HomeComponent} from './home/home.component';
+import {AdministrationComponent} from './administration/administration.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {UniversityMapComponent} from './universitycomponents/university-map/university-map.component';
 import {UniversityDescriptionComponent} from './universitycomponents/university-description/university-description.component';
@@ -56,7 +57,6 @@ import {UniversityInfosComponent} from './universitycomponents/university-infos/
 import {UniversityComponent} from './universitycomponents/university/university.component';
 import {LoginComponent} from './log/login/login.component';
 import {RegisterComponent} from './log/register/register.component';
-import {CreateAccountComponent} from './create-account';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {UniversityService} from '../services/universityService';
 import {UniversityHeaderComponent} from './universitycomponents/university-header/university-header.component';
@@ -72,6 +72,8 @@ import {FooterComponent} from './footer/footer.component';
 import {AuthenticationInterceptor} from '../services/AuthenticationInterceptor';
 import {ProfileService} from '../services/profileService';
 import {ReviewInfosComponent} from './reviews/review-infos';
+import {LoginGuardService} from '../services/guards/LoginGuardService';
+import {LoginAdminGuardService} from '../services/guards/LoginAdminGuardService';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
 
 @NgModule({
@@ -93,7 +95,6 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     UniversityDescriptionComponent,
     LoginComponent,
     RegisterComponent,
-    CreateAccountComponent,
     ExchangeProgramsComponent,
     UniversityMapComponent,
     UniversityHeaderComponent,
@@ -104,6 +105,7 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     FooterComponent,
     ReviewInfosComponent,
     MyDialogComponent
+    AdministrationComponent
   ],
   imports: [
     SlideshowModule,
@@ -152,7 +154,7 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     MatTooltipModule,
     MatTreeModule,
   ],
-  providers: [UniversityService, ReviewService, ProfileService, LoginService, {
+  providers: [UniversityService, ReviewService, ProfileService, LoginGuardService, LoginAdminGuardService, LoginService, {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthenticationInterceptor,
     multi: true

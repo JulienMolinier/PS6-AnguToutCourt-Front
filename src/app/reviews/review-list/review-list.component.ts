@@ -33,12 +33,22 @@ export class ReviewListComponent implements OnInit {
     const promise = this.reviewService.getReviewsAsync();
     promise.then(value => {
       this.reviewService.reviews$.subscribe((reviews) => {
+        reviews = reviews.sort((i1, i2) => {
+          if (i1.Date < i2.Date) {
+            return 1;
+          }
+          if (i1.Date > i2.Date) {
+            return -1;
+          }
+          return 0;
+        });
         this.reviewList = reviews;
         this.initialReviewList = this.reviewList;
         this.size = reviews.length;
         this.getUniversitiesList();
         this.getCountryList();
         this.reviewsLoaded = Promise.resolve(true);
+        this.reviewListPaginated = [];
         this.reviewListPaginated.push(...this.reviewList.slice(0, this.pageSize));
         this.pageEvent.pageIndex = 0;
         this.pageEvent.pageSize = this.pageSize;
@@ -117,7 +127,7 @@ export class ReviewListComponent implements OnInit {
     this.reviewListPaginated = [];
     $event.pageIndex = ($event.pageIndex * $event.pageSize) + 1 > this.reviewList.length ?
       Math.floor(this.reviewList.length / $event.pageSize) : $event.pageIndex;
-    this.reviewListPaginated.push(...this.reviewList.slice($event.pageIndex * this.pageSize,
-      $event.pageSize > this.reviewList.length ? this.reviewList.length : ($event.pageIndex + 1) * this.pageSize));
+    this.reviewListPaginated.push(...this.reviewList.slice($event.pageIndex * $event.pageSize,
+      $event.pageSize > this.reviewList.length ? this.reviewList.length : ($event.pageIndex + 1) * $event.pageSize));
   }
 }

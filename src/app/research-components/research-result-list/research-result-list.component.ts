@@ -38,6 +38,7 @@ export class ResearchResultListComponent implements OnInit {
     promise.then(value => {
       this.getUniversitiesList();
       this.setupFiltersLists();
+      this.researchResultListPaginated = [];
       this.researchResultListPaginated.push(...this.researchResultList.slice(0, this.pageSize));
     }).catch((error) => {
       console.log(error);
@@ -91,13 +92,22 @@ export class ResearchResultListComponent implements OnInit {
 
   onFilterBestChange() {
     if (this.recommended) {
-      this.universityService.getBestUniversities();
-      this.getUniversitiesList();
+      const promise = this.universityService.getBestUniversitiesAsync();
+      promise.then(value => {
+        this.getUniversitiesList();
+        this.pageChanged(this.pageEvent);
+      }).catch((error) => {
+        console.log(error);
+      });
     } else {
-      this.universityService.getUniversities();
-      this.getUniversitiesList();
+      const promise = this.universityService.getUniversitiesAsync();
+      promise.then(value => {
+        this.getUniversitiesList();
+        this.pageChanged(this.pageEvent);
+      }).catch((error) => {
+        console.log(error);
+      });
     }
-    this.pageChanged(this.pageEvent);
   }
 
   navigateUniversityDetails(university: University) {
@@ -161,9 +171,9 @@ export class ResearchResultListComponent implements OnInit {
   pageChanged($event: PageEvent) {
     this.pageEvent = $event;
     this.researchResultListPaginated = [];
-    $event.pageIndex = ($event.pageIndex * $event.pageSize) + 1 > this.researchResultList.length ?
-      Math.floor(this.researchResultList.length / $event.pageSize) : $event.pageIndex;
-    this.researchResultListPaginated.push(...this.researchResultList.slice($event.pageIndex * this.pageSize,
-      $event.pageSize > this.researchResultList.length ? this.researchResultList.length : ($event.pageIndex + 1) * this.pageSize));
+    $event.pageIndex = ($event.pageIndex * $event.pageSize) + 1 > this.researchResultList.length ? 0
+      : $event.pageIndex; // Math.floor(this.researchResultList.length / $event.pageSize)
+    this.researchResultListPaginated.push(...this.researchResultList.slice($event.pageIndex * $event.pageSize,
+      $event.pageSize > this.researchResultList.length ? this.researchResultList.length : ($event.pageIndex + 1) * $event.pageSize));
   }
 }

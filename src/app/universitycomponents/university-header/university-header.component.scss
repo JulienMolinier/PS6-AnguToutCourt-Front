@@ -8,6 +8,7 @@
   background: #F4F5F5;
   border-width: 2px;
   height: 7em;
+  display: flex;
 }
 
 .places {
@@ -15,35 +16,29 @@
 }
 
 .univ {
-  float: left;
   width: 80%;
-  display: grid;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .univname {
-  margin-top: 3%;
   font-size: 5vh;
-  grid-column: 2;
-  grid-row: 1;
+  margin-left: 15%;
+  align-self: center;
 }
 
 .img {
-  float: left;
   margin-top: 1%;
   margin-left: 3%;
   margin-bottom: 5%;
   height: 100px;
-  grid-column: 1;
-  grid-row: 1;
 }
 
 .details-container {
   text-align: center;
-  float: right;
   width: 15%;
   height: 100%;
-  display: grid;
   border-color: black;
   border-style: solid;
-  border-width: 0px 0px 0px 2px;
+  border-width: 0 0 0 2px;
 }

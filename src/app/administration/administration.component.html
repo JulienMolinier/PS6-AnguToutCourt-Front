@@ -6,18 +6,16 @@
       programmes d'échanges en Europe, aux Etats-Unis, au Canada, en Chine et dans plusieurs autres pays.
       <br>&emsp;En Europe, nous avons des accords avec près de 200 universités dans 25 pays. Nous accueillons chaque
       année environ près de 300 étudiants de nationalité étrangère.</p><br>
-    <ul class="selection">
-      <li (click)="goTop5()" class="li">Consultez nos recommandations d'universités</li>
-    </ul>
   </div>
   <div class="right">
-    <div class="review">
-      <h3>Ajouter un avis</h3>
-      <button (click)="goReviewForm()" mat-raised-button>Go !</button>
+    <div class="register">
+      <h3>Ajouter un étudiant</h3>
+      <button (click)="goRegister()" mat-raised-button>Go !</button>
+      <br>
     </div>
-    <br>
-    <div (click)="goLastReviewList()" class="last-reviews">
-      <app-last-review-list class="white"></app-last-review-list>
+    <div class="university-form">
+      <h3>Ajouter une université</h3>
+      <button (click)="goUniversityForm()" mat-raised-button>Go !</button>
     </div>
   </div>
 </div>
