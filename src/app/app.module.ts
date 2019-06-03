@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
@@ -39,7 +38,8 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatTreeModule
+  MatTreeModule,
+
 } from '@angular/material';
 import {ReviewComponent} from './reviews/review';
 import {ReviewFormComponent} from './reviews/review-form';
@@ -72,7 +72,7 @@ import {FooterComponent} from './footer/footer.component';
 import {AuthenticationInterceptor} from '../services/AuthenticationInterceptor';
 import {ProfileService} from '../services/profileService';
 import {ReviewInfosComponent} from './reviews/review-infos';
-
+import { MyDialogComponent } from './my-dialog/my-dialog.component';
 
 @NgModule({
   declarations: [
@@ -102,8 +102,8 @@ import {ReviewInfosComponent} from './reviews/review-infos';
     UniversityFormComponent,
     LastReviewListComponent,
     FooterComponent,
-    ReviewInfosComponent
-
+    ReviewInfosComponent,
+    MyDialogComponent
   ],
   imports: [
     SlideshowModule,
@@ -158,7 +158,8 @@ import {ReviewInfosComponent} from './reviews/review-infos';
     multi: true
   }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [MyDialogComponent],
 })
 export class AppModule {
 }
