@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
             } else {
               this.router.navigateByUrl('/home');
             }
+          },
           error => {
             this.openDialog();
           }

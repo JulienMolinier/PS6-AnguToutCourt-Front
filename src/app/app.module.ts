@@ -104,7 +104,7 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     LastReviewListComponent,
     FooterComponent,
     ReviewInfosComponent,
-    MyDialogComponent
+    MyDialogComponent,
     AdministrationComponent
   ],
   imports: [
