@@ -4,7 +4,7 @@ import {LoginService} from 'src/services/loginService';
 import {Router} from '@angular/router';
 import {User} from '../../../models/User';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
-import {MyDialogComponent} from '../../my-dialog/my-dialog.component';
+import {MyDialogComponent} from '../../alerte/my-dialog/my-dialog.component';
 
 export interface DialogData {
   user: string;
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(MyDialogComponent,{
-      width: '250px',
+      width: '400px',
     });
 
     dialogRef.afterClosed().subscribe(result => {

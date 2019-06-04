@@ -74,7 +74,9 @@ import {ProfileService} from '../services/profileService';
 import {ReviewInfosComponent} from './reviews/review-infos';
 import {LoginGuardService} from '../services/guards/LoginGuardService';
 import {LoginAdminGuardService} from '../services/guards/LoginAdminGuardService';
-import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import { MyDialogComponent } from './alerte/my-dialog/my-dialog.component';
+import { AlertFormRegisterComponent } from './alerte/alert-form-register/alert-form-register.component';
+import { AlertFormUniversityComponent } from './alerte/alert-form-university/alert-form-university.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +107,9 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     FooterComponent,
     ReviewInfosComponent,
     MyDialogComponent,
-    AdministrationComponent
+    AdministrationComponent,
+    AlertFormRegisterComponent,
+    AlertFormUniversityComponent
   ],
   imports: [
     SlideshowModule,
@@ -161,7 +165,8 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
   }
   ],
   bootstrap: [AppComponent],
-  entryComponents: [MyDialogComponent],
+  entryComponents: [MyDialogComponent, AlertFormUniversityComponent, AlertFormRegisterComponent],
+
 })
 export class AppModule {
 }

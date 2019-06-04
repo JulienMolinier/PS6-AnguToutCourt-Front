@@ -3,6 +3,9 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {University} from '../../../models/university';
 import {UniversityService} from '../../../services/universityService';
 import {EXCHANGE_MOCKED} from '../../../mocks/exchange.mocks';
+import {MatDialog} from '@angular/material';
+import {MyDialogComponent} from '../../alerte/my-dialog';
+import {AlertFormUniversityComponent} from '../../alerte/alert-form-university';
 
 @Component({
   selector: 'app-university-form',
@@ -21,7 +24,10 @@ export class UniversityFormComponent implements OnInit {
   private campusImgsRaw: string;
 
   constructor(private formBuilder: FormBuilder,
-              private universityService: UniversityService) {
+              private universityService: UniversityService,
+              public dialog: MatDialog) {
+
+
 
     this.semesterList = [1, 2];
     this.campusImgsPath = [];
@@ -49,6 +55,16 @@ export class UniversityFormComponent implements OnInit {
 
   }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AlertFormUniversityComponent,{
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
   ngOnInit(): void {
   }
 
@@ -63,7 +79,7 @@ export class UniversityFormComponent implements OnInit {
       university.contacts = this.contactsRaw.split('\n');
       this.universityService.postUniversity(university);
     } else {
-      console.log('Invalid');
+      this.openDialog();
     }
   }
 
