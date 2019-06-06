@@ -25,7 +25,7 @@ export class ReviewService {
   }
 
   getReview() {
-    this.http.get<Review[]>(`${this.url}/api/reviews`).subscribe(value => {
+    this.http.get<Review[]>(`${this.url}/api/reviews/?verified=true`).subscribe(value => {
       this.reviewList = value;
       this.reviews$.next(this.reviewList);
       console.log(this.reviewList);
@@ -33,7 +33,7 @@ export class ReviewService {
   }
 
   async getReviewsAsync() {
-    this.reviewList = await this.http.get<Review[]>(`${this.url}/api/reviews`).toPromise();
+    this.reviewList = await this.http.get<Review[]>(`${this.url}/api/reviews/?verified=true`).toPromise();
     this.reviews$.next(this.reviewList);
   }
 
@@ -45,7 +45,7 @@ export class ReviewService {
   }
 
   getLastReviews(count: number) {
-    this.http.get<Review[]>(`${this.url}/api/reviews`).subscribe(value => {
+    this.http.get<Review[]>(`${this.url}/api/reviews/?verified=true`).subscribe(value => {
       let reviews = value;
       reviews = reviews.sort((i1, i2) => {
         if (i1.Date < i2.Date) {

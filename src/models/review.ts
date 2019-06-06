@@ -8,6 +8,7 @@ export interface Review {
   Description: string;
   Date: Date;
   Rate: number;
+  verified: boolean;
   profile?: Profile;
   university?: University;
 }

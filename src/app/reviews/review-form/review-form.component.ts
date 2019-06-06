@@ -38,6 +38,7 @@ export class ReviewFormComponent implements OnInit {
     if (this.reviewForm.valid) {
       const reviewToCreate: Review = this.reviewForm.getRawValue() as Review;
       reviewToCreate.Date = dateToday;
+      reviewToCreate.verified = false;
       this.reviewService.postReview(reviewToCreate);
       this.universityService.addARate(reviewToCreate.universityId.toString(), reviewToCreate.Rate);
     } else {
