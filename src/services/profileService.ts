@@ -13,8 +13,12 @@ export class ProfileService {
 
   postProfile(profile: Profile) {
     this.http.post(`${this.url}/api/profiles`, profile).subscribe(value => {
-      console.log('added');
-    });
+        console.log('added');
+      },
+      error1 => {
+        throw new Error(error1);
+      });
+
   }
 
 }

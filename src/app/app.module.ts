@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
@@ -39,7 +38,8 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatTreeModule
+  MatTreeModule,
+
 } from '@angular/material';
 import {ReviewComponent} from './reviews/review';
 import {ReviewFormComponent} from './reviews/review-form';
@@ -74,7 +74,9 @@ import {ProfileService} from '../services/profileService';
 import {ReviewInfosComponent} from './reviews/review-infos';
 import {LoginGuardService} from '../services/guards/LoginGuardService';
 import {LoginAdminGuardService} from '../services/guards/LoginAdminGuardService';
-
+import { MyDialogComponent } from './alerte/my-dialog/my-dialog.component';
+import { AlertFormRegisterComponent } from './alerte/alert-form-register/alert-form-register.component';
+import { AlertFormUniversityComponent } from './alerte/alert-form-university/alert-form-university.component';
 
 @NgModule({
   declarations: [
@@ -104,8 +106,10 @@ import {LoginAdminGuardService} from '../services/guards/LoginAdminGuardService'
     LastReviewListComponent,
     FooterComponent,
     ReviewInfosComponent,
-    AdministrationComponent
-
+    MyDialogComponent,
+    AdministrationComponent,
+    AlertFormRegisterComponent,
+    AlertFormUniversityComponent
   ],
   imports: [
     SlideshowModule,
@@ -160,7 +164,9 @@ import {LoginAdminGuardService} from '../services/guards/LoginAdminGuardService'
     multi: true
   }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [MyDialogComponent, AlertFormUniversityComponent, AlertFormRegisterComponent],
+
 })
 export class AppModule {
 }
