@@ -1,9 +1,9 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from 'src/services/loginService';
 import {Router} from '@angular/router';
 import {User} from '../../../models/User';
-import {MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import {MyDialogComponent} from '../../alerte/my-dialog/my-dialog.component';
 
 export interface DialogData {
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     });
   }
   openDialog(): void {
-    const dialogRef = this.dialog.open(MyDialogComponent,{
+    const dialogRef = this.dialog.open(MyDialogComponent, {
       width: '400px',
     });
 

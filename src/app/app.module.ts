@@ -39,7 +39,6 @@ import {
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule,
-
 } from '@angular/material';
 import {ReviewComponent} from './reviews/review';
 import {ReviewFormComponent} from './reviews/review-form';
@@ -74,9 +73,10 @@ import {ProfileService} from '../services/profileService';
 import {ReviewInfosComponent} from './reviews/review-infos';
 import {LoginGuardService} from '../services/guards/LoginGuardService';
 import {LoginAdminGuardService} from '../services/guards/LoginAdminGuardService';
-import { MyDialogComponent } from './alerte/my-dialog/my-dialog.component';
-import { AlertFormRegisterComponent } from './alerte/alert-form-register/alert-form-register.component';
-import { AlertFormUniversityComponent } from './alerte/alert-form-university/alert-form-university.component';
+import {MyDialogComponent} from './alerte/my-dialog/my-dialog.component';
+import {AlertFormRegisterComponent} from './alerte/alert-form-register/alert-form-register.component';
+import {AlertFormUniversityComponent} from './alerte/alert-form-university/alert-form-university.component';
+import {ReviewPostAlertComponent} from './alerte/review-post-alert';
 
 @NgModule({
   declarations: [
@@ -109,7 +109,8 @@ import { AlertFormUniversityComponent } from './alerte/alert-form-university/ale
     MyDialogComponent,
     AdministrationComponent,
     AlertFormRegisterComponent,
-    AlertFormUniversityComponent
+    AlertFormUniversityComponent,
+    ReviewPostAlertComponent
   ],
   imports: [
     SlideshowModule,
@@ -165,7 +166,7 @@ import { AlertFormUniversityComponent } from './alerte/alert-form-university/ale
   }
   ],
   bootstrap: [AppComponent],
-  entryComponents: [MyDialogComponent, AlertFormUniversityComponent, AlertFormRegisterComponent],
+  entryComponents: [MyDialogComponent, AlertFormUniversityComponent, AlertFormRegisterComponent, ReviewPostAlertComponent],
 
 })
 export class AppModule {
